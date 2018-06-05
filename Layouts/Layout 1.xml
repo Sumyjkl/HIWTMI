@@ -2,7 +2,7 @@
 <c2layout>
     <name>Layout 1</name>
     <sid>4650502934421703</sid>
-    <event-sheet>Event sheet 1</event-sheet>
+    <event-sheet>Main</event-sheet>
     <size>
         <width>1280</width>
         <height>1024</height>
@@ -47,7 +47,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="TileMap" uid="15">
+                <instance type="tiles_TileMap" uid="15">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <tile-width>16</tile-width>
@@ -105,7 +105,7 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="TileMap" uid="0">
+                <instance type="tiles_TileMap" uid="0">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <tile-width>16</tile-width>
@@ -320,21 +320,22 @@
         </layer>
     </layers>
     <nonworld-instances>
-        <instance type="TileArray" uid="8">
+        <instance type="tiles_TileArray" uid="8">
             <properties>
                 <width>10</width>
                 <height>1</height>
                 <depth>1</depth>
             </properties>
         </instance>
-        <instance type="tileForms" uid="10" />
-        <instance type="tilePrefabs" uid="11">
+        <instance type="tiles_tileForms" uid="10" />
+        <instance type="tiles_tilePrefabs" uid="11">
             <properties>
                 <width>1</width>
                 <height>1</height>
                 <depth>1</depth>
             </properties>
         </instance>
+        <instance type="ldr_Storage" uid="17" />
     </nonworld-instances>
     <effects />
 </c2layout>

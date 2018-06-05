@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Main</name>
+    <events>
+        <comment># MAIN&#x0D;&#x0A;# (none)&#x0D;&#x0A;# Includes all event sheets for gameplay&#x0D;&#x0A;</comment>
+        <include>Loader</include>
+        <include>Player</include>
+        <include>Tiles</include>
+        <comment>because of limitations in C2, the loader doesn&apos;t have any way of knowing if all async requests are finished&#x0D;&#x0A;so we need to manually wait for it to finish&#x0D;&#x0A;this will be fixed when we have a loading screen or main menu where requests can run in the background</comment>
+        <comment>call inits</comment>
+        <event-block sid="702880282237988">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="315342360137575" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="164063190804874" type="f">
+                    <param id="0" name="Name">&quot;ldr_Request&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="-16" name="Wait" sid="620363794273962" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="0" name="Call function" sid="450468803159599" type="f">
+                    <param id="0" name="Name">&quot;tiles_Start&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

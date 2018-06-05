@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Loader</name>
+    <events>
+        <comment># LOADER&#x0D;&#x0A;# ldr_&#x0D;&#x0A;# Loads external files from project files and then stores them in ldr_Storage&#x0D;&#x0A;</comment>
+        <event-block sid="448436398651454">
+            <conditions>
+                <condition id="0" name="On function" sid="237033982577436" type="f">
+                    <param id="0" name="Name">&quot;ldr_Request&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Request project file" sid="722434290048483" type="AJAX">
+                    <param id="0" name="Tag">&quot;caves&quot;</param>
+                    <param id="1" name="File">caves.txt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="223610080932585">
+            <conditions>
+                <condition id="3" name="On any completed" sid="395840909320276" type="AJAX" />
+            </conditions>
+            <actions>
+                <action id="0" name="Add key" sid="163818280728625" type="ldr_Storage">
+                    <param id="0" name="Key">AJAX.Tag</param>
+                    <param id="1" name="Value">AJAX.LastData</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
