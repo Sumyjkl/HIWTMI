@@ -16,1132 +16,1202 @@
         <variable constant="0" name="map_gemDensity" sid="392666142481395" static="0" type="number">10</variable>
         <comment></comment>
         <variable comment="size of tiles in tilemap" constant="0" name="tileMapSize" sid="565947161547990" static="0" type="number">16</variable>
-        <event-block sid="173453743271243">
-            <conditions>
-                <condition id="0" name="On function" sid="357933562706559" type="f">
-                    <param id="0" name="Name">&quot;tiles_arrayInit&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
+        <event-group description="" sid="617999632741444" title="tileGroup">
             <sub-events>
-                <event-block sid="296917412624930">
-                    <conditions />
-                    <actions>
-                        <action id="1" name="Set size" sid="373629758614617" type="TileArray">
-                            <param id="0" name="Width">ceil(TileMap.Width/16) + 1</param>
-                            <param id="1" name="Height">ceil(TileMap.Height/16) + 1</param>
-                            <param id="2" name="Depth">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="322609691473336">
-            <conditions>
-                <condition id="0" name="On function" sid="899042168112573" type="f">
-                    <param id="0" name="Name">&quot;tiles_fillAll&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="230427935569771">
+                <comment>set size</comment>
+                <event-block sid="173453743271243">
                     <conditions>
-                        <condition id="3" name="For each element" sid="800155758344231" type="TileArray">
-                            <param id="0" name="Axes">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="3" name="Set at XY" sid="606480566127323" type="TileArray">
-                            <param id="0" name="X">TileArray.CurX</param>
-                            <param id="1" name="Y">TileArray.CurY</param>
-                            <param id="2" name="Value">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="354166967899695">
-            <conditions>
-                <condition id="0" name="On function" sid="111312266157391" type="f">
-                    <param id="0" name="Name">&quot;tiles_generate&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="716842529448937">
-                    <conditions />
-                    <actions>
-                        <action id="0" name="Call function" sid="985300064000789" type="f">
-                            <param id="0" name="Name">&quot;tiles_fillAll&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="155324166896785">
-                    <conditions>
-                        <condition id="-10" name="For" sid="806544104473398" type="System">
-                            <param id="0" name="Name">&quot;&quot;</param>
-                            <param id="1" name="Start index">0</param>
-                            <param id="2" name="End index">map_caveDensity</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="579756286421095" type="f">
-                            <param id="0" name="Name">&quot;tiles_addPrefab&quot;</param>
-                            <param id="1" name="Parameter {n}">int(random(TileArray.Width)){###}int(random(TileArray.Height)){###}tilePrefabs.At(int(random(tilePrefabs.Width)), 0)</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="368755346485427">
-            <conditions>
-                <condition id="0" name="On function" sid="771555555682040" type="f">
-                    <param id="0" name="Name">&quot;tiles_init&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="460178901762733">
-                    <conditions />
-                    <actions>
-                        <action id="0" name="Call function" sid="251802748981211" type="f">
-                            <param id="0" name="Name">&quot;tiles_generate&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action id="0" name="Call function" sid="168345947504956" type="f">
-                            <param id="0" name="Name">&quot;tiles_updateAll&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="373072669672789">
-            <conditions>
-                <condition id="0" name="On function" sid="653134782135777" type="f">
-                    <param id="0" name="Name">&quot;tiles_updateAll&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="657429951060094">
-                    <conditions>
-                        <condition id="-10" name="For" sid="160806625531047" type="System">
-                            <param id="0" name="Name">&quot;X&quot;</param>
-                            <param id="1" name="Start index">0</param>
-                            <param id="2" name="End index">TileArray.Width</param>
-                        </condition>
-                        <condition id="-10" name="For" sid="114314246358770" type="System">
-                            <param id="0" name="Name">&quot;Y&quot;</param>
-                            <param id="1" name="Start index">0</param>
-                            <param id="2" name="End index">TileArray.Height</param>
+                        <condition id="0" name="On function" sid="357933562706559" type="f">
+                            <param id="0" name="Name">&quot;tiles_arrayInit&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="380838275588344">
+                        <event-block sid="296917412624930">
                             <conditions />
                             <actions>
-                                <action id="0" name="Call function" sid="285286267056179" type="f">
-                                    <param id="0" name="Name">&quot;tiles_update&quot;</param>
-                                    <param id="1" name="Parameter {n}">loopindex(&quot;X&quot;){###}loopindex(&quot;Y&quot;)</param>
+                                <action id="1" name="Set size" sid="373629758614617" type="TileArray">
+                                    <param id="0" name="Width">ceil(TileMap.Width/16) + 1</param>
+                                    <param id="1" name="Height">ceil(TileMap.Height/16) + 1</param>
+                                    <param id="2" name="Depth">1</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="123908690874059">
-            <conditions>
-                <condition id="0" name="On function" sid="424954218497400" type="f">
-                    <param id="0" name="Name">&quot;tiles_loadToArray&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="724366755852586">
+                <comment>fill entire array with 1</comment>
+                <event-block sid="322609691473336">
                     <conditions>
-                        <condition id="-10" name="For" sid="277402196223887" type="System">
-                            <param id="0" name="Name">&quot;X&quot;</param>
-                            <param id="1" name="Start index">0</param>
-                            <param id="2" name="End index">TileArray.Width</param>
-                        </condition>
-                        <condition id="-10" name="For" sid="802361909799249" type="System">
-                            <param id="0" name="Name">&quot;Y&quot;</param>
-                            <param id="1" name="Start index">0</param>
-                            <param id="2" name="End index">TileArray.Height</param>
+                        <condition id="0" name="On function" sid="899042168112573" type="f">
+                            <param id="0" name="Name">&quot;tiles_fillAll&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="573276402314498">
+                        <event-block sid="230427935569771">
                             <conditions>
-                                <condition id="0" name="Compare tile at" sid="836745961106654" type="TileMap">
-                                    <param id="0" name="Tile X">loopindex(&quot;X&quot;)</param>
-                                    <param id="1" name="Tile Y">loopindex(&quot;Y&quot;)</param>
-                                    <param id="2" name="Comparison">0</param>
-                                    <param id="3" name="Tile">0</param>
+                                <condition id="3" name="For each element" sid="800155758344231" type="TileArray">
+                                    <param id="0" name="Axes">1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="3" name="Set at XY" sid="978406776935102" type="TileArray">
-                                    <param id="0" name="X">loopindex(&quot;X&quot;)</param>
-                                    <param id="1" name="Y">loopindex(&quot;Y&quot;)</param>
+                                <action id="3" name="Set at XY" sid="606480566127323" type="TileArray">
+                                    <param id="0" name="X">TileArray.CurX</param>
+                                    <param id="1" name="Y">TileArray.CurY</param>
                                     <param id="2" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-            </sub-events>
-        </event-block>
-        <comment>filter tile</comment>
-        <event-block sid="792665320227073">
-            <conditions>
-                <condition id="0" name="On function" sid="475810467581889" type="f">
-                    <param id="0" name="Name">&quot;tiles_update&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <variable constant="0" name="tmpX" sid="547432424238540" static="0" type="number">0</variable>
-                <variable constant="0" name="tmpY" sid="980794607408603" static="0" type="number">0</variable>
-                <variable constant="0" name="tmpZ" sid="476756068686952" static="0" type="number">0</variable>
-                <variable constant="0" name="tmpReturn" sid="873776731206199" static="0" type="text"></variable>
-                <event-block sid="833420863358831">
-                    <conditions />
-                    <actions>
-                        <action id="-9" name="Set value" sid="943743350749132" type="System">
-                            <param id="0" name="Variable">tmpX</param>
-                            <param id="1" name="Value">f.Param(0)</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="381839798758819" type="System">
-                            <param id="0" name="Variable">tmpY</param>
-                            <param id="1" name="Value">f.Param(1)</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="462289936755178" type="System">
-                            <param id="0" name="Variable">tmpZ</param>
-                            <param id="1" name="Value">TileArray.At(tmpX, tmpY)</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="729474087272375" type="System">
-                            <param id="0" name="Variable">tmpReturn</param>
-                            <param id="1" name="Value">&quot;&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>same</comment>
-                <event-block disabled="1" sid="342266730463874">
+                <comment>add prefabs</comment>
+                <event-block sid="354166967899695">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="172282200752850" type="System">
-                            <param id="0" name="Variable">tmpZ</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">1</param>
+                        <condition id="0" name="On function" sid="111312266157391" type="f">
+                            <param id="0" name="Name">&quot;tiles_generate&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block disabled="1" sid="701920115352441">
-                            <conditions>
-                                <condition id="1" name="Compare at XY" sid="589368520151734" type="TileArray">
-                                    <param id="0" name="X">tmpX</param>
-                                    <param id="1" name="Y">tmpY-1</param>
-                                    <param id="2" name="Comparison">0</param>
-                                    <param id="3" name="Value">tmpZ</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="379323796401445" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="103853114850895">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="905076236496073" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="931622993185066" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="770623860838561">
-                            <conditions>
-                                <condition id="1" name="Compare at XY" sid="573130629425021" type="TileArray">
-                                    <param id="0" name="X">tmpX</param>
-                                    <param id="1" name="Y">tmpY+1</param>
-                                    <param id="2" name="Comparison">0</param>
-                                    <param id="3" name="Value">tmpZ</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="523773485050413" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="882934995067146">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="769602913728136" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="313089155122842" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="676029671573950">
-                            <conditions>
-                                <condition id="1" name="Compare at XY" sid="119518447692722" type="TileArray">
-                                    <param id="0" name="X">tmpX-1</param>
-                                    <param id="1" name="Y">tmpY</param>
-                                    <param id="2" name="Comparison">0</param>
-                                    <param id="3" name="Value">tmpZ</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="998082579593659" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="809917366844721">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="342145366626138" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="149405887282055" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="620619757437701">
-                            <conditions>
-                                <condition id="1" name="Compare at XY" sid="877165693220451" type="TileArray">
-                                    <param id="0" name="X">tmpX+1</param>
-                                    <param id="1" name="Y">tmpY</param>
-                                    <param id="2" name="Comparison">0</param>
-                                    <param id="3" name="Value">tmpZ</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="785652827159119" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="926791269226104">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="657471171557721" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="558927681222892" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="484849362853425">
+                        <event-block sid="716842529448937">
                             <conditions />
                             <actions>
-                                <action id="1" name="Set tile" sid="288082977579696" type="TileMap">
-                                    <param id="0" name="Tile X">tmpX</param>
-                                    <param id="1" name="Tile Y">tmpY</param>
-                                    <param id="2" name="Tile">(tmpZ-1) * 20 + tileForms.Get(tmpReturn)</param>
-                                    <param id="3" name="State">0</param>
+                                <action id="0" name="Call function" sid="985300064000789" type="f">
+                                    <param id="0" name="Name">&quot;tiles_fillAll&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="155324166896785">
+                            <conditions>
+                                <condition id="-10" name="For" sid="806544104473398" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">map_caveDensity</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="579756286421095" type="f">
+                                    <param id="0" name="Name">&quot;tiles_addPrefab&quot;</param>
+                                    <param id="1" name="Parameter {n}">int(random(TileArray.Width)){###}int(random(TileArray.Height)){###}tilePrefabs.At(int(random(tilePrefabs.Width)), 0)</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>any with other rules</comment>
-                <event-block sid="624236522042278">
+                <comment>generate and update</comment>
+                <event-block sid="368755346485427">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="568892364024559" type="System">
-                            <param id="0" name="Variable">tmpZ</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">1</param>
+                        <condition id="0" name="On function" sid="771555555682040" type="f">
+                            <param id="0" name="Name">&quot;tiles_init&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <comment></comment>
-                        <event-block sid="447386441105162">
-                            <conditions>
-                                <condition id="1" name="Compare at XY" sid="299329217807186" type="TileArray">
-                                    <param id="0" name="X">tmpX</param>
-                                    <param id="1" name="Y">tmpY-1</param>
-                                    <param id="2" name="Comparison">0</param>
-                                    <param id="3" name="Value">tmpZ</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="716647948537293" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="346666740355205">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="732341701711504" type="System" />
-                                <condition id="1" inverted="1" name="Compare at XY" sid="204370107935326" type="TileArray">
-                                    <param id="0" name="X">tmpX</param>
-                                    <param id="1" name="Y">tmpY-1</param>
-                                    <param id="2" name="Comparison">0</param>
-                                    <param id="3" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="571453991613669" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="939283930238797">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="281013326474582" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="605696414123417" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <comment></comment>
-                        <event-block sid="462892105018178">
-                            <conditions>
-                                <condition id="1" name="Compare at XY" sid="181573061151105" type="TileArray">
-                                    <param id="0" name="X">tmpX</param>
-                                    <param id="1" name="Y">tmpY+1</param>
-                                    <param id="2" name="Comparison">0</param>
-                                    <param id="3" name="Value">tmpZ</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="333519603155475" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="836101921596530">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="358198275520968" type="System" />
-                                <condition id="1" inverted="1" name="Compare at XY" sid="570141267068877" type="TileArray">
-                                    <param id="0" name="X">tmpX</param>
-                                    <param id="1" name="Y">tmpY+1</param>
-                                    <param id="2" name="Comparison">0</param>
-                                    <param id="3" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="605203533832649" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="741750930232294">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="961827213700199" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="320750472363803" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <comment></comment>
-                        <event-block sid="212877469086615">
-                            <conditions>
-                                <condition id="1" name="Compare at XY" sid="549933229130181" type="TileArray">
-                                    <param id="0" name="X">tmpX-1</param>
-                                    <param id="1" name="Y">tmpY</param>
-                                    <param id="2" name="Comparison">0</param>
-                                    <param id="3" name="Value">tmpZ</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="974084503137542" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="809062478318536">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="438293538225052" type="System" />
-                                <condition id="1" inverted="1" name="Compare at XY" sid="942113752603671" type="TileArray">
-                                    <param id="0" name="X">tmpX-1</param>
-                                    <param id="1" name="Y">tmpY</param>
-                                    <param id="2" name="Comparison">0</param>
-                                    <param id="3" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="850504127872401" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="757477476849412">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="688743616150999" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="148385928499893" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <comment></comment>
-                        <event-block sid="242197481132457">
-                            <conditions>
-                                <condition id="1" name="Compare at XY" sid="315612553392483" type="TileArray">
-                                    <param id="0" name="X">tmpX+1</param>
-                                    <param id="1" name="Y">tmpY</param>
-                                    <param id="2" name="Comparison">0</param>
-                                    <param id="3" name="Value">tmpZ</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="427682723945417" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="341006795371698">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="800584094054267" type="System" />
-                                <condition id="1" inverted="1" name="Compare at XY" sid="432427698693613" type="TileArray">
-                                    <param id="0" name="X">tmpX+1</param>
-                                    <param id="1" name="Y">tmpY</param>
-                                    <param id="2" name="Comparison">0</param>
-                                    <param id="3" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="274765663912777" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="211818376031997">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="648958979226767" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Set value" sid="553329888430644" type="System">
-                                    <param id="0" name="Variable">tmpReturn</param>
-                                    <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <comment>only if has key</comment>
-                        <event-block sid="599143462883251">
-                            <conditions>
-                                <condition id="3" name="Has key" sid="476219915897770" type="tileForms">
-                                    <param id="0" name="Key">tmpReturn</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="1" name="Set tile" sid="878214538005363" type="TileMap">
-                                    <param id="0" name="Tile X">tmpX</param>
-                                    <param id="1" name="Tile Y">tmpY</param>
-                                    <param id="2" name="Tile">(tmpZ-1) * 20 + tileForms.Get(tmpReturn)</param>
-                                    <param id="3" name="State">0</param>
-                                </action>
-                                <action disabled="1" id="0" name="Call function" sid="251035691830149" type="f">
-                                    <param id="0" name="Name">&quot;tiles_solidTest&quot;</param>
-                                    <param id="1" name="Parameter {n}">tmpX{###}tmpY{###}tmpZ{###}tmpReturn</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="755746338816038">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="113221164467229" type="System" />
-                            </conditions>
-                            <actions>
-                                <action disabled="1" id="1" name="Set tile" sid="104193933631826" type="TileMap">
-                                    <param id="0" name="Tile X">tmpX</param>
-                                    <param id="1" name="Tile Y">tmpY</param>
-                                    <param id="2" name="Tile">11</param>
-                                    <param id="3" name="State">0</param>
-                                </action>
-                                <action id="0" name="Erase tile" sid="748064225689915" type="TileMap">
-                                    <param id="0" name="Tile X">tmpX</param>
-                                    <param id="1" name="Tile Y">tmpY</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="362000372772463">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="868416466107340" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Erase tile" sid="243638262709568" type="TileMap">
-                            <param id="0" name="Tile X">tmpX</param>
-                            <param id="1" name="Tile Y">tmpY</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block disabled="1" sid="802398714048410">
-            <conditions>
-                <condition id="0" name="On function" sid="522523816192742" type="f">
-                    <param id="0" name="Name">&quot;tiles_solidTest&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block disabled="1" sid="802307044834829">
-                    <conditions>
-                        <condition id="-21" name="Is between values" sid="475752230807957" type="System">
-                            <param id="0" name="Value">tileForms.Get(f.Param(3))</param>
-                            <param id="1" name="Lower bound">10</param>
-                            <param id="2" name="Upper bound">19</param>
-                        </condition>
-                        <condition id="-8" name="Compare two values" sid="486729865903205" type="System">
-                            <param id="0" name="First value">f.Param(2)</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Second value">4</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block disabled="1" sid="790021988994517">
-                            <conditions>
-                                <condition behavior="Solid" id="0" name="Is enabled" sid="668670408868373" type="TileMap" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Erase tile" sid="898186493277204" type="TileMap">
-                                    <param id="0" name="Tile X">f.Param(0)</param>
-                                    <param id="1" name="Tile Y">f.Param(1)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="795741050515353">
-                            <conditions>
-                                <condition behavior="Solid" id="0" inverted="1" name="Is enabled" sid="626790116830387" type="TileMap" />
-                            </conditions>
-                            <actions>
-                                <action id="1" name="Set tile" sid="441544399870656" type="TileMap">
-                                    <param id="0" name="Tile X">f.Param(0)</param>
-                                    <param id="1" name="Tile Y">f.Param(1)</param>
-                                    <param id="2" name="Tile">(f.Param(2)-1) * 20 + tileForms.Get(f.Param(3))</param>
-                                    <param id="3" name="State">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block disabled="1" sid="103863401366926">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="218032035583434" type="System" />
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block disabled="1" sid="662218006999330">
-                            <conditions>
-                                <condition behavior="Solid" id="0" name="Is enabled" sid="387420303633320" type="TileMap" />
-                            </conditions>
-                            <actions>
-                                <action id="1" name="Set tile" sid="218759829540835" type="TileMap">
-                                    <param id="0" name="Tile X">f.Param(0)</param>
-                                    <param id="1" name="Tile Y">f.Param(1)</param>
-                                    <param id="2" name="Tile">(f.Param(2)-1) * 20 + tileForms.Get(f.Param(3))</param>
-                                    <param id="3" name="State">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="346164824916958">
-                            <conditions>
-                                <condition behavior="Solid" id="0" inverted="1" name="Is enabled" sid="880007071274645" type="TileMap" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Erase tile" sid="128363258361626" type="TileMap">
-                                    <param id="0" name="Tile X">f.Param(0)</param>
-                                    <param id="1" name="Tile Y">f.Param(1)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="898175934961281">
-            <conditions>
-                <condition id="0" name="On function" sid="263985660070400" type="f">
-                    <param id="0" name="Name">&quot;tiles_solidEnable&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-        </event-block>
-        <comment>make rules for filter</comment>
-        <event-block disabled="1" sid="530638075813951">
-            <conditions>
-                <condition id="0" name="On function" sid="266526441688677" type="f">
-                    <param id="0" name="Name">&quot;tiles_formsInit&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <comment>no top</comment>
-                <event-block disabled="1" sid="917432148127261">
-                    <conditions />
-                    <actions>
-                        <action id="0" name="Add key" sid="521191638718046" type="tileForms">
-                            <param id="0" name="Key">&quot;0000&quot;</param>
-                            <param id="1" name="Value">10</param>
-                        </action>
-                        <action id="0" name="Add key" sid="497426673354874" type="tileForms">
-                            <param id="0" name="Key">&quot;0100&quot;</param>
-                            <param id="1" name="Value">11</param>
-                        </action>
-                        <action id="0" name="Add key" sid="665428274733402" type="tileForms">
-                            <param id="0" name="Key">&quot;0010&quot;</param>
-                            <param id="1" name="Value">12</param>
-                        </action>
-                        <action id="0" name="Add key" sid="438028822408431" type="tileForms">
-                            <param id="0" name="Key">&quot;0001&quot;</param>
-                            <param id="1" name="Value">13</param>
-                        </action>
-                        <action id="0" name="Add key" sid="481882002432203" type="tileForms">
-                            <param id="0" name="Key">&quot;0110&quot;</param>
-                            <param id="1" name="Value">14</param>
-                        </action>
-                        <action id="0" name="Add key" sid="835512309460719" type="tileForms">
-                            <param id="0" name="Key">&quot;0101&quot;</param>
-                            <param id="1" name="Value">15</param>
-                        </action>
-                        <action id="0" name="Add key" sid="777170299404924" type="tileForms">
-                            <param id="0" name="Key">&quot;0011&quot;</param>
-                            <param id="1" name="Value">16</param>
-                        </action>
-                        <action id="0" name="Add key" sid="355619258801091" type="tileForms">
-                            <param id="0" name="Key">&quot;0111&quot;</param>
-                            <param id="1" name="Value">17</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>other</comment>
-                <event-block disabled="1" sid="669839761773424">
-                    <conditions />
-                    <actions>
-                        <action id="0" name="Add key" sid="597448412033741" type="tileForms">
-                            <param id="0" name="Key">&quot;1100&quot;</param>
-                            <param id="1" name="Value">20</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>top</comment>
-                <event-block disabled="1" sid="643917661376483">
-                    <conditions />
-                    <actions>
-                        <action id="0" name="Add key" sid="972700209427697" type="tileForms">
-                            <param id="0" name="Key">&quot;1000&quot;</param>
-                            <param id="1" name="Value">21</param>
-                        </action>
-                        <action id="0" name="Add key" sid="983771414621103" type="tileForms">
-                            <param id="0" name="Key">&quot;1010&quot;</param>
-                            <param id="1" name="Value">22</param>
-                        </action>
-                        <action id="0" name="Add key" sid="469450508191229" type="tileForms">
-                            <param id="0" name="Key">&quot;1001&quot;</param>
-                            <param id="1" name="Value">23</param>
-                        </action>
-                        <action id="0" name="Add key" sid="963568520224575" type="tileForms">
-                            <param id="0" name="Key">&quot;1110&quot;</param>
-                            <param id="1" name="Value">24</param>
-                        </action>
-                        <action id="0" name="Add key" sid="815608876832073" type="tileForms">
-                            <param id="0" name="Key">&quot;1101&quot;</param>
-                            <param id="1" name="Value">25</param>
-                        </action>
-                        <action id="0" name="Add key" sid="631773850910180" type="tileForms">
-                            <param id="0" name="Key">&quot;1011&quot;</param>
-                            <param id="1" name="Value">26</param>
-                        </action>
-                        <action id="0" name="Add key" sid="868043958457943" type="tileForms">
-                            <param id="0" name="Key">&quot;1111&quot;</param>
-                            <param id="1" name="Value">27</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="359001787807018">
-            <conditions>
-                <condition id="0" name="On function" sid="888740731340970" type="f">
-                    <param id="0" name="Name">&quot;tiles_formsInit&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <comment>no top</comment>
-                <event-block sid="417270310431139">
-                    <conditions />
-                    <actions>
-                        <action id="0" name="Add key" sid="848683852473384" type="tileForms">
-                            <param id="0" name="Key">&quot;1111&quot;</param>
-                            <param id="1" name="Value">10</param>
-                        </action>
-                        <action id="0" name="Add key" sid="532194687736387" type="tileForms">
-                            <param id="0" name="Key">&quot;1011&quot;</param>
-                            <param id="1" name="Value">11</param>
-                        </action>
-                        <action id="0" name="Add key" sid="243954822996210" type="tileForms">
-                            <param id="0" name="Key">&quot;1101&quot;</param>
-                            <param id="1" name="Value">12</param>
-                        </action>
-                        <action id="0" name="Add key" sid="203476059576165" type="tileForms">
-                            <param id="0" name="Key">&quot;1110&quot;</param>
-                            <param id="1" name="Value">13</param>
-                        </action>
-                        <action id="0" name="Add key" sid="395292968457809" type="tileForms">
-                            <param id="0" name="Key">&quot;1001&quot;</param>
-                            <param id="1" name="Value">14</param>
-                        </action>
-                        <action id="0" name="Add key" sid="878852183782173" type="tileForms">
-                            <param id="0" name="Key">&quot;1010&quot;</param>
-                            <param id="1" name="Value">15</param>
-                        </action>
-                        <action id="0" name="Add key" sid="826258526416876" type="tileForms">
-                            <param id="0" name="Key">&quot;1100&quot;</param>
-                            <param id="1" name="Value">16</param>
-                        </action>
-                        <action id="0" name="Add key" sid="721560282874547" type="tileForms">
-                            <param id="0" name="Key">&quot;1000&quot;</param>
-                            <param id="1" name="Value">17</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>other</comment>
-                <event-block sid="149603767051679">
-                    <conditions />
-                    <actions>
-                        <action id="0" name="Add key" sid="345932625620226" type="tileForms">
-                            <param id="0" name="Key">&quot;0011&quot;</param>
-                            <param id="1" name="Value">20</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>top</comment>
-                <event-block sid="176567140044791">
-                    <conditions />
-                    <actions>
-                        <action id="0" name="Add key" sid="642494502535086" type="tileForms">
-                            <param id="0" name="Key">&quot;0111&quot;</param>
-                            <param id="1" name="Value">21</param>
-                        </action>
-                        <action id="0" name="Add key" sid="547826150957124" type="tileForms">
-                            <param id="0" name="Key">&quot;0101&quot;</param>
-                            <param id="1" name="Value">22</param>
-                        </action>
-                        <action id="0" name="Add key" sid="113736208694774" type="tileForms">
-                            <param id="0" name="Key">&quot;0110&quot;</param>
-                            <param id="1" name="Value">23</param>
-                        </action>
-                        <action id="0" name="Add key" sid="109776249855434" type="tileForms">
-                            <param id="0" name="Key">&quot;0001&quot;</param>
-                            <param id="1" name="Value">24</param>
-                        </action>
-                        <action id="0" name="Add key" sid="702997157875236" type="tileForms">
-                            <param id="0" name="Key">&quot;0010&quot;</param>
-                            <param id="1" name="Value">25</param>
-                        </action>
-                        <action id="0" name="Add key" sid="729181512597625" type="tileForms">
-                            <param id="0" name="Key">&quot;0100&quot;</param>
-                            <param id="1" name="Value">26</param>
-                        </action>
-                        <action id="0" name="Add key" sid="782604722374744" type="tileForms">
-                            <param id="0" name="Key">&quot;0000&quot;</param>
-                            <param id="1" name="Value">27</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <comment>update 3x3 square around object</comment>
-        <event-block sid="199217367605507">
-            <conditions>
-                <condition id="0" name="On function" sid="786904486978209" type="f">
-                    <param id="0" name="Name">&quot;tiles_updateArea&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="582952570753656">
-                    <conditions>
-                        <condition id="-10" name="For" sid="523799346576396" type="System">
-                            <param id="0" name="Name">&quot;X&quot;</param>
-                            <param id="1" name="Start index">f.Param(0)-1</param>
-                            <param id="2" name="End index">f.Param(0)+1</param>
-                        </condition>
-                        <condition id="-10" name="For" sid="287351800142435" type="System">
-                            <param id="0" name="Name">&quot;Y&quot;</param>
-                            <param id="1" name="Start index">f.Param(1)-1</param>
-                            <param id="2" name="End index">f.Param(1)+1</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="136123623654498">
+                        <event-block sid="460178901762733">
                             <conditions />
                             <actions>
-                                <action id="0" name="Call function" sid="957693217577182" type="f">
-                                    <param id="0" name="Name">&quot;tiles_update&quot;</param>
-                                    <param id="1" name="Parameter {n}">loopindex(&quot;X&quot;){###}loopindex(&quot;Y&quot;)</param>
+                                <action id="0" name="Call function" sid="251802748981211" type="f">
+                                    <param id="0" name="Name">&quot;tiles_generate&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="168345947504956" type="f">
+                                    <param id="0" name="Name">&quot;tiles_updateAll&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="452917131137742">
-            <conditions>
-                <condition id="0" name="On function" sid="509851346225713" type="f">
-                    <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="791780712341532">
-                    <conditions />
-                    <actions>
-                        <action id="3" name="Set at XY" sid="263638850818002" type="TileArray">
-                            <param id="0" name="X">f.Param(0)</param>
-                            <param id="1" name="Y">f.Param(1)</param>
-                            <param id="2" name="Value">f.Param(2)</param>
-                        </action>
-                        <action id="0" name="Call function" sid="512667885254559" type="f">
-                            <param id="0" name="Name">&quot;tiles_updateArea&quot;</param>
-                            <param id="1" name="Parameter {n}">f.Param(0){###}f.Param(1)</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="328091045988294">
-            <conditions>
-                <condition id="0" name="On function" sid="793988232537631" type="f">
-                    <param id="0" name="Name">&quot;tiles_addPrefab&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="557609664033595">
+                <comment>update tiles</comment>
+                <event-block sid="373072669672789">
                     <conditions>
-                        <condition id="-10" name="For" sid="432680193544847" type="System">
-                            <param id="0" name="Name">&quot;X&quot;</param>
-                            <param id="1" name="Start index">0</param>
-                            <param id="2" name="End index">len(tokenat(f.Param(2), 4, &quot;;&quot;))</param>
-                        </condition>
-                        <condition id="-10" name="For" sid="584942827780652" type="System">
-                            <param id="0" name="Name">&quot;Y&quot;</param>
-                            <param id="1" name="Start index">0</param>
-                            <param id="2" name="End index">tokencount(f.Param(2), &quot;;&quot;) - 4</param>
+                        <condition id="0" name="On function" sid="653134782135777" type="f">
+                            <param id="0" name="Name">&quot;tiles_updateAll&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <variable constant="0" name="tmpLine" sid="488291050872278" static="0" type="text"></variable>
-                        <event-block sid="223245695252891">
+                        <event-block sid="657429951060094">
+                            <conditions>
+                                <condition id="-10" name="For" sid="160806625531047" type="System">
+                                    <param id="0" name="Name">&quot;X&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">TileArray.Width</param>
+                                </condition>
+                                <condition id="-10" name="For" sid="114314246358770" type="System">
+                                    <param id="0" name="Name">&quot;Y&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">TileArray.Height</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="380838275588344">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Call function" sid="285286267056179" type="f">
+                                            <param id="0" name="Name">&quot;tiles_update&quot;</param>
+                                            <param id="1" name="Parameter {n}">loopindex(&quot;X&quot;){###}loopindex(&quot;Y&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>load tiles from tilmap to the array</comment>
+                <event-block sid="123908690874059">
+                    <conditions>
+                        <condition id="0" name="On function" sid="424954218497400" type="f">
+                            <param id="0" name="Name">&quot;tiles_loadToArray&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="724366755852586">
+                            <conditions>
+                                <condition id="-10" name="For" sid="277402196223887" type="System">
+                                    <param id="0" name="Name">&quot;X&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">TileArray.Width</param>
+                                </condition>
+                                <condition id="-10" name="For" sid="802361909799249" type="System">
+                                    <param id="0" name="Name">&quot;Y&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">TileArray.Height</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="573276402314498">
+                                    <conditions>
+                                        <condition id="0" name="Compare tile at" sid="836745961106654" type="TileMap">
+                                            <param id="0" name="Tile X">loopindex(&quot;X&quot;)</param>
+                                            <param id="1" name="Tile Y">loopindex(&quot;Y&quot;)</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Tile">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="3" name="Set at XY" sid="978406776935102" type="TileArray">
+                                            <param id="0" name="X">loopindex(&quot;X&quot;)</param>
+                                            <param id="1" name="Y">loopindex(&quot;Y&quot;)</param>
+                                            <param id="2" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>filter tile range</comment>
+                <event-block sid="792665320227073">
+                    <conditions>
+                        <condition id="0" name="On function" sid="475810467581889" type="f">
+                            <param id="0" name="Name">&quot;tiles_update&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="tmpX" sid="547432424238540" static="0" type="number">0</variable>
+                        <variable constant="0" name="tmpY" sid="980794607408603" static="0" type="number">0</variable>
+                        <variable constant="0" name="tmpZ" sid="476756068686952" static="0" type="number">0</variable>
+                        <variable constant="0" name="tmpReturn" sid="873776731206199" static="0" type="text"></variable>
+                        <event-block sid="833420863358831">
                             <conditions />
                             <actions>
-                                <action id="-9" name="Set value" sid="583680577192259" type="System">
-                                    <param id="0" name="Variable">tmpLine</param>
-                                    <param id="1" name="Value">tokenat(f.Param(2), loopindex(&quot;Y&quot;) + 4, &quot;;&quot;)</param>
+                                <action id="-9" name="Set value" sid="943743350749132" type="System">
+                                    <param id="0" name="Variable">tmpX</param>
+                                    <param id="1" name="Value">f.Param(0)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="381839798758819" type="System">
+                                    <param id="0" name="Variable">tmpY</param>
+                                    <param id="1" name="Value">f.Param(1)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="462289936755178" type="System">
+                                    <param id="0" name="Variable">tmpZ</param>
+                                    <param id="1" name="Value">TileArray.At(tmpX, tmpY)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="729474087272375" type="System">
+                                    <param id="0" name="Variable">tmpReturn</param>
+                                    <param id="1" name="Value">&quot;&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="299090857723668">
+                        <comment>same</comment>
+                        <event-block disabled="1" sid="342266730463874">
                             <conditions>
-                                <condition id="-8" name="Compare two values" sid="360231159933038" type="System">
-                                    <param id="0" name="First value">mid(tmpLine, loopindex(&quot;X&quot;), 1)</param>
+                                <condition id="-14" name="Compare variable" sid="172282200752850" type="System">
+                                    <param id="0" name="Variable">tmpZ</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="701920115352441">
+                                    <conditions>
+                                        <condition id="1" name="Compare at XY" sid="589368520151734" type="TileArray">
+                                            <param id="0" name="X">tmpX</param>
+                                            <param id="1" name="Y">tmpY-1</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">tmpZ</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="379323796401445" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="103853114850895">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="905076236496073" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="931622993185066" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="770623860838561">
+                                    <conditions>
+                                        <condition id="1" name="Compare at XY" sid="573130629425021" type="TileArray">
+                                            <param id="0" name="X">tmpX</param>
+                                            <param id="1" name="Y">tmpY+1</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">tmpZ</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="523773485050413" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="882934995067146">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="769602913728136" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="313089155122842" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="676029671573950">
+                                    <conditions>
+                                        <condition id="1" name="Compare at XY" sid="119518447692722" type="TileArray">
+                                            <param id="0" name="X">tmpX-1</param>
+                                            <param id="1" name="Y">tmpY</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">tmpZ</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="998082579593659" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="809917366844721">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="342145366626138" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="149405887282055" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="620619757437701">
+                                    <conditions>
+                                        <condition id="1" name="Compare at XY" sid="877165693220451" type="TileArray">
+                                            <param id="0" name="X">tmpX+1</param>
+                                            <param id="1" name="Y">tmpY</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">tmpZ</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="785652827159119" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="926791269226104">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="657471171557721" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="558927681222892" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="484849362853425">
+                                    <conditions />
+                                    <actions>
+                                        <action id="1" name="Set tile" sid="288082977579696" type="TileMap">
+                                            <param id="0" name="Tile X">tmpX</param>
+                                            <param id="1" name="Tile Y">tmpY</param>
+                                            <param id="2" name="Tile">(tmpZ-1) * 20 + tileForms.Get(tmpReturn)</param>
+                                            <param id="3" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>any with other rules (you can also omit certain tile types from the test</comment>
+                        <event-block sid="624236522042278">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="568892364024559" type="System">
+                                    <param id="0" name="Variable">tmpZ</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-14" inverted="1" name="Compare variable" sid="512633879886119" type="System">
+                                    <param id="0" name="Variable">tmpY</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">&quot;1&quot;</param>
+                                    <param id="2" name="Value">9</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <comment></comment>
+                                <comment>if tile above, add a 1 to the current string</comment>
+                                <comment>Basically, it goes through and adds up a string like 10011 and then searches for it in the dictionary to see if it has that tile mapped. If it does, it sets that tile. This way you can program tiles to be a certain way based on their surroundings.</comment>
+                                <comment>It&apos;s also less CPU intensive to use a dictionary than a thousand if statements</comment>
+                                <event-block sid="447386441105162">
+                                    <conditions>
+                                        <condition id="1" name="Compare at XY" sid="299329217807186" type="TileArray">
+                                            <param id="0" name="X">tmpX</param>
+                                            <param id="1" name="Y">tmpY-1</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">tmpZ</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="716647948537293" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="346666740355205">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="732341701711504" type="System" />
+                                        <condition id="1" inverted="1" name="Compare at XY" sid="204370107935326" type="TileArray">
+                                            <param id="0" name="X">tmpX</param>
+                                            <param id="1" name="Y">tmpY-1</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="571453991613669" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="939283930238797">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="281013326474582" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="605696414123417" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment></comment>
+                                <event-block sid="462892105018178">
+                                    <conditions>
+                                        <condition id="1" name="Compare at XY" sid="181573061151105" type="TileArray">
+                                            <param id="0" name="X">tmpX</param>
+                                            <param id="1" name="Y">tmpY+1</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">tmpZ</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="333519603155475" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="836101921596530">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="358198275520968" type="System" />
+                                        <condition id="1" inverted="1" name="Compare at XY" sid="570141267068877" type="TileArray">
+                                            <param id="0" name="X">tmpX</param>
+                                            <param id="1" name="Y">tmpY+1</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="605203533832649" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="741750930232294">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="961827213700199" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="320750472363803" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment></comment>
+                                <event-block sid="212877469086615">
+                                    <conditions>
+                                        <condition id="1" name="Compare at XY" sid="549933229130181" type="TileArray">
+                                            <param id="0" name="X">tmpX-1</param>
+                                            <param id="1" name="Y">tmpY</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">tmpZ</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="974084503137542" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="809062478318536">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="438293538225052" type="System" />
+                                        <condition id="1" inverted="1" name="Compare at XY" sid="942113752603671" type="TileArray">
+                                            <param id="0" name="X">tmpX-1</param>
+                                            <param id="1" name="Y">tmpY</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="850504127872401" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="757477476849412">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="688743616150999" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="148385928499893" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment></comment>
+                                <event-block sid="242197481132457">
+                                    <conditions>
+                                        <condition id="1" name="Compare at XY" sid="315612553392483" type="TileArray">
+                                            <param id="0" name="X">tmpX+1</param>
+                                            <param id="1" name="Y">tmpY</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">tmpZ</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="427682723945417" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="341006795371698">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="800584094054267" type="System" />
+                                        <condition id="1" inverted="1" name="Compare at XY" sid="432427698693613" type="TileArray">
+                                            <param id="0" name="X">tmpX+1</param>
+                                            <param id="1" name="Y">tmpY</param>
+                                            <param id="2" name="Comparison">0</param>
+                                            <param id="3" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="274765663912777" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="211818376031997">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="648958979226767" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="553329888430644" type="System">
+                                            <param id="0" name="Variable">tmpReturn</param>
+                                            <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>only if has key made from all the 10001011 stuff</comment>
+                                <event-block sid="599143462883251">
+                                    <conditions>
+                                        <condition id="3" name="Has key" sid="476219915897770" type="tileForms">
+                                            <param id="0" name="Key">tmpReturn</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Set tile" sid="878214538005363" type="TileMap">
+                                            <param id="0" name="Tile X">tmpX</param>
+                                            <param id="1" name="Tile Y">tmpY</param>
+                                            <param id="2" name="Tile">(tmpZ-1) * 20 + tileForms.Get(tmpReturn)</param>
+                                            <param id="3" name="State">0</param>
+                                        </action>
+                                        <action disabled="1" id="0" name="Call function" sid="251035691830149" type="f">
+                                            <param id="0" name="Name">&quot;tiles_solidTest&quot;</param>
+                                            <param id="1" name="Parameter {n}">tmpX{###}tmpY{###}tmpZ{###}tmpReturn</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>otherwise just delete the tile</comment>
+                                <event-block sid="755746338816038">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="113221164467229" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action disabled="1" id="1" name="Set tile" sid="104193933631826" type="TileMap">
+                                            <param id="0" name="Tile X">tmpX</param>
+                                            <param id="1" name="Tile Y">tmpY</param>
+                                            <param id="2" name="Tile">11</param>
+                                            <param id="3" name="State">0</param>
+                                        </action>
+                                        <action id="0" name="Erase tile" sid="748064225689915" type="TileMap">
+                                            <param id="0" name="Tile X">tmpX</param>
+                                            <param id="1" name="Tile Y">tmpY</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>if it isn&apos;t a tile, delete it</comment>
+                        <event-block sid="362000372772463">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="868416466107340" type="System" />
+                                <condition id="-14" inverted="1" name="Compare variable" sid="763930078163073" type="System">
+                                    <param id="0" name="Variable">tmpY</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">9</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="0" name="Call function" sid="859012546731442" type="f">
-                                    <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
-                                    <param id="1" name="Parameter {n}">loopindex(&quot;X&quot;) + f.Param(0){###}loopindex(&quot;Y&quot;) + f.Param(1){###}int(tokenat(f.Param(2), 0, &quot;;&quot;))</param>
+                                <action id="0" name="Erase tile" sid="243638262709568" type="TileMap">
+                                    <param id="0" name="Tile X">tmpX</param>
+                                    <param id="1" name="Tile Y">tmpY</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="148925356726236">
-            <conditions>
-                <condition id="0" name="On function" sid="248922411443090" type="f">
-                    <param id="0" name="Name">&quot;tiles_prefabInit&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="152393227318772">
-                    <conditions />
-                    <actions>
-                        <action id="0" name="Clear" sid="537453979242624" type="tilePrefabs" />
-                    </actions>
-                </event-block>
-                <event-block sid="695042554560997">
+                <event-block disabled="1" sid="802398714048410">
                     <conditions>
-                        <condition id="-10" name="For" sid="186944705089845" type="System">
-                            <param id="0" name="Name">&quot;&quot;</param>
-                            <param id="1" name="Start index">1</param>
-                            <param id="2" name="End index">tokencount(f.Param(0), &quot;CAVE&quot;)</param>
+                        <condition id="0" name="On function" sid="522523816192742" type="f">
+                            <param id="0" name="Name">&quot;tiles_solidTest&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="563654028913491">
+                        <event-block disabled="1" sid="802307044834829">
+                            <conditions>
+                                <condition id="-21" name="Is between values" sid="475752230807957" type="System">
+                                    <param id="0" name="Value">tileForms.Get(f.Param(3))</param>
+                                    <param id="1" name="Lower bound">10</param>
+                                    <param id="2" name="Upper bound">19</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="486729865903205" type="System">
+                                    <param id="0" name="First value">f.Param(2)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="790021988994517">
+                                    <conditions>
+                                        <condition behavior="Solid" id="0" name="Is enabled" sid="668670408868373" type="TileMap" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Erase tile" sid="898186493277204" type="TileMap">
+                                            <param id="0" name="Tile X">f.Param(0)</param>
+                                            <param id="1" name="Tile Y">f.Param(1)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="795741050515353">
+                                    <conditions>
+                                        <condition behavior="Solid" id="0" inverted="1" name="Is enabled" sid="626790116830387" type="TileMap" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Set tile" sid="441544399870656" type="TileMap">
+                                            <param id="0" name="Tile X">f.Param(0)</param>
+                                            <param id="1" name="Tile Y">f.Param(1)</param>
+                                            <param id="2" name="Tile">(f.Param(2)-1) * 20 + tileForms.Get(f.Param(3))</param>
+                                            <param id="3" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block disabled="1" sid="103863401366926">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="218032035583434" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="662218006999330">
+                                    <conditions>
+                                        <condition behavior="Solid" id="0" name="Is enabled" sid="387420303633320" type="TileMap" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="1" name="Set tile" sid="218759829540835" type="TileMap">
+                                            <param id="0" name="Tile X">f.Param(0)</param>
+                                            <param id="1" name="Tile Y">f.Param(1)</param>
+                                            <param id="2" name="Tile">(f.Param(2)-1) * 20 + tileForms.Get(f.Param(3))</param>
+                                            <param id="3" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="346164824916958">
+                                    <conditions>
+                                        <condition behavior="Solid" id="0" inverted="1" name="Is enabled" sid="880007071274645" type="TileMap" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Erase tile" sid="128363258361626" type="TileMap">
+                                            <param id="0" name="Tile X">f.Param(0)</param>
+                                            <param id="1" name="Tile Y">f.Param(1)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="898175934961281">
+                    <conditions>
+                        <condition id="0" name="On function" sid="263985660070400" type="f">
+                            <param id="0" name="Name">&quot;tiles_solidEnable&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+                <comment>make rules for filter</comment>
+                <event-block disabled="1" sid="530638075813951">
+                    <conditions>
+                        <condition id="0" name="On function" sid="266526441688677" type="f">
+                            <param id="0" name="Name">&quot;tiles_formsInit&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>no top</comment>
+                        <event-block disabled="1" sid="917432148127261">
                             <conditions />
                             <actions>
-                                <action id="5" name="Push" sid="107915628271146" type="tilePrefabs">
-                                    <param id="0" name="Where">0</param>
-                                    <param id="1" name="Value">tokenat(f.Param(0), loopindex, &quot;CAVE&quot;)</param>
-                                    <param id="2" name="Axis">0</param>
+                                <action id="0" name="Add key" sid="521191638718046" type="tileForms">
+                                    <param id="0" name="Key">&quot;0000&quot;</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="0" name="Add key" sid="497426673354874" type="tileForms">
+                                    <param id="0" name="Key">&quot;0100&quot;</param>
+                                    <param id="1" name="Value">11</param>
+                                </action>
+                                <action id="0" name="Add key" sid="665428274733402" type="tileForms">
+                                    <param id="0" name="Key">&quot;0010&quot;</param>
+                                    <param id="1" name="Value">12</param>
+                                </action>
+                                <action id="0" name="Add key" sid="438028822408431" type="tileForms">
+                                    <param id="0" name="Key">&quot;0001&quot;</param>
+                                    <param id="1" name="Value">13</param>
+                                </action>
+                                <action id="0" name="Add key" sid="481882002432203" type="tileForms">
+                                    <param id="0" name="Key">&quot;0110&quot;</param>
+                                    <param id="1" name="Value">14</param>
+                                </action>
+                                <action id="0" name="Add key" sid="835512309460719" type="tileForms">
+                                    <param id="0" name="Key">&quot;0101&quot;</param>
+                                    <param id="1" name="Value">15</param>
+                                </action>
+                                <action id="0" name="Add key" sid="777170299404924" type="tileForms">
+                                    <param id="0" name="Key">&quot;0011&quot;</param>
+                                    <param id="1" name="Value">16</param>
+                                </action>
+                                <action id="0" name="Add key" sid="355619258801091" type="tileForms">
+                                    <param id="0" name="Key">&quot;0111&quot;</param>
+                                    <param id="1" name="Value">17</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>other</comment>
+                        <event-block disabled="1" sid="669839761773424">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Add key" sid="597448412033741" type="tileForms">
+                                    <param id="0" name="Key">&quot;1100&quot;</param>
+                                    <param id="1" name="Value">20</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>top</comment>
+                        <event-block disabled="1" sid="643917661376483">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Add key" sid="972700209427697" type="tileForms">
+                                    <param id="0" name="Key">&quot;1000&quot;</param>
+                                    <param id="1" name="Value">21</param>
+                                </action>
+                                <action id="0" name="Add key" sid="983771414621103" type="tileForms">
+                                    <param id="0" name="Key">&quot;1010&quot;</param>
+                                    <param id="1" name="Value">22</param>
+                                </action>
+                                <action id="0" name="Add key" sid="469450508191229" type="tileForms">
+                                    <param id="0" name="Key">&quot;1001&quot;</param>
+                                    <param id="1" name="Value">23</param>
+                                </action>
+                                <action id="0" name="Add key" sid="963568520224575" type="tileForms">
+                                    <param id="0" name="Key">&quot;1110&quot;</param>
+                                    <param id="1" name="Value">24</param>
+                                </action>
+                                <action id="0" name="Add key" sid="815608876832073" type="tileForms">
+                                    <param id="0" name="Key">&quot;1101&quot;</param>
+                                    <param id="1" name="Value">25</param>
+                                </action>
+                                <action id="0" name="Add key" sid="631773850910180" type="tileForms">
+                                    <param id="0" name="Key">&quot;1011&quot;</param>
+                                    <param id="1" name="Value">26</param>
+                                </action>
+                                <action id="0" name="Add key" sid="868043958457943" type="tileForms">
+                                    <param id="0" name="Key">&quot;1111&quot;</param>
+                                    <param id="1" name="Value">27</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="297059528477180">
-            <conditions>
-                <condition id="1" name="On any touch end" sid="997974982381082" type="Touch" />
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="502465409520093">
+                <comment>make the dictionary with the tile mappings</comment>
+                <event-block sid="359001787807018">
                     <conditions>
-                        <condition id="1" name="Compare at XY" sid="217086056395665" type="TileArray">
-                            <param id="0" name="X">floor(Touch.X / tileMapSize)</param>
-                            <param id="1" name="Y">floor(Touch.Y / tileMapSize)</param>
-                            <param id="2" name="Comparison">1</param>
-                            <param id="3" name="Value">0</param>
+                        <condition id="0" name="On function" sid="888740731340970" type="f">
+                            <param id="0" name="Name">&quot;tiles_formsInit&quot;</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="674018169859759" type="f">
-                            <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
-                            <param id="1" name="Parameter {n}">floor(Touch.X / tileMapSize){###}floor(Touch.Y / tileMapSize){###}0</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <comment>no top</comment>
+                        <event-block sid="417270310431139">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Add key" sid="848683852473384" type="tileForms">
+                                    <param id="0" name="Key">&quot;1111&quot;</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="0" name="Add key" sid="532194687736387" type="tileForms">
+                                    <param id="0" name="Key">&quot;1011&quot;</param>
+                                    <param id="1" name="Value">11</param>
+                                </action>
+                                <action id="0" name="Add key" sid="243954822996210" type="tileForms">
+                                    <param id="0" name="Key">&quot;1101&quot;</param>
+                                    <param id="1" name="Value">12</param>
+                                </action>
+                                <action id="0" name="Add key" sid="203476059576165" type="tileForms">
+                                    <param id="0" name="Key">&quot;1110&quot;</param>
+                                    <param id="1" name="Value">13</param>
+                                </action>
+                                <action id="0" name="Add key" sid="395292968457809" type="tileForms">
+                                    <param id="0" name="Key">&quot;1001&quot;</param>
+                                    <param id="1" name="Value">14</param>
+                                </action>
+                                <action id="0" name="Add key" sid="878852183782173" type="tileForms">
+                                    <param id="0" name="Key">&quot;1010&quot;</param>
+                                    <param id="1" name="Value">15</param>
+                                </action>
+                                <action id="0" name="Add key" sid="826258526416876" type="tileForms">
+                                    <param id="0" name="Key">&quot;1100&quot;</param>
+                                    <param id="1" name="Value">16</param>
+                                </action>
+                                <action id="0" name="Add key" sid="721560282874547" type="tileForms">
+                                    <param id="0" name="Key">&quot;1000&quot;</param>
+                                    <param id="1" name="Value">17</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>other</comment>
+                        <event-block sid="149603767051679">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Add key" sid="345932625620226" type="tileForms">
+                                    <param id="0" name="Key">&quot;0011&quot;</param>
+                                    <param id="1" name="Value">20</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>top</comment>
+                        <event-block sid="176567140044791">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Add key" sid="642494502535086" type="tileForms">
+                                    <param id="0" name="Key">&quot;0111&quot;</param>
+                                    <param id="1" name="Value">21</param>
+                                </action>
+                                <action id="0" name="Add key" sid="547826150957124" type="tileForms">
+                                    <param id="0" name="Key">&quot;0101&quot;</param>
+                                    <param id="1" name="Value">22</param>
+                                </action>
+                                <action id="0" name="Add key" sid="113736208694774" type="tileForms">
+                                    <param id="0" name="Key">&quot;0110&quot;</param>
+                                    <param id="1" name="Value">23</param>
+                                </action>
+                                <action id="0" name="Add key" sid="109776249855434" type="tileForms">
+                                    <param id="0" name="Key">&quot;0001&quot;</param>
+                                    <param id="1" name="Value">24</param>
+                                </action>
+                                <action id="0" name="Add key" sid="702997157875236" type="tileForms">
+                                    <param id="0" name="Key">&quot;0010&quot;</param>
+                                    <param id="1" name="Value">25</param>
+                                </action>
+                                <action id="0" name="Add key" sid="729181512597625" type="tileForms">
+                                    <param id="0" name="Key">&quot;0100&quot;</param>
+                                    <param id="1" name="Value">26</param>
+                                </action>
+                                <action id="0" name="Add key" sid="782604722374744" type="tileForms">
+                                    <param id="0" name="Key">&quot;0000&quot;</param>
+                                    <param id="1" name="Value">27</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
-                <event-block sid="430068768224707">
+                <comment>update [0]x[1] square around object</comment>
+                <event-block sid="199217367605507">
                     <conditions>
-                        <condition id="-22" name="Else" sid="863384420324274" type="System" />
+                        <condition id="0" name="On function" sid="786904486978209" type="f">
+                            <param id="0" name="Name">&quot;tiles_updateArea&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="582952570753656">
+                            <conditions>
+                                <condition id="-10" name="For" sid="523799346576396" type="System">
+                                    <param id="0" name="Name">&quot;X&quot;</param>
+                                    <param id="1" name="Start index">f.Param(0)-1</param>
+                                    <param id="2" name="End index">f.Param(0)+1</param>
+                                </condition>
+                                <condition id="-10" name="For" sid="287351800142435" type="System">
+                                    <param id="0" name="Name">&quot;Y&quot;</param>
+                                    <param id="1" name="Start index">f.Param(1)-1</param>
+                                    <param id="2" name="End index">f.Param(1)+1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="136123623654498">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Call function" sid="957693217577182" type="f">
+                                            <param id="0" name="Name">&quot;tiles_update&quot;</param>
+                                            <param id="1" name="Parameter {n}">loopindex(&quot;X&quot;){###}loopindex(&quot;Y&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>set a tile in a certain XY</comment>
+                <event-block sid="452917131137742">
+                    <conditions>
+                        <condition id="0" name="On function" sid="509851346225713" type="f">
+                            <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="791780712341532">
+                            <conditions />
+                            <actions>
+                                <action id="3" name="Set at XY" sid="263638850818002" type="TileArray">
+                                    <param id="0" name="X">f.Param(0)</param>
+                                    <param id="1" name="Y">f.Param(1)</param>
+                                    <param id="2" name="Value">f.Param(2)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="512667885254559" type="f">
+                                    <param id="0" name="Name">&quot;tiles_updateArea&quot;</param>
+                                    <param id="1" name="Parameter {n}">f.Param(0){###}f.Param(1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>add a prefab cave / ore deposit</comment>
+                <event-block sid="328091045988294">
+                    <conditions>
+                        <condition id="0" name="On function" sid="793988232537631" type="f">
+                            <param id="0" name="Name">&quot;tiles_addPrefab&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="557609664033595">
+                            <conditions>
+                                <condition id="-10" name="For" sid="432680193544847" type="System">
+                                    <param id="0" name="Name">&quot;X&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">len(tokenat(f.Param(2), 4, &quot;;&quot;))</param>
+                                </condition>
+                                <condition id="-10" name="For" sid="584942827780652" type="System">
+                                    <param id="0" name="Name">&quot;Y&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">tokencount(f.Param(2), &quot;;&quot;) - 4</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="tmpLine" sid="488291050872278" static="0" type="text"></variable>
+                                <event-block sid="223245695252891">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="583680577192259" type="System">
+                                            <param id="0" name="Variable">tmpLine</param>
+                                            <param id="1" name="Value">tokenat(f.Param(2), loopindex(&quot;Y&quot;) + 4, &quot;;&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="299090857723668">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="360231159933038" type="System">
+                                            <param id="0" name="First value">mid(tmpLine, loopindex(&quot;X&quot;), 1)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">&quot;1&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="859012546731442" type="f">
+                                            <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
+                                            <param id="1" name="Parameter {n}">loopindex(&quot;X&quot;) + f.Param(0){###}loopindex(&quot;Y&quot;) + f.Param(1){###}int(tokenat(f.Param(2), 0, &quot;;&quot;))</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>clear and get ready prefab list</comment>
+                <event-block sid="148925356726236">
+                    <conditions>
+                        <condition id="0" name="On function" sid="248922411443090" type="f">
+                            <param id="0" name="Name">&quot;tiles_prefabInit&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="152393227318772">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Clear" sid="537453979242624" type="tilePrefabs" />
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="695042554560997">
+                            <conditions>
+                                <condition id="-10" name="For" sid="186944705089845" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">tokencount(f.Param(0), &quot;CAVE&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="563654028913491">
+                                    <conditions />
+                                    <actions>
+                                        <action id="5" name="Push" sid="107915628271146" type="tilePrefabs">
+                                            <param id="0" name="Where">0</param>
+                                            <param id="1" name="Value">tokenat(f.Param(0), loopindex, &quot;CAVE&quot;)</param>
+                                            <param id="2" name="Axis">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>add a list of prefabs from text</comment>
+                <event-block sid="698356838231914">
+                    <conditions>
+                        <condition id="0" name="On function" sid="416637481819344" type="f">
+                            <param id="0" name="Name">&quot;tiles_prefabAppend&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="563236401515573">
+                            <conditions>
+                                <condition id="-10" name="For" sid="992698531382535" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">1</param>
+                                    <param id="2" name="End index">tokencount(f.Param(0), &quot;CAVE&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="537976229814378">
+                                    <conditions />
+                                    <actions>
+                                        <action id="5" name="Push" sid="581121459185975" type="tilePrefabs">
+                                            <param id="0" name="Where">0</param>
+                                            <param id="1" name="Value">tokenat(f.Param(0), loopindex, &quot;CAVE&quot;)</param>
+                                            <param id="2" name="Axis">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="399365734410408" title="other misc">
+            <sub-events>
+                <event-block sid="297059528477180">
+                    <conditions>
+                        <condition id="1" name="On any touch end" sid="997974982381082" type="Touch" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="502465409520093">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="217086056395665" type="TileArray">
+                                    <param id="0" name="X">floor(Touch.X / tileMapSize)</param>
+                                    <param id="1" name="Y">floor(Touch.Y / tileMapSize)</param>
+                                    <param id="2" name="Comparison">1</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="674018169859759" type="f">
+                                    <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
+                                    <param id="1" name="Parameter {n}">floor(Touch.X / tileMapSize){###}floor(Touch.Y / tileMapSize){###}0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="430068768224707">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="863384420324274" type="System" />
+                            </conditions>
+                            <actions>
+                                <action disabled="1" id="0" name="Call function" sid="145286664578949" type="f">
+                                    <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
+                                    <param id="1" name="Parameter {n}">floor(Touch.X / tileMapSize){###}floor(Touch.Y / tileMapSize){###}3</param>
+                                </action>
+                                <action id="0" name="Call function" sid="250980049051681" type="f">
+                                    <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
+                                    <param id="1" name="Parameter {n}">floor(Touch.X / tileMapSize){###}floor(Touch.Y / tileMapSize){###}4</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="346168289459889">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="750882124100480" type="System" />
                     </conditions>
                     <actions>
-                        <action disabled="1" id="0" name="Call function" sid="145286664578949" type="f">
-                            <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
-                            <param id="1" name="Parameter {n}">floor(Touch.X / tileMapSize){###}floor(Touch.Y / tileMapSize){###}3</param>
+                        <action id="0" name="Call function" sid="425681324922702" type="f">
+                            <param id="0" name="Name">&quot;tiles_formsInit&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
-                        <action id="0" name="Call function" sid="250980049051681" type="f">
-                            <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
-                            <param id="1" name="Parameter {n}">floor(Touch.X / tileMapSize){###}floor(Touch.Y / tileMapSize){###}4</param>
+                        <action id="0" name="Call function" sid="324103200251626" type="f">
+                            <param id="0" name="Name">&quot;tiles_arrayInit&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action disabled="1" id="0" name="Call function" sid="358523946661127" type="f">
+                            <param id="0" name="Name">&quot;tiles_loadToArray&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="242396080842845" type="f">
+                            <param id="0" name="Name">&quot;tiles_prefabAppend&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="709249422556844" type="f">
+                            <param id="0" name="Name">&quot;tiles_prefabInit&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;CAVE&#x0D;&#x0A;0;0;0;0;&#x0D;&#x0A;0000110010;&#x0D;&#x0A;0001111111;&#x0D;&#x0A;0011000101;&#x0D;&#x0A;0010111100;&#x0D;&#x0A;CAVE&#x0D;&#x0A;0;0;0;0;&#x0D;&#x0A;0000111000000;&#x0D;&#x0A;0001111011000;&#x0D;&#x0A;0111011111000;&#x0D;&#x0A;0111001111100;&#x0D;&#x0A;0011101100000;&#x0D;&#x0A;0000000000000;&#x0D;&#x0A;CAVE&#x0D;&#x0A;0;0;0;0;&#x0D;&#x0A;00000000000000;&#x0D;&#x0A;00001111100000;&#x0D;&#x0A;00000011111000;&#x0D;&#x0A;00001111000111;&#x0D;&#x0A;00111111111111;&#x0D;&#x0A;00110000011110;&#x0D;&#x0A;00000111111100;&#x0D;&#x0A;00011111000100;&#x0D;&#x0A;CAVE&#x0D;&#x0A;2;0;0;0;&#x0D;&#x0A;011110100;&#x0D;&#x0A;000111100;&#x0D;&#x0A;001111110;&#x0D;&#x0A;000001110;&#x0D;&#x0A;000001110;&#x0D;&#x0A;CAVE&#x0D;&#x0A;2;0;0;0;&#x0D;&#x0A;001111000011111;&#x0D;&#x0A;111100111111110;&#x0D;&#x0A;000001111111111;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="305645557696546" type="f">
+                            <param id="0" name="Name">&quot;tiles_init&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="591846795037484" type="freeCam">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="298173097174501" type="f">
+                            <param id="0" name="Name">&quot;fogClear&quot;</param>
+                            <param id="1" name="Parameter {n}">fog.PositionToTileX(player.X){###}fog.PositionToTileY(player.Y){###}3</param>
                         </action>
                     </actions>
                 </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="346168289459889">
-            <conditions>
-                <condition id="-2" name="On start of layout" sid="750882124100480" type="System" />
-            </conditions>
-            <actions>
-                <action id="0" name="Call function" sid="425681324922702" type="f">
-                    <param id="0" name="Name">&quot;tiles_formsInit&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-                <action id="0" name="Call function" sid="324103200251626" type="f">
-                    <param id="0" name="Name">&quot;tiles_arrayInit&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-                <action disabled="1" id="0" name="Call function" sid="358523946661127" type="f">
-                    <param id="0" name="Name">&quot;tiles_loadToArray&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-                <action id="0" name="Call function" sid="242396080842845" type="f">
-                    <param id="0" name="Name">&quot;tiles_prefabInit&quot;</param>
-                    <param id="1" name="Parameter {n}">&quot;CAVE&#x0D;&#x0A;0;0;0;0;&#x0D;&#x0A;0000110010;&#x0D;&#x0A;0001111111;&#x0D;&#x0A;0011000101;&#x0D;&#x0A;0010111100;&#x0D;&#x0A;CAVE&#x0D;&#x0A;0;0;0;0;&#x0D;&#x0A;0000111000000;&#x0D;&#x0A;0001111011000;&#x0D;&#x0A;0111011111000;&#x0D;&#x0A;0111001111100;&#x0D;&#x0A;0011101100000;&#x0D;&#x0A;0000000000000;&#x0D;&#x0A;CAVE&#x0D;&#x0A;0;0;0;0;&#x0D;&#x0A;00000000000000;&#x0D;&#x0A;00001111100000;&#x0D;&#x0A;00000011111000;&#x0D;&#x0A;00001111000111;&#x0D;&#x0A;00111111111111;&#x0D;&#x0A;00110000011110;&#x0D;&#x0A;00000111111100;&#x0D;&#x0A;00011111000100;&#x0D;&#x0A;CAVE&#x0D;&#x0A;2;0;0;0;&#x0D;&#x0A;011110100;&#x0D;&#x0A;000111100;&#x0D;&#x0A;001111110;&#x0D;&#x0A;000001110;&#x0D;&#x0A;000001110;&#x0D;&#x0A;CAVE&#x0D;&#x0A;2;0;0;0;&#x0D;&#x0A;001111000011111;&#x0D;&#x0A;111100111111110;&#x0D;&#x0A;000001111111111;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;&quot;</param>
-                </action>
-                <action id="0" name="Call function" sid="305645557696546" type="f">
-                    <param id="0" name="Name">&quot;tiles_init&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-                <action id="11" name="Set collisions enabled" sid="591846795037484" type="freeCam">
-                    <param id="0" name="Collisions">0</param>
-                </action>
-                <action id="0" name="Call function" sid="298173097174501" type="f">
-                    <param id="0" name="Name">&quot;fogClear&quot;</param>
-                    <param id="1" name="Parameter {n}">fog.PositionToTileX(player.X){###}fog.PositionToTileY(player.Y){###}3</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="798800357232477">
-            <conditions>
-                <condition behavior="Platform" id="0" name="Is moving" sid="325329698152562" type="player" />
-            </conditions>
-            <actions>
-                <action id="0" name="Call function" sid="398575135345088" type="f">
-                    <param id="0" name="Name">&quot;fogClear&quot;</param>
-                    <param id="1" name="Parameter {n}">fog.PositionToTileX(player.X){###}fog.PositionToTileY(player.Y){###}3</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="679325921067062">
-            <conditions>
-                <condition id="0" name="On function" sid="501893277685767" type="f">
-                    <param id="0" name="Name">&quot;fogClear&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="686728465288807">
-                    <conditions />
+                <event-block sid="798800357232477">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="325329698152562" type="player" />
+                    </conditions>
                     <actions>
-                        <action id="2" name="Erase tile range" sid="910272743985366" type="fog">
-                            <param id="0" name="Tile X">f.Param(0) - f.Param(2)</param>
-                            <param id="1" name="Tile Y">f.Param(1) - f.Param(2)</param>
-                            <param id="2" name="Width">f.Param(2) * 2</param>
-                            <param id="3" name="Height">f.Param(2) * 2</param>
+                        <action id="0" name="Call function" sid="398575135345088" type="f">
+                            <param id="0" name="Name">&quot;fogClear&quot;</param>
+                            <param id="1" name="Parameter {n}">fog.PositionToTileX(player.X){###}fog.PositionToTileY(player.Y){###}3</param>
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="679325921067062">
+                    <conditions>
+                        <condition id="0" name="On function" sid="501893277685767" type="f">
+                            <param id="0" name="Name">&quot;fogClear&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="686728465288807">
+                            <conditions />
+                            <actions>
+                                <action id="2" name="Erase tile range" sid="910272743985366" type="fog">
+                                    <param id="0" name="Tile X">f.Param(0) - f.Param(2)</param>
+                                    <param id="1" name="Tile Y">f.Param(1) - f.Param(2)</param>
+                                    <param id="2" name="Width">f.Param(2) * 2</param>
+                                    <param id="3" name="Height">f.Param(2) * 2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="636361133489004">
+                    <conditions />
+                    <actions />
+                </event-block>
             </sub-events>
-        </event-block>
-        <event-block sid="636361133489004">
-            <conditions />
-            <actions />
-        </event-block>
+        </event-group>
         <event-group description="" sid="813576804131762" title="player">
             <sub-events>
                 <comment></comment>
@@ -1308,6 +1378,103 @@
                                     <param id="0" name="Animation">&quot;fall&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>needs to be functionalised (it&apos;s just a proof of concept at the moment)</comment>
+        <event-group description="" sid="345103391822263" title="turrets">
+            <sub-events>
+                <event-block sid="317880903390644">
+                    <conditions>
+                        <condition behavior="Turret" id="1" name="On shoot" sid="336438128449351" type="turret" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="154570994006509" type="turret">
+                            <param id="0" name="Object">projectile</param>
+                            <param id="1" name="Layer">&quot;player&quot;</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="974888883596501">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="422084779115124" type="turret" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Turret" id="1" name="Add object to target" sid="583589652589605" type="turret">
+                            <param id="0" name="Target">player</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="149149072036262">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="545212538652442" type="projectile">
+                            <param id="0" name="Object">TileMap</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="852969674206062" type="projectile">
+                            <param id="0" name="Instance variable">armed</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="826379164637189" type="projectile">
+                            <param id="0" name="Instance variable">armed</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="166693685452718">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="924358335969926" type="projectile" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Timer" id="0" name="Start timer" sid="523813882703452" type="projectile">
+                            <param id="0" name="Duration">1.0</param>
+                            <param id="1" name="Type">0</param>
+                            <param id="2" name="Tag">&quot;arm&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="869761428976474">
+                    <conditions>
+                        <condition behavior="Timer" id="0" name="On timer" sid="903988449122865" type="projectile">
+                            <param id="0" name="Tag">&quot;arm&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="446509675673351" type="projectile">
+                            <param id="0" name="Instance variable">armed</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="624035877496108">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="650574917532848" type="projectile">
+                            <param id="0" name="Object">player</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="461977775053890" type="projectile">
+                            <param id="0" name="Object">TileMap</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="160475978061961">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="891324758890464" type="projectile">
+                                    <param id="0" name="Instance variable">armed</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="109818430494240" type="projectile">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="319153279489318" type="System">
+                                    <param id="0" name="Seconds">0.5</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="347643614674552" type="projectile" />
                             </actions>
                         </event-block>
                     </sub-events>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
-    <name>New project</name>
+    <name>HIWTMI</name>
     <description></description>
     <version>1.0</version>
     <author></author>
@@ -24,8 +24,11 @@
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
+        <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -167,6 +170,9 @@
         </object-type>
         <object-type global="1" name="tilePrefabs" sid="300854171818577">
             <plugin id="Arr" />
+            <instance-variables>
+                <instance-variable name="material" sid="307733536092812" type="number" />
+            </instance-variables>
         </object-type>
         <object-type name="freeCam" sid="531127939675069">
             <plugin id="Sprite" />
@@ -246,8 +252,78 @@
             <texture />
             <tiles />
         </object-type>
+        <object-type name="turretMountCannon" sid="714129993918786">
+            <plugin id="Sprite" />
+            <container>
+                <type>turretHeadCannon</type>
+                <type>turretMountCannon</type>
+            </container>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="269540452901567" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0">
+                        <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="turretHeadCannon" sid="298481314468908">
+            <plugin id="Sprite" />
+            <container>
+                <type>turretHeadCannon</type>
+                <type>turretMountCannon</type>
+            </container>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="737402429149405" speed="5">
+                    <frame duration="1" hotspotX="0.3125" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="turretCannonBall" sid="407838013888517">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="748776845620508" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
-    <families />
+    <families>
+        <family name="turret" plugin-id="Sprite" sid="705466075700669">
+            <members>
+                <member>turretHeadCannon</member>
+            </members>
+            <instance-variables>
+                <instance-variable comment="wait this long before firing" name="tFirerate" sid="916639009263415" type="number" />
+                <instance-variable name="tReload" sid="567920029347965" type="number" />
+                <instance-variable name="tMag" sid="344171931878015" type="number" />
+                <instance-variable name="tMagCap" sid="236063511131058" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Timer" sid="634537999400957">
+                    <behavior id="Timer" />
+                </behavior-type>
+                <behavior-type name="Turret" sid="833906606021490">
+                    <behavior id="Turret" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="projectile" plugin-id="Sprite" sid="863453558484176">
+            <members>
+                <member>turretCannonBall</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="armed" sid="775653830843992" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Bullet" sid="592879945012623">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Timer" sid="740680683050701">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
+        </family>
+    </families>
     <layout-folder>
         <layout>Layout 1.xml</layout>
     </layout-folder>
