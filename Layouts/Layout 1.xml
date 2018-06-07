@@ -2,7 +2,7 @@
 <c2layout>
     <name>Layout 1</name>
     <sid>4650502934421703</sid>
-    <event-sheet>Event sheet 1</event-sheet>
+    <event-sheet>Main</event-sheet>
     <size>
         <width>1280</width>
         <height>1024</height>
@@ -459,6 +459,7 @@
                 <material>0</material>
             </instance-variables>
         </instance>
+        <instance type="ldr_Storage" uid="21" />
     </nonworld-instances>
     <effects />
 </c2layout>
