@@ -1417,6 +1417,42 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="678004349806975">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="356336639838613" type="Keyboard">
+                            <param id="0" name="Key">65</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="908709777562422" type="player">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="464710332240118">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="450407634230664" type="Keyboard">
+                            <param id="0" name="Key">68</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="930158485840269" type="player">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="834101059918003">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="736615070928025" type="Keyboard">
+                            <param id="0" name="Key">87</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="834146087720802" type="player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <comment>needs to be functionalised (it&apos;s just a proof of concept at the moment)</comment>
@@ -1443,6 +1479,10 @@
                                     <param id="0" name="Object">projectile</param>
                                     <param id="1" name="Layer">&quot;player&quot;</param>
                                     <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="464219879283665" type="turret">
+                                    <param id="0" name="Instance variable">tMag</param>
+                                    <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1599,5 +1639,45 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="406662262235152">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="648739165484123" type="Keyboard">
+                    <param id="0" name="Key">86</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="995311244522469" type="player">
+                    <param id="0" name="Object">Particles</param>
+                    <param id="1" name="Layer">Self.LayerName</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="667428562723746" type="player">
+                    <param id="0" name="Object">Particles2</param>
+                    <param id="1" name="Layer">Self.LayerName</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="4" name="Set speed" sid="949129598726058" type="Particles">
+                    <param id="0" name="Speed">Self.InitSpeed + abs(player.Platform.VectorX)/2</param>
+                </action>
+                <action id="4" name="Set speed" sid="525102969216077" type="Particles2">
+                    <param id="0" name="Speed">Self.InitSpeed + abs(player.Platform.VectorX)/2</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="428686299045905">
+                    <conditions>
+                        <condition id="7" name="Is mirrored" sid="176383574689886" type="player" />
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="413402294072658" type="Particles">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                        <action id="-8" name="Set angle" sid="396333725512853" type="Particles2">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>

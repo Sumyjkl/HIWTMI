@@ -17,6 +17,7 @@
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
@@ -93,70 +94,6 @@
                         <point x="0" y="1" />
                     </collision-poly>
                 </tile>
-                <tile id="80">
-                    <collision-poly>
-                        <point x="0" y="0" />
-                        <point x="1" y="0" />
-                        <point x="1" y="0.3125" />
-                        <point x="0" y="0.3125" />
-                    </collision-poly>
-                </tile>
-                <tile id="81">
-                    <collision-poly>
-                        <point x="0" y="0" />
-                        <point x="1" y="0" />
-                        <point x="1" y="0.3125" />
-                        <point x="0" y="0.3125" />
-                    </collision-poly>
-                </tile>
-                <tile id="82">
-                    <collision-poly>
-                        <point x="0" y="0" />
-                        <point x="1" y="0" />
-                        <point x="1" y="0.3125" />
-                        <point x="0" y="0.3125" />
-                    </collision-poly>
-                </tile>
-                <tile id="83">
-                    <collision-poly>
-                        <point x="0" y="0" />
-                        <point x="1" y="0" />
-                        <point x="1" y="0.3125" />
-                        <point x="0" y="0.3125" />
-                    </collision-poly>
-                </tile>
-                <tile id="84">
-                    <collision-poly>
-                        <point x="0" y="0" />
-                        <point x="1" y="0" />
-                        <point x="1" y="0.3125" />
-                        <point x="0" y="0.3125" />
-                    </collision-poly>
-                </tile>
-                <tile id="85">
-                    <collision-poly>
-                        <point x="0" y="0" />
-                        <point x="1" y="0" />
-                        <point x="1" y="0.3125" />
-                        <point x="0" y="0.3125" />
-                    </collision-poly>
-                </tile>
-                <tile id="86">
-                    <collision-poly>
-                        <point x="0" y="0" />
-                        <point x="1" y="0" />
-                        <point x="1" y="0.3125" />
-                        <point x="0" y="0.3125" />
-                    </collision-poly>
-                </tile>
-                <tile id="87">
-                    <collision-poly>
-                        <point x="0" y="0" />
-                        <point x="1" y="0" />
-                        <point x="1" y="0.3125" />
-                        <point x="0" y="0.3125" />
-                    </collision-poly>
-                </tile>
             </tiles>
         </object-type>
         <object-type global="1" name="TileArray" sid="677783269632029">
@@ -202,46 +139,42 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="idle" pingpong="0" repeatcount="1" repeatto="0" sid="485264239023371" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.529412" original-source="C:\Users\Sumi\Documents\Art\pixel\PC4frame\PC1.png">
+                    <frame duration="1" hotspotX="0.4375" hotspotY="0.6875" original-source="C:\Users\Sumi\Documents\Art\pixel\PC4frame\PC1.png">
+                        <image-point name="Imagepoint 1" x="0.875" y="0.625" />
                         <collision-poly>
-                            <point x="0.3125" y="0.17647" />
-                            <point x="0.75" y="0.17647" />
-                            <point x="0.75" y="0.941176" />
-                            <point x="0.3125" y="0.941176" />
+                            <point x="0.3125" y="0.499999" />
+                            <point x="0.5625" y="0.499999" />
+                            <point x="0.5625" y="1" />
+                            <point x="0.3125" y="1" />
                         </collision-poly>
                     </frame>
                 </animation>
-                <animation framecount="4" loop="1" name="walk" pingpong="0" repeatcount="1" repeatto="0" sid="738885799976776" speed="10">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.529412">
+                <animation framecount="3" loop="1" name="walk" pingpong="0" repeatcount="1" repeatto="0" sid="738885799976776" speed="10">
+                    <frame duration="1" hotspotX="0.4375" hotspotY="0.6875">
+                        <image-point name="Imagepoint 1" x="0.875" y="0.625" />
                         <collision-poly>
-                            <point x="0.3125" y="0.17647" />
-                            <point x="0.75" y="0.17647" />
-                            <point x="0.75" y="0.941176" />
-                            <point x="0.3125" y="0.941176" />
+                            <point x="0.3125" y="0.499999" />
+                            <point x="0.5625" y="0.499999" />
+                            <point x="0.5625" y="1" />
+                            <point x="0.3125" y="1" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.529412">
+                    <frame duration="1" hotspotX="0.4375" hotspotY="0.6875">
+                        <image-point name="Imagepoint 1" x="0.875" y="0.625" />
                         <collision-poly>
-                            <point x="0.3125" y="0.17647" />
-                            <point x="0.75" y="0.17647" />
-                            <point x="0.75" y="0.941176" />
-                            <point x="0.3125" y="0.941176" />
+                            <point x="0.3125" y="0.499999" />
+                            <point x="0.5625" y="0.499999" />
+                            <point x="0.5625" y="1" />
+                            <point x="0.3125" y="1" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.529412">
+                    <frame duration="1" hotspotX="0.4375" hotspotY="0.6875">
+                        <image-point name="Imagepoint 1" x="0.875" y="0.625" />
                         <collision-poly>
-                            <point x="0.3125" y="0.17647" />
-                            <point x="0.75" y="0.17647" />
-                            <point x="0.75" y="0.941176" />
-                            <point x="0.3125" y="0.941176" />
-                        </collision-poly>
-                    </frame>
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.529412">
-                        <collision-poly>
-                            <point x="0.3125" y="0.17647" />
-                            <point x="0.75" y="0.17647" />
-                            <point x="0.75" y="0.941176" />
-                            <point x="0.3125" y="0.941176" />
+                            <point x="0.3125" y="0.499999" />
+                            <point x="0.5625" y="0.499999" />
+                            <point x="0.5625" y="1" />
+                            <point x="0.3125" y="1" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -299,6 +232,14 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Particles" sid="435970541177347">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="Particles2" sid="207305787088705">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
     </object-folder>
     <families>
         <family name="turret" plugin-id="Sprite" sid="705466075700669">
@@ -340,6 +281,7 @@
     </families>
     <layout-folder>
         <layout>Layout 1.xml</layout>
+        <layout>assets.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
