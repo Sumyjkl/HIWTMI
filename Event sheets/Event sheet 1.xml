@@ -1099,15 +1099,18 @@
             <sub-events>
                 <event-block sid="297059528477180">
                     <conditions>
-                        <condition id="1" name="On any touch end" sid="997974982381082" type="Touch" />
+                        <condition id="0" name="On click" sid="997974982381082" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
                     </conditions>
                     <actions />
                     <sub-events>
                         <event-block sid="502465409520093">
                             <conditions>
                                 <condition id="1" name="Compare at XY" sid="217086056395665" type="TileArray">
-                                    <param id="0" name="X">floor(Touch.X / tileMapSize)</param>
-                                    <param id="1" name="Y">floor(Touch.Y / tileMapSize)</param>
+                                    <param id="0" name="X">floor(Mouse.X / tileMapSize)</param>
+                                    <param id="1" name="Y">floor(Mouse.Y / tileMapSize)</param>
                                     <param id="2" name="Comparison">1</param>
                                     <param id="3" name="Value">0</param>
                                 </condition>
@@ -1115,7 +1118,7 @@
                             <actions>
                                 <action id="0" name="Call function" sid="674018169859759" type="f">
                                     <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
-                                    <param id="1" name="Parameter {n}">floor(Touch.X / tileMapSize){###}floor(Touch.Y / tileMapSize){###}0</param>
+                                    <param id="1" name="Parameter {n}">floor(Mouse.X / tileMapSize){###}floor(Mouse.Y / tileMapSize){###}0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1130,7 +1133,7 @@
                                 </action>
                                 <action id="0" name="Call function" sid="250980049051681" type="f">
                                     <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
-                                    <param id="1" name="Parameter {n}">floor(Touch.X / tileMapSize){###}floor(Touch.Y / tileMapSize){###}4</param>
+                                    <param id="1" name="Parameter {n}">floor(Mouse.X / tileMapSize){###}floor(Mouse.Y / tileMapSize){###}4</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1179,9 +1182,21 @@
                                     <param id="0" name="Name">&quot;tiles_prefabInit&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
-                                <action id="0" name="Call function" sid="242396080842845" type="f">
+                                <action disabled="1" id="0" name="Call function" sid="242396080842845" type="f">
                                     <param id="0" name="Name">&quot;tiles_prefabAppend&quot;</param>
                                     <param id="1" name="Parameter {n}">&quot;CAVE&#x0D;&#x0A;0;0;0;0;&#x0D;&#x0A;0000110010;&#x0D;&#x0A;0001111111;&#x0D;&#x0A;0011000101;&#x0D;&#x0A;0010111100;&#x0D;&#x0A;CAVE&#x0D;&#x0A;0;0;0;0;&#x0D;&#x0A;0000111000000;&#x0D;&#x0A;0001111011000;&#x0D;&#x0A;0111011111000;&#x0D;&#x0A;0111001111100;&#x0D;&#x0A;0011101100000;&#x0D;&#x0A;0000000000000;&#x0D;&#x0A;CAVE&#x0D;&#x0A;0;0;0;0;&#x0D;&#x0A;00000000000000;&#x0D;&#x0A;00001111100000;&#x0D;&#x0A;00000011111000;&#x0D;&#x0A;00001111000111;&#x0D;&#x0A;00111111111111;&#x0D;&#x0A;00110000011110;&#x0D;&#x0A;00000111111100;&#x0D;&#x0A;00011111000100;&#x0D;&#x0A;CAVE&#x0D;&#x0A;2;0;0;0;&#x0D;&#x0A;011110100;&#x0D;&#x0A;000111100;&#x0D;&#x0A;001111110;&#x0D;&#x0A;000001110;&#x0D;&#x0A;000001110;&#x0D;&#x0A;CAVE&#x0D;&#x0A;2;0;0;0;&#x0D;&#x0A;001111000011111;&#x0D;&#x0A;111100111111110;&#x0D;&#x0A;000001111111111;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="936401480793948" type="f">
+                                    <param id="0" name="Name">&quot;tiles_prefabAppend&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;CAVE&#x0D;&#x0A;0;0;0;0;&#x0D;&#x0A;0110;&#x0D;&#x0A;0010;&#x0D;&#x0A;0010;&#x0D;&#x0A;0110;&#x0D;&#x0A;0111;&#x0D;&#x0A;1110;&#x0D;&#x0A;0111;&#x0D;&#x0A;0011;&#x0D;&#x0A;0011;&#x0D;&#x0A;CAVE&#x0D;&#x0A;0;0;0;0;&#x0D;&#x0A;101100100;&#x0D;&#x0A;111111111;&#x0D;&#x0A;000001100;&#x0D;&#x0A;CAVE&#x0D;&#x0A;0;0;0;0;&#x0D;&#x0A;000000001100;&#x0D;&#x0A;011100001111;&#x0D;&#x0A;001111111100;&#x0D;&#x0A;111110000100;&#x0D;&#x0A;000000000100;&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="246385115949346" type="f">
+                                    <param id="0" name="Name">&quot;tiles_prefabAppend&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;CAVE&#x0D;&#x0A;0;0;0;0;&#x0D;&#x0A;00000001110000000000000;&#x0D;&#x0A;11111111111111111000011;&#x0D;&#x0A;00000100000101111111111;&#x0D;&#x0A;00000000000100000000000;&#x0D;&#x0A;CAVE&#x0D;&#x0A;0;0;0;0;&#x0D;&#x0A;00111000000000110000000;&#x0D;&#x0A;00011111000000111011110;&#x0D;&#x0A;00011000000001111110011;&#x0D;&#x0A;00011110000001101000000;&#x0D;&#x0A;00011000001111111111100;&#x0D;&#x0A;00001111111110000000000;&#x0D;&#x0A;00000000000000000000000;&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="400447571310176" type="f">
+                                    <param id="0" name="Name">&quot;tiles_prefabAppend&quot;</param>
+                                    <param id="1" name="Parameter {n}">&quot;CAVE&#x0D;&#x0A;0;0;0;0;&#x0D;&#x0A;00111100000;&#x0D;&#x0A;00001110000;&#x0D;&#x0A;00000110000;&#x0D;&#x0A;00000011111;&#x0D;&#x0A;01110011100;&#x0D;&#x0A;00111110000;&#x0D;&#x0A;00000000000;&#x0D;&#x0A;CAVE&#x0D;&#x0A;0;0;0;0;&#x0D;&#x0A;001110;&#x0D;&#x0A;001100;&#x0D;&#x0A;001100;&#x0D;&#x0A;011000;&#x0D;&#x0A;011100;&#x0D;&#x0A;001100;&#x0D;&#x0A;001100;&#x0D;&#x0A;000100;&#x0D;&#x0A;000100;&#x0D;&#x0A;001110;&#x0D;&#x0A;001100;&#x0D;&#x0A;001100;&quot;</param>
                                 </action>
                                 <action id="0" name="Call function" sid="305645557696546" type="f">
                                     <param id="0" name="Name">&quot;tiles_init&quot;</param>
@@ -1219,7 +1234,7 @@
                     <actions>
                         <action id="0" name="Call function" sid="398575135345088" type="f">
                             <param id="0" name="Name">&quot;fogClear&quot;</param>
-                            <param id="1" name="Parameter {n}">fog.PositionToTileX(player.X){###}fog.PositionToTileY(player.Y){###}3</param>
+                            <param id="1" name="Parameter {n}">fog.PositionToTileX(player.X){###}fog.PositionToTileY(player.Y){###}4</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1240,6 +1255,90 @@
                                     <param id="1" name="Tile Y">f.Param(1) - f.Param(2)</param>
                                     <param id="2" name="Width">f.Param(2) * 2</param>
                                     <param id="3" name="Height">f.Param(2) * 2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment></comment>
+                <comment>set scale to see more and stuff</comment>
+                <event-block sid="711563875666267">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="324288447623625" type="Keyboard">
+                            <param id="0" name="Key">97</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="802079767403642">
+                            <conditions />
+                            <actions>
+                                <action id="-28" name="Set canvas size" sid="271261805846250" type="System">
+                                    <param id="0" name="Width">320 * 1</param>
+                                    <param id="1" name="Height">180 * 1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>4x zoom out</comment>
+                <event-block sid="574174064551162">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="111074624224021" type="Keyboard">
+                            <param id="0" name="Key">100</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="474531525817924">
+                            <conditions />
+                            <actions>
+                                <action id="-28" name="Set canvas size" sid="435929949879789" type="System">
+                                    <param id="0" name="Width">320 * 4</param>
+                                    <param id="1" name="Height">180 * 4</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>open doors (temporary)</comment>
+                <event-block sid="314329748947303">
+                    <conditions>
+                        <condition id="6" name="On object clicked" sid="917152517863542" type="Mouse">
+                            <param id="0" name="Mouse button">2</param>
+                            <param id="1" name="Click type">0</param>
+                            <param id="2" name="Object clicked">door</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="215794651641155">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="884647731476480" type="door">
+                                    <param id="0" name="Animation">&quot;closed&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="474044833639998" type="door">
+                                    <param id="0" name="Animation">&quot;open&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Solid" id="0" name="Set enabled" sid="957510667027382" type="door">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="598422822225410">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="374627553624434" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="529552566045884" type="door">
+                                    <param id="0" name="Animation">&quot;closed&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Solid" id="0" name="Set enabled" sid="370887765246285" type="door">
+                                    <param id="0" name="State">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1483,6 +1582,16 @@
                                 <action id="-12" name="Subtract from" sid="464219879283665" type="turret">
                                     <param id="0" name="Instance variable">tMag</param>
                                     <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="917830983931206" type="turret">
+                                    <param id="0" name="Object">Particles</param>
+                                    <param id="1" name="Layer">Self.LayerName</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="203015273252779" type="turret">
+                                    <param id="0" name="Object">Particles2</param>
+                                    <param id="1" name="Layer">Self.LayerName</param>
+                                    <param id="2" name="Image point">1</param>
                                 </action>
                             </actions>
                         </event-block>
