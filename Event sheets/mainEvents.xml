@@ -4,12 +4,15 @@
     <name>mainEvents</name>
     <events>
         <comment># MAIN&#x0D;&#x0A;# (none)&#x0D;&#x0A;# Does all the stuffs&#x0D;&#x0A;</comment>
+        <comment></comment>
         <comment>loader</comment>
         <include>loaderEvents</include>
         <comment>all gameplay, interactive components</comment>
         <include>gameLogic</include>
         <comment>events that should be in every layout</comment>
         <include>globalEvents</include>
+        <comment>GUI</comment>
+        <include>guiEvents</include>
         <comment></comment>
         <event-group description="" disabled="1" sid="553547643011772" title="other misc pre">
             <sub-events>

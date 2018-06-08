@@ -4,7 +4,6 @@
     <name>playerEvents</name>
     <events>
         <comment># PLAYER&#x0D;&#x0A;# player_ bind_&#x0D;&#x0A;# Player controls and animations&#x0D;&#x0A;</comment>
-        <comment>bind</comment>
         <event-group description="" sid="760794577628408" title="player">
             <sub-events>
                 <comment>animation rules</comment>

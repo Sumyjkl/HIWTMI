@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>turretEvents</name>
     <events>
-        <comment># TURRETS&#x0D;&#x0A;# turret_&#x0D;&#x0A;# Makes turrets work&#x0D;&#x0A;</comment>
+        <comment># turretEvents&#x0D;&#x0A;# turret_&#x0D;&#x0A;# Makes turrets work&#x0D;&#x0A;</comment>
         <comment>needs to be functionalised (it&apos;s just a proof of concept at the moment)</comment>
         <comment>Turrets might end up being completely different so take that into account.&#x0D;&#x0A;I&apos;m thinking maybe making them mounted on the sides of blocks, that way we won&apos;t have the &quot;stuck in adjacent blocks&quot; issue</comment>
         <event-group description="" sid="113344706146814" title="turretGlobal">

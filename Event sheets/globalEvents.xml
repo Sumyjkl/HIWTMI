@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>globalEvents</name>
     <events>
-        <comment># globalEvents&#x0D;&#x0A;# g_&#x0D;&#x0A;# &#x0D;&#x0A;</comment>
+        <comment># globalEvents&#x0D;&#x0A;# g_&#x0D;&#x0A;# these events are used by every part of the game&#x0D;&#x0A;</comment>
         <comment>binds</comment>
         <variable comment="default 37 Left" constant="0" name="bind_moveLeft" sid="942428307058092" static="0" type="number">65</variable>
         <variable comment="default 39 Right" constant="0" name="bind_moveRight" sid="771258869745673" static="0" type="number">68</variable>
