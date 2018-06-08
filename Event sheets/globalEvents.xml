@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>globalEvents</name>
+    <events>
+        <comment># globalEvents&#x0D;&#x0A;# g_&#x0D;&#x0A;# &#x0D;&#x0A;</comment>
+        <comment>binds</comment>
+        <variable comment="default 37 Left" constant="0" name="bind_moveLeft" sid="942428307058092" static="0" type="number">65</variable>
+        <variable comment="default 39 Right" constant="0" name="bind_moveRight" sid="771258869745673" static="0" type="number">68</variable>
+        <variable comment="default 32 Space" constant="0" name="bind_moveJump" sid="345348000598958" static="0" type="number">32</variable>
+        <variable comment="whether button is down (soft)" constant="0" name="bind_moveJumpToggle" sid="320223226798203" static="0" type="number">0</variable>
+        <variable comment="default 38 Up" constant="0" name="bind_moveUp" sid="814019574314623" static="0" type="number">87</variable>
+        <variable comment="default 40 Down" constant="0" name="bind_moveDown" sid="941147011963702" static="0" type="number">83</variable>
+        <variable comment="default 67 C" constant="0" name="bind_attackBow" sid="693235350393980" static="0" type="number">67</variable>
+        <comment>map</comment>
+        <variable constant="0" name="map_caveDensity" sid="667035261991988" static="0" type="number">30</variable>
+        <variable constant="0" name="map_gemDensity" sid="953541038957394" static="0" type="number">10</variable>
+        <comment>tile</comment>
+        <variable comment="size of tiles in tilemap" constant="0" name="tileMapSize" sid="683014316784176" static="0" type="number">16</variable>
+        <event-group description="" sid="142850864710611" title="view">
+            <sub-events>
+                <comment>set scale to see more and stuff</comment>
+                <event-block sid="705798009066945">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="931983251516778" type="Keyboard">
+                            <param id="0" name="Key">97</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="276868265061815">
+                            <conditions />
+                            <actions>
+                                <action id="-28" name="Set canvas size" sid="935018211795828" type="System">
+                                    <param id="0" name="Width">320 * 1</param>
+                                    <param id="1" name="Height">180 * 1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>4x zoom out</comment>
+                <event-block sid="631206142088457">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="241481682146808" type="Keyboard">
+                            <param id="0" name="Key">100</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="576671293678114">
+                            <conditions />
+                            <actions>
+                                <action id="-28" name="Set canvas size" sid="668284191170740" type="System">
+                                    <param id="0" name="Width">320 * 4</param>
+                                    <param id="1" name="Height">180 * 4</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="589305884943056" title="globalLogic">
+            <sub-events>
+                <comment>go to a layout</comment>
+                <event-block sid="940963467998845">
+                    <conditions>
+                        <condition id="0" name="On function" sid="910720568437032" type="f">
+                            <param id="0" name="Name">&quot;layout&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="461730336711111">
+                            <conditions />
+                            <actions>
+                                <action id="-25" name="Go to layout (by name)" sid="848232109688691" type="System">
+                                    <param id="0" name="Layout">f.Param(0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>future use</comment>
+                <event-block disabled="1" sid="142589080125708">
+                    <conditions>
+                        <condition id="0" name="On function" sid="801909775620358" type="f">
+                            <param id="0" name="Name">&quot;map&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="512348067363746">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="686043231293335" type="System">
+                                    <param id="0" name="First value">&quot;map&quot;</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">&quot;exists&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-25" name="Go to layout (by name)" sid="467413181325940" type="System">
+                                    <param id="0" name="Layout">f.Param(0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

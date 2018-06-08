@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>turretEvents</name>
+    <events>
+        <comment># TURRETS&#x0D;&#x0A;# turret_&#x0D;&#x0A;# Makes turrets work&#x0D;&#x0A;</comment>
+        <comment>needs to be functionalised (it&apos;s just a proof of concept at the moment)</comment>
+        <comment>Turrets might end up being completely different so take that into account.&#x0D;&#x0A;I&apos;m thinking maybe making them mounted on the sides of blocks, that way we won&apos;t have the &quot;stuck in adjacent blocks&quot; issue</comment>
+        <event-group description="" sid="113344706146814" title="turretGlobal">
+            <sub-events>
+                <comment>this will constantly try to fire when a target is in line of fire</comment>
+                <event-block disabled="1" sid="710576124583689">
+                    <conditions>
+                        <condition behavior="Turret" id="1" name="On shoot" sid="166351184215982" type="turret" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="996240994381612">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="607586262087855" type="turret">
+                                    <param id="0" name="Instance variable">tMag</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="176273759493607" type="turret">
+                                    <param id="0" name="Object">projectile</param>
+                                    <param id="1" name="Layer">&quot;player&quot;</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="937249084253877" type="turret">
+                                    <param id="0" name="Instance variable">tMag</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="954819386755686" type="turret">
+                                    <param id="0" name="Object">Particles</param>
+                                    <param id="1" name="Layer">Self.LayerName</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="359031439604436" type="turret">
+                                    <param id="0" name="Object">Particles2</param>
+                                    <param id="1" name="Layer">Self.LayerName</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="955897043381990">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="997765128294109" type="System" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="474757610659064" type="turret">
+                                    <param id="0" name="Instance variable">tReloading</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="517799670534760" type="f">
+                                    <param id="0" name="Name">&quot;turretReload&quot;</param>
+                                    <param id="1" name="Parameter {n}">turret.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>start reload on a uid [0]</comment>
+                <event-block sid="575221075056735">
+                    <conditions>
+                        <condition id="0" name="On function" sid="532070745638844" type="f">
+                            <param id="0" name="Name">&quot;turretReload&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="959939748760357">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="413204052702138" type="turret">
+                                    <param id="0" name="Unique ID">f.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="928233442271049" type="turret">
+                                    <param id="0" name="Instance variable">tReloading</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Timer" id="0" name="Start timer" sid="245232642326795" type="turret">
+                                    <param id="0" name="Duration">Self.tReload</param>
+                                    <param id="1" name="Type">0</param>
+                                    <param id="2" name="Tag">&quot;reload&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>reload</comment>
+                <event-block sid="174296464158417">
+                    <conditions>
+                        <condition behavior="Timer" id="0" name="On timer" sid="904297082726530" type="turret">
+                            <param id="0" name="Tag">&quot;reload&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="119023174736456">
+                            <conditions />
+                            <actions>
+                                <action id="-10" name="Set value" sid="155975618953637" type="turret">
+                                    <param id="0" name="Instance variable">tMag</param>
+                                    <param id="1" name="Value">Self.tMagCap</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="571093669076965" type="turret">
+                                    <param id="0" name="Instance variable">tReloading</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>add turret targets</comment>
+                <event-block disabled="1" sid="328888581312963">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="507851244429407" type="turret" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Turret" id="1" name="Add object to target" sid="462279464561583" type="turret">
+                            <param id="0" name="Target">player</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="482800593899971" title="turretSpecific">
+            <sub-events>
+                <comment>cannon</comment>
+                <event-block sid="523069393931220">
+                    <conditions>
+                        <condition behavior="Turret" id="1" name="On shoot" sid="741093486184956" type="turretHeadCannon" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="404912074789003">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="187886863213980" type="turretHeadCannon">
+                                    <param id="0" name="Instance variable">tMag</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="694334777591811" type="turretHeadCannon">
+                                    <param id="0" name="Object">turretCannonBall</param>
+                                    <param id="1" name="Layer">&quot;player&quot;</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="732769207601594" type="turretHeadCannon">
+                                    <param id="0" name="Instance variable">tMag</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="433652243478329" type="turretHeadCannon">
+                                    <param id="0" name="Object">Particles</param>
+                                    <param id="1" name="Layer">Self.LayerName</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="925990828143016" type="turretHeadCannon">
+                                    <param id="0" name="Object">Particles2</param>
+                                    <param id="1" name="Layer">Self.LayerName</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="7" name="Play (by name)" sid="374242218676959" type="Audio">
+                                    <param id="0" name="Folder">0</param>
+                                    <param id="1" name="Audio file name">&quot;canFire&quot;</param>
+                                    <param id="3" name="Loop">0</param>
+                                    <param id="4" name="Volume">0</param>
+                                    <param id="2" name="Tag (optional)">&quot;sfx&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="683693572586195">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="939613160397249" type="System" />
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="878831773652451" type="turretHeadCannon">
+                                    <param id="0" name="Instance variable">tReloading</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="400168577942696" type="f">
+                                    <param id="0" name="Name">&quot;turretReload&quot;</param>
+                                    <param id="1" name="Parameter {n}">turretHeadCannon.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

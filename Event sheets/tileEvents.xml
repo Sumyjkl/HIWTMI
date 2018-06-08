@@ -1,13 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>Tiles</name>
+    <name>tileEvents</name>
     <events>
         <comment># TILES&#x0D;&#x0A;# tiles_ map_&#x0D;&#x0A;# Map generation and updating, most of which I don&apos;t understand&#x0D;&#x0A;</comment>
         <comment>map</comment>
-        <variable constant="0" name="map_caveDensity" sid="280220761036169" static="0" type="number">30</variable>
-        <variable constant="0" name="map_gemDensity" sid="392666142481395" static="0" type="number">10</variable>
-        <variable comment="size of tiles in tilemap" constant="0" name="tileMapSize" sid="565947161547990" static="0" type="number">16</variable>
         <event-group description="" sid="471789423016500" title="tileGroup">
             <sub-events>
                 <comment>set size</comment>
@@ -20,12 +17,16 @@
                     <actions />
                     <sub-events>
                         <event-block sid="697039056228175">
-                            <conditions />
+                            <conditions>
+                                <condition id="-17" name="Pick top/bottom" sid="684781821768752" type="TileMap">
+                                    <param id="0" name="Which">0</param>
+                                </condition>
+                            </conditions>
                             <actions>
                                 <action id="1" name="Set size" sid="578645322153489" type="TileArray">
-                                    <param id="0" name="Width">ceil(TileMap.Width/16) + 1</param>
-                                    <param id="1" name="Height">ceil(TileMap.Height/16) + 1</param>
-                                    <param id="2" name="Depth">1</param>
+                                    <param id="0" name="Width">ceil(TileMap.Width/tileMapSize) + 1</param>
+                                    <param id="1" name="Height">ceil(TileMap.Height/tileMapSize) + 1</param>
+                                    <param id="2" name="Depth">2</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -80,6 +81,14 @@
                                     <param id="0" name="Name">&quot;&quot;</param>
                                     <param id="1" name="Start index">0</param>
                                     <param id="2" name="End index">map_caveDensity</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="440956795186726" type="tilePrefabs">
+                                    <param id="0" name="Instance variable">material</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition disabled="1" id="-14" name="Pick by unique ID" sid="225643873653337" type="tilePrefabs">
+                                    <param id="0" name="Unique ID">42</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -621,6 +630,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <comment>defunct</comment>
                 <event-block disabled="1" sid="740789905035912">
                     <conditions>
                         <condition id="0" name="On function" sid="696064525529829" type="f">
@@ -704,15 +714,22 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="824945120484189">
+                <comment>future</comment>
+                <event-block disabled="1" sid="824945120484189">
                     <conditions>
                         <condition id="0" name="On function" sid="550342940631051" type="f">
                             <param id="0" name="Name">&quot;tiles_solidEnable&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
+                    <sub-events>
+                        <event-block sid="277570056852349">
+                            <conditions />
+                            <actions />
+                        </event-block>
+                    </sub-events>
                 </event-block>
-                <comment>make rules for filter</comment>
+                <comment>make rules for filter (old)</comment>
                 <event-block disabled="1" sid="858985147037134">
                     <conditions>
                         <condition id="0" name="On function" sid="295059915845865" type="f">
@@ -1022,33 +1039,33 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="928768640181751">
+                        <event-block sid="701935368865390">
                             <conditions />
                             <actions>
-                                <action id="0" name="Clear" sid="210851565299215" type="tilePrefabs" />
+                                <action id="-9" name="Destroy" sid="494690860824726" type="tilePrefabs" />
                             </actions>
                         </event-block>
-                        <event-block disabled="1" sid="272474415267494">
+                        <event-block sid="327332020978943">
                             <conditions>
-                                <condition id="-10" name="For" sid="180000760138214" type="System">
+                                <condition id="-10" name="For" sid="178478545580334" type="System">
                                     <param id="0" name="Name">&quot;&quot;</param>
-                                    <param id="1" name="Start index">1</param>
-                                    <param id="2" name="End index">tokencount(f.Param(0), &quot;CAVE&quot;)</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">9</param>
                                 </condition>
                             </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block disabled="1" sid="568629962152146">
-                                    <conditions />
-                                    <actions>
-                                        <action id="5" name="Push" sid="490995736824704" type="tilePrefabs">
-                                            <param id="0" name="Where">0</param>
-                                            <param id="1" name="Value">tokenat(f.Param(0), loopindex, &quot;CAVE&quot;)</param>
-                                            <param id="2" name="Axis">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
+                            <actions>
+                                <action id="-3" name="Create object" sid="166686595322888" type="System">
+                                    <param id="0" name="Object to create">tilePrefabs</param>
+                                    <param id="1" name="Layer">&quot;player&quot;</param>
+                                    <param id="2" name="X">100</param>
+                                    <param id="3" name="Y">100</param>
+                                </action>
+                                <action id="0" name="Clear" sid="210851565299215" type="tilePrefabs" />
+                                <action id="-10" name="Set value" sid="580625363724038" type="tilePrefabs">
+                                    <param id="0" name="Instance variable">material</param>
+                                    <param id="1" name="Value">loopindex</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -1071,8 +1088,29 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="784900891318364">
+                                <variable constant="0" name="cave" sid="148222665901181" static="0" type="text"></variable>
+                                <event-block sid="682800081498436">
                                     <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="443849717570824" type="System">
+                                            <param id="0" name="Variable">cave</param>
+                                            <param id="1" name="Value">tokenat(f.Param(0), loopindex, &quot;CAVE&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="784900891318364">
+                                    <conditions>
+                                        <condition disabled="1" id="-7" name="Compare instance variable" sid="626603872585756" type="tilePrefabs">
+                                            <param id="0" name="Instance variable">material</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="371149333513283" type="tilePrefabs">
+                                            <param id="0" name="Instance variable">material</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">int(tokenat(cave, 0, &quot;;&quot;))</param>
+                                        </condition>
+                                    </conditions>
                                     <actions>
                                         <action id="5" name="Push" sid="260610331887038" type="tilePrefabs">
                                             <param id="0" name="Where">0</param>

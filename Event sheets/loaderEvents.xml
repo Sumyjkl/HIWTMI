@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>Loader</name>
+    <name>loaderEvents</name>
     <events>
-        <comment># LOADER&#x0D;&#x0A;# ldr_&#x0D;&#x0A;# Loads project files asynchronously and stores them in ldr_Storage&#x0D;&#x0A;</comment>
+        <comment># loaderEvents&#x0D;&#x0A;# ldr_&#x0D;&#x0A;# Loads project files asynchronously and stores them in ldr_Storage&#x0D;&#x0A;</comment>
+        <comment>we probably don&apos;t need to load cave files yet (but if we add prefabs that are more complex, yeah)</comment>
         <event-block sid="331501711710607">
             <conditions>
                 <condition id="0" name="On function" sid="292531184225133" type="f">
@@ -17,6 +18,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>adds key from AJAX to ldr_storage dictionary</comment>
         <event-block sid="891367520192257">
             <conditions>
                 <condition id="3" name="On any completed" sid="326700934504304" type="AJAX" />

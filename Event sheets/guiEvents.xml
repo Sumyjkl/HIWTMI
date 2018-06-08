@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>guiEvents</name>
+    <events>
+        <comment># guiEvents&#x0D;&#x0A;# gui_&#x0D;&#x0A;# game oriented UI&#x0D;&#x0A;</comment>
+    </events>
+</c2eventsheet>

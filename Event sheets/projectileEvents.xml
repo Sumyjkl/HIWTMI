@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>projectileEvents</name>
+    <events>
+        <comment># projectileEvents&#x0D;&#x0A;# pr_&#x0D;&#x0A;# projectiles&#x0D;&#x0A;</comment>
+        <event-group description="" sid="371894083444698" title="projectileGlobal">
+            <sub-events>
+                <comment>set armed when it has escaped it&apos;s initial collision (e.g. with the turret body)</comment>
+                <event-block sid="890432391568487">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="600079364070183" type="projectile">
+                            <param id="0" name="Object">TileMap</param>
+                        </condition>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="996074892577777" type="projectile">
+                            <param id="0" name="Object">player</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="299071103251709" type="projectile">
+                            <param id="0" name="Instance variable">armed</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="406721441388700" type="projectile">
+                            <param id="0" name="Instance variable">armed</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="184256191143520">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="764815865206615" type="projectile" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Timer" id="0" name="Start timer" sid="438137431474119" type="projectile">
+                            <param id="0" name="Duration">0.2</param>
+                            <param id="1" name="Type">0</param>
+                            <param id="2" name="Tag">&quot;arm&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="587871179767872">
+                    <conditions>
+                        <condition behavior="Timer" id="0" name="On timer" sid="164863267749253" type="projectile">
+                            <param id="0" name="Tag">&quot;arm&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="308845861320025" type="projectile">
+                            <param id="0" name="Instance variable">armed</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>do whatever the </comment>
+                <event-block any="1" sid="818551184941206">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="611706939669002" type="projectile">
+                            <param id="0" name="Object">player</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="295702245517889" type="projectile">
+                            <param id="0" name="Object">TileMap</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="219268164211329" type="projectile">
+                            <param id="0" name="Object">door</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="604558210354686">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="816622887568411" type="projectile">
+                                    <param id="0" name="Instance variable">armed</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" disabled="1" id="0" name="Set speed" sid="670968461128114" type="projectile">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="487769278045254" type="f">
+                                    <param id="0" name="Name">&quot;projectileStop&quot;</param>
+                                    <param id="1" name="Parameter {n}">projectile.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="849514448341069" title="projectileSpecific">
+            <sub-events>
+                <comment>stops a projectile correctly based on the object type</comment>
+                <event-block sid="633703029282256">
+                    <conditions>
+                        <condition id="0" name="On function" sid="822462134257212" type="f">
+                            <param id="0" name="Name">&quot;projectileStop&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="396908021866974">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="359662655952516" type="playerBBshot">
+                                    <param id="0" name="Unique ID">f.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="942347414580968" type="playerBBshot">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="226478529982409" type="playerBBshot" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="521761626583330">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="790269048264857" type="turretCannonBall">
+                                    <param id="0" name="Unique ID">f.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="570423725247892" type="turretCannonBall">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="535985110930516" type="System">
+                                    <param id="0" name="Seconds">0.2</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="263481622207240" type="turretCannonBall" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

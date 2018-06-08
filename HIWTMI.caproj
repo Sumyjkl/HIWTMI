@@ -20,6 +20,7 @@
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
@@ -290,6 +291,25 @@
         <object-type global="1" name="ldr_Storage" sid="136453734773086">
             <plugin id="Dictionary" />
         </object-type>
+        <object-type name="playerBBshot" sid="556892087289911">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="794013062113845" speed="5">
+                    <frame duration="1" hotspotX="0.8125" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Text" sid="459109172063710">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="arrayAnchor" sid="774189181368880">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="878374948542506" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="turret" plugin-id="Sprite" sid="705466075700669">
@@ -314,6 +334,7 @@
         </family>
         <family name="projectile" plugin-id="Sprite" sid="863453558484176">
             <members>
+                <member>playerBBshot</member>
                 <member>turretCannonBall</member>
             </members>
             <instance-variables>
@@ -328,17 +349,41 @@
                 </behavior-type>
             </behaviors>
         </family>
+        <family name="playerB" plugin-id="Sprite" sid="293741998572149">
+            <members>
+                <member>player</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="controlID" sid="229908494343545" type="number" />
+                <instance-variable name="gunSpread" sid="125085140760311" type="number" />
+                <instance-variable name="gunShots" sid="830485847142510" type="number" />
+                <instance-variable name="gunReload" sid="233567987916520" type="number" />
+                <instance-variable name="gunMag" sid="870726986334534" type="number" />
+                <instance-variable name="gunMagCap" sid="803836454617078" type="number" />
+            </instance-variables>
+        </family>
     </families>
     <layout-folder>
-        <layout>Layout 1.xml</layout>
+        <layout>main.xml</layout>
         <layout>assets.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-sheet>Main.xml</event-sheet>
-        <event-sheet>Player.xml</event-sheet>
-        <event-sheet>Tiles.xml</event-sheet>
-        <event-sheet>Loader.xml</event-sheet>
-        <event-sheet>Turrets.xml</event-sheet>
+        <event-folder name="gameLogic">
+            <event-sheet>playerEvents.xml</event-sheet>
+            <event-sheet>tileEvents.xml</event-sheet>
+            <event-sheet>turretEvents.xml</event-sheet>
+            <event-sheet>projectileEvents.xml</event-sheet>
+        </event-folder>
+        <event-folder name="uiEvents">
+            <event-sheet>loaderEvents.xml</event-sheet>
+            <event-sheet>guiEvents.xml</event-sheet>
+            <event-sheet>menuEvents.xml</event-sheet>
+        </event-folder>
+        <event-folder name="levelEvents">
+            <event-sheet>mainEvents.xml</event-sheet>
+        </event-folder>
+        <event-sheet>gameLogic.xml</event-sheet>
+        <event-sheet>globalEvents.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="WebStorage" uid="1" />
@@ -372,7 +417,11 @@
         <global-instance type="f" uid="9" />
         <global-instance type="AJAX" uid="18" />
     </global-instances>
-    <sounds-folder />
+    <sounds-folder>
+        <file name="bbFire.ogg" />
+        <file name="canFire.ogg" />
+        <file name="tinyClick.ogg" />
+    </sounds-folder>
     <music-folder />
     <files-folder>
         <file-folder name="Icons">

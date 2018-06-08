@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>Layout 1</name>
+    <name>main</name>
     <sid>4650502934421703</sid>
-    <event-sheet>Main</event-sheet>
+    <event-sheet>mainEvents</event-sheet>
     <size>
-        <width>1280</width>
+        <width>2048</width>
         <height>1024</height>
     </size>
     <margins>
@@ -129,7 +129,7 @@
                         <x>0</x>
                         <y>0</y>
                         <z>0</z>
-                        <width>1280</width>
+                        <width>2048</width>
                         <height>1024</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -137,7 +137,7 @@
                         <opacity>1</opacity>
                     </world>
                     <tilemap-data>
-                        <width>80</width>
+                        <width>128</width>
                         <height>64</height>
                         <max-width>160</max-width>
                         <max-height>128</max-height>
@@ -220,8 +220,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>640</x>
-                        <y>368</y>
+                        <x>960</x>
+                        <y>464</y>
                         <z>0</z>
                         <width>16</width>
                         <height>16</height>
@@ -239,6 +239,14 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <controlID>0</controlID>
+                        <gunSpread>20</gunSpread>
+                        <gunShots>5</gunShots>
+                        <gunReload>2</gunReload>
+                        <gunMag>1</gunMag>
+                        <gunMagCap>1</gunMagCap>
+                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
                             <properties>
@@ -263,8 +271,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>633</x>
-                        <y>379</y>
+                        <x>944</x>
+                        <y>464</y>
                         <z>0</z>
                         <width>16</width>
                         <height>16</height>
@@ -288,8 +296,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>528</x>
-                        <y>272</y>
+                        <x>851</x>
+                        <y>376</y>
                         <z>0</z>
                         <width>8</width>
                         <height>8</height>
@@ -310,8 +318,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>512</x>
-                        <y>288</y>
+                        <x>832</x>
+                        <y>400</y>
                         <z>0</z>
                         <width>16</width>
                         <height>16</height>
@@ -355,13 +363,62 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>520</x>
-                        <y>296</y>
+                        <x>840</x>
+                        <y>408</y>
                         <z>0</z>
                         <width>16</width>
                         <height>16</height>
                         <depth>0</depth>
                         <hotspotX>0.25</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Text" uid="30">
+                    <properties>
+                        <text>Text</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-16</font>
+                        <color>255,255,255</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>904</x>
+                        <y>426</y>
+                        <z>0</z>
+                        <width>329</width>
+                        <height>158</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="arrayAnchor" uid="32">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>995</x>
+                        <y>410</y>
+                        <z>0</z>
+                        <width>4</width>
+                        <height>4</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -445,14 +502,14 @@
             <properties>
                 <width>10</width>
                 <height>1</height>
-                <depth>1</depth>
+                <depth>2</depth>
             </properties>
         </instance>
         <instance type="tileForms" uid="10" />
         <instance type="tilePrefabs" uid="11">
             <properties>
-                <width>1</width>
-                <height>1</height>
+                <width>0</width>
+                <height>10</height>
                 <depth>1</depth>
             </properties>
             <instance-variables>

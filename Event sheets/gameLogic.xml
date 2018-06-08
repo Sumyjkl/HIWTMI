@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>gameLogic</name>
+    <events>
+        <comment># gameLogic&#x0D;&#x0A;# gl_&#x0D;&#x0A;# turrets, doors etc. The part of the game that is game.&#x0D;&#x0A;</comment>
+        <include>tileEvents</include>
+        <include>turretEvents</include>
+        <include>playerEvents</include>
+        <include>projectileEvents</include>
+    </events>
+</c2eventsheet>
