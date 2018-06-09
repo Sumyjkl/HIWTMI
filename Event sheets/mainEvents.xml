@@ -330,6 +330,19 @@
                     <conditions>
                         <condition id="-2" name="On start of layout" sid="988247096847424" type="System" />
                     </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="295711692869388" type="f">
+                            <param id="0" name="Name">&quot;ldr_Init&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="930277695412971">
+                    <conditions>
+                        <condition id="0" name="On function" sid="807260417478168" type="f">
+                            <param id="0" name="Name">&quot;g_initialise&quot;</param>
+                        </condition>
+                    </conditions>
                     <actions />
                     <sub-events>
                         <event-block sid="946229510591165">
@@ -337,13 +350,6 @@
                             <actions>
                                 <action disabled="1" id="-30" name="Set from JSON" sid="784926898499826" type="TileMap">
                                     <param id="0" name="JSON">&quot;&quot;</param>
-                                </action>
-                                <action id="0" name="Call function" sid="295711692869388" type="f">
-                                    <param id="0" name="Name">&quot;ldr_Init&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                                <action id="-16" name="Wait" sid="315834785406153" type="System">
-                                    <param id="0" name="Seconds">0.2</param>
                                 </action>
                                 <action id="0" name="Call function" sid="204248903268805" type="f">
                                     <param id="0" name="Name">&quot;tiles_prefabAppend&quot;</param>
