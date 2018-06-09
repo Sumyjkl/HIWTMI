@@ -54,7 +54,7 @@
         <prop name="Fullscreen scaling quality">Low</prop>
         <prop name="Hide address bar">No</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
-        <prop name="Preview browser">(default)</prop>
+        <prop name="Preview browser">Chrome</prop>
         <prop name="Sampling">Point</prop>
         <prop name="Use iOS retina display">All devices</prop>
     </configuration-settings>
@@ -366,6 +366,7 @@
     <layout-folder>
         <layout>main.xml</layout>
         <layout>assets.xml</layout>
+        <layout>loader.xml</layout>
     </layout-folder>
     <event-folder>
         <event-folder name="gameLogic">
@@ -384,6 +385,7 @@
         </event-folder>
         <event-sheet>gameLogic.xml</event-sheet>
         <event-sheet>globalEvents.xml</event-sheet>
+        <event-sheet>loaderLayout.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="WebStorage" uid="1" />

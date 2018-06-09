@@ -12,9 +12,13 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="1" name="Request project file" sid="637913459805553" type="AJAX">
+                <action disabled="1" id="1" name="Request project file" sid="637913459805553" type="AJAX">
                     <param id="0" name="Tag">&quot;caves&quot;</param>
                     <param id="1" name="File">caves.txt</param>
+                </action>
+                <action id="0" name="Request URL" sid="161506255875150" type="AJAX">
+                    <param id="0" name="Tag">&quot;caves&quot;</param>
+                    <param id="1" name="URL">&quot;caves.txt&quot;</param>
                 </action>
             </actions>
         </event-block>
