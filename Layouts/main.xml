@@ -517,6 +517,14 @@
             </instance-variables>
         </instance>
         <instance type="ldr_Storage" uid="21" />
+        <instance type="tiles_damageArray" uid="33">
+            <properties>
+                <width>10</width>
+                <height>1</height>
+                <depth>1</depth>
+            </properties>
+        </instance>
+        <instance type="tiles_strength" uid="34" />
     </nonworld-instances>
     <effects />
 </c2layout>

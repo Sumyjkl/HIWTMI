@@ -99,16 +99,17 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <comment>I think these are broken as I don&apos;t have these sounds in my project bar</comment>
                         <event-block sid="843398517977868">
                             <conditions>
                                 <condition behavior="Platform" id="5" name="On jump" sid="112007204208058" type="player" />
                             </conditions>
                             <actions>
-                                <action id="4" name="Set animation" sid="397186814465327" type="player">
+                                <action disabled="1" id="4" name="Set animation" sid="397186814465327" type="player">
                                     <param id="0" name="Animation">&quot;jump&quot;</param>
                                     <param id="1" name="From">1</param>
                                 </action>
-                                <action id="7" name="Play (by name)" sid="189945492974779" type="Audio">
+                                <action disabled="1" id="7" name="Play (by name)" sid="189945492974779" type="Audio">
                                     <param id="0" name="Folder">0</param>
                                     <param id="1" name="Audio file name">&quot;jump&quot;</param>
                                     <param id="3" name="Loop">0</param>
@@ -122,7 +123,7 @@
                                 <condition behavior="Platform" id="9" name="On landed" sid="604704592641794" type="player" />
                             </conditions>
                             <actions>
-                                <action id="7" name="Play (by name)" sid="818803196844579" type="Audio">
+                                <action disabled="1" id="7" name="Play (by name)" sid="818803196844579" type="Audio">
                                     <param id="0" name="Folder">0</param>
                                     <param id="1" name="Audio file name">&quot;land&quot;</param>
                                     <param id="3" name="Loop">0</param>

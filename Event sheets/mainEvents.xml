@@ -289,8 +289,8 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Call function" sid="553259141811958" type="f">
-                                    <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
-                                    <param id="1" name="Parameter {n}">floor(Mouse.X / tileMapSize){###}floor(Mouse.Y / tileMapSize){###}0</param>
+                                    <param id="0" name="Name">&quot;tdm_damageTile&quot;</param>
+                                    <param id="1" name="Parameter {n}">floor(Mouse.X / tileMapSize){###}floor(Mouse.Y / tileMapSize){###}0.5</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -354,9 +354,6 @@
                                 <action id="0" name="Call function" sid="204248903268805" type="f">
                                     <param id="0" name="Name">&quot;tiles_prefabAppend&quot;</param>
                                     <param id="1" name="Parameter {n}">f.Param(0)</param>
-                                </action>
-                                <action id="0" name="Alert" sid="885135555813804" type="Browser">
-                                    <param id="0" name="Message">f.Param(0)</param>
                                 </action>
                                 <action id="0" name="Call function" sid="198017262255997" type="f">
                                     <param id="0" name="Name">&quot;tiles_formsInit&quot;</param>

@@ -59,6 +59,26 @@
         <prop name="Use iOS retina display">All devices</prop>
     </configuration-settings>
     <object-folder>
+        <object-folder name="tiles">
+            <object-type global="1" name="TileArray" sid="677783269632029">
+                <plugin id="Arr" />
+            </object-type>
+            <object-type global="1" name="tileForms" sid="452475413327726">
+                <plugin id="Dictionary" />
+            </object-type>
+            <object-type global="1" name="tilePrefabs" sid="300854171818577">
+                <plugin id="Arr" />
+                <instance-variables>
+                    <instance-variable name="material" sid="307733536092812" type="number" />
+                </instance-variables>
+            </object-type>
+            <object-type global="1" name="tiles_damageArray" sid="320559312913153">
+                <plugin id="Arr" />
+            </object-type>
+            <object-type global="1" name="tiles_strength" sid="351250388163833">
+                <plugin id="Dictionary" />
+            </object-type>
+        </object-folder>
         <object-type name="WebStorage" sid="1510269620771624">
             <plugin id="WebStorage" />
         </object-type>
@@ -90,20 +110,8 @@
             <texture />
             <tiles />
         </object-type>
-        <object-type global="1" name="TileArray" sid="677783269632029">
-            <plugin id="Arr" />
-        </object-type>
         <object-type name="f" sid="363146118056024">
             <plugin id="Function" />
-        </object-type>
-        <object-type global="1" name="tileForms" sid="452475413327726">
-            <plugin id="Dictionary" />
-        </object-type>
-        <object-type global="1" name="tilePrefabs" sid="300854171818577">
-            <plugin id="Arr" />
-            <instance-variables>
-                <instance-variable name="material" sid="307733536092812" type="number" />
-            </instance-variables>
         </object-type>
         <object-type name="freeCam" sid="531127939675069">
             <plugin id="Sprite" />

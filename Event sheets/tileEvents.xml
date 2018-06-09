@@ -45,12 +45,20 @@
                         <event-block sid="571795114972873">
                             <conditions />
                             <actions>
+                                <action id="0" name="Call function" sid="201922360585575" type="f">
+                                    <param id="0" name="Name">&quot;tdm_init&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
                                 <action id="0" name="Call function" sid="702073220289822" type="f">
                                     <param id="0" name="Name">&quot;tiles_generate&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
                                 <action id="0" name="Call function" sid="171919339807816" type="f">
                                     <param id="0" name="Name">&quot;tiles_updateAll&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="0" name="Call function" sid="906765250229477" type="f">
+                                    <param id="0" name="Name">&quot;tdm_fromTileArray&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
                             </actions>
@@ -144,6 +152,10 @@
                                 </action>
                                 <action id="0" name="Call function" sid="456178188439962" type="f">
                                     <param id="0" name="Name">&quot;tiles_updateArea&quot;</param>
+                                    <param id="1" name="Parameter {n}">f.Param(0){###}f.Param(1)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="271159271171404" type="f">
+                                    <param id="0" name="Name">&quot;tdm_updateTile&quot;</param>
                                     <param id="1" name="Parameter {n}">f.Param(0){###}f.Param(1)</param>
                                 </action>
                             </actions>
@@ -1062,6 +1074,182 @@
                                     </actions>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Destroy a tile with item drop</comment>
+                <event-block sid="452327671825536">
+                    <conditions>
+                        <condition id="0" name="On function" sid="513998742060253" type="f">
+                            <param id="0" name="Name">&quot;tiles_destroy&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="what type of block was destroyed" constant="0" name="type" sid="429191393610293" static="0" type="number">0</variable>
+                        <event-block sid="386560995289448">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="592987010466709" type="System">
+                                    <param id="0" name="Variable">type</param>
+                                    <param id="1" name="Value">TileArray.At(f.Param(0), f.Param(1))</param>
+                                </action>
+                                <action id="0" name="Call function" sid="347905889052359" type="f">
+                                    <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
+                                    <param id="1" name="Parameter {n}">f.Param(0){###}f.Param(1){###}0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>Drop various things</comment>
+                        <event-block sid="987086716804502">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="364880459375178" type="System">
+                                    <param id="0" name="Variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Log" sid="429397581919813" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Should have dropped stone&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="926976245020289">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="440149406680157" type="System">
+                                    <param id="0" name="Variable">type</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="14" name="Log" sid="683857987885376" type="Browser">
+                                    <param id="0" name="Type">0</param>
+                                    <param id="1" name="Message">&quot;Should have dropped wood&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="261556135983434" title="Damage to tiles">
+            <sub-events>
+                <comment>Initialize damage values</comment>
+                <event-block sid="202448128023486">
+                    <conditions>
+                        <condition id="0" name="On function" sid="128578910153026" type="f">
+                            <param id="0" name="Name">&quot;tdm_init&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="920816683437842">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Add key" sid="659789840496104" type="tiles_strength">
+                                    <param id="0" name="Key">&quot;0&quot;</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Add key" sid="218432202201149" type="tiles_strength">
+                                    <param id="0" name="Key">&quot;1&quot;</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="0" name="Add key" sid="475885270946939" type="tiles_strength">
+                                    <param id="0" name="Key">&quot;2&quot;</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="0" name="Add key" sid="629611923664790" type="tiles_strength">
+                                    <param id="0" name="Key">&quot;3&quot;</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action id="0" name="Add key" sid="214929877371417" type="tiles_strength">
+                                    <param id="0" name="Key">&quot;4&quot;</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Overwrite all strength values with defaults for certain block</comment>
+                <event-block sid="238189452643525">
+                    <conditions>
+                        <condition id="0" name="On function" sid="219105499918848" type="f">
+                            <param id="0" name="Name">&quot;tdm_fromTileArray&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set size" sid="425150766423728" type="tiles_damageArray">
+                            <param id="0" name="Width">TileArray.Width</param>
+                            <param id="1" name="Height">TileArray.Height</param>
+                            <param id="2" name="Depth">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="464366353844726">
+                            <conditions>
+                                <condition id="3" name="For each element" sid="955904482642964" type="TileArray">
+                                    <param id="0" name="Axes">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set at XY" sid="926031746538029" type="tiles_damageArray">
+                                    <param id="0" name="X">TileArray.CurX</param>
+                                    <param id="1" name="Y">TileArray.CurY</param>
+                                    <param id="2" name="Value">tiles_strength.Get(TileArray.CurValue)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Overwrite a tile&apos;s strength value with default for that block</comment>
+                <event-block sid="793041581441335">
+                    <conditions>
+                        <condition id="0" name="On function" sid="695549990111610" type="f">
+                            <param id="0" name="Name">&quot;tdm_updateTile&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set at XY" sid="471945657759618" type="tiles_damageArray">
+                            <param id="0" name="X">f.Param(0)</param>
+                            <param id="1" name="Y">f.Param(1)</param>
+                            <param id="2" name="Value">tiles_strength.Get(TileArray.At(f.Param(0), f.Param(1)))</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Remove from a tile&apos;s strength</comment>
+                <event-block sid="451344307302121">
+                    <conditions>
+                        <condition id="0" name="On function" sid="789710115640086" type="f">
+                            <param id="0" name="Name">&quot;tdm_damageTile&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Set at XY" sid="106662241474804" type="tiles_damageArray">
+                            <param id="0" name="X">f.Param(0)</param>
+                            <param id="1" name="Y">f.Param(1)</param>
+                            <param id="2" name="Value">tiles_damageArray.At(f.Param(0), f.Param(1)) - f.Param(2)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <comment>If it is too damaged, destroy it</comment>
+                        <event-block sid="920123360473337">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="248479128159607" type="tiles_damageArray">
+                                    <param id="0" name="X">f.Param(0)</param>
+                                    <param id="1" name="Y">f.Param(1)</param>
+                                    <param id="2" name="Comparison">3</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="218446829686190" type="f">
+                                    <param id="0" name="Name">&quot;tiles_destroy&quot;</param>
+                                    <param id="1" name="Parameter {n}">f.Param(0){###}f.Param(1)</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>

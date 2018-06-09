@@ -4,7 +4,7 @@
     <name>loaderEvents</name>
     <events>
         <comment># loaderEvents&#x0D;&#x0A;# ldr_&#x0D;&#x0A;# Loads project files asynchronously&#x0D;&#x0A;</comment>
-        <comment>Usage: ldr_Load( filename, callback )&#x0D;&#x0A;Callback gets loaded value as Param(0)</comment>
+        <comment>Usage: ldr_Load( filename, callback )&#x0D;&#x0A;Callback gets the loaded value as Param(0)</comment>
         <event-block sid="331501711710607">
             <conditions>
                 <condition id="0" name="On function" sid="292531184225133" type="f">
