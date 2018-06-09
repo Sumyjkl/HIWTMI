@@ -3,53 +3,31 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>loaderEvents</name>
     <events>
-        <comment># loaderEvents&#x0D;&#x0A;# ldr_&#x0D;&#x0A;# Loads project files asynchronously and stores them in ldr_Storage&#x0D;&#x0A;</comment>
-        <comment>we probably don&apos;t need to load cave files yet (but if we add prefabs that are more complex, yeah)</comment>
+        <comment># loaderEvents&#x0D;&#x0A;# ldr_&#x0D;&#x0A;# Loads project files asynchronously&#x0D;&#x0A;</comment>
+        <comment>Usage: ldr_Load( filename, callback )&#x0D;&#x0A;Callback gets loaded value as Param(0)</comment>
         <event-block sid="331501711710607">
             <conditions>
                 <condition id="0" name="On function" sid="292531184225133" type="f">
-                    <param id="0" name="Name">&quot;ldr_Init&quot;</param>
+                    <param id="0" name="Name">&quot;ldr_Load&quot;</param>
                 </condition>
             </conditions>
             <actions>
-                <action disabled="1" id="1" name="Request project file" sid="637913459805553" type="AJAX">
-                    <param id="0" name="Tag">&quot;caves&quot;</param>
-                    <param id="1" name="File">caves.txt</param>
-                </action>
                 <action id="0" name="Request URL" sid="161506255875150" type="AJAX">
-                    <param id="0" name="Tag">&quot;caves&quot;</param>
-                    <param id="1" name="URL">&quot;caves.txt&quot;</param>
+                    <param id="0" name="Tag">f.Param(1)</param>
+                    <param id="1" name="URL">f.Param(0)</param>
                 </action>
             </actions>
         </event-block>
-        <comment>adds key from AJAX to ldr_storage dictionary</comment>
         <event-block sid="891367520192257">
             <conditions>
                 <condition id="3" name="On any completed" sid="326700934504304" type="AJAX" />
             </conditions>
             <actions>
-                <action id="0" name="Add key" sid="940916250712234" type="ldr_Storage">
-                    <param id="0" name="Key">AJAX.Tag</param>
-                    <param id="1" name="Value">AJAX.LastData</param>
+                <action id="0" name="Call function" sid="455059039656254" type="f">
+                    <param id="0" name="Name">AJAX.Tag</param>
+                    <param id="1" name="Parameter {n}">AJAX.LastData</param>
                 </action>
             </actions>
-            <sub-events>
-                <event-block sid="327758736735770">
-                    <conditions>
-                        <condition id="-8" name="Compare two values" sid="808816852130215" type="System">
-                            <param id="0" name="First value">AJAX.Tag</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Second value">&quot;caves&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="455059039656254" type="f">
-                            <param id="0" name="Name">&quot;g_initialise&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>

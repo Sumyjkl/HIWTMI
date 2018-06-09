@@ -332,8 +332,8 @@
                     </conditions>
                     <actions>
                         <action id="0" name="Call function" sid="295711692869388" type="f">
-                            <param id="0" name="Name">&quot;ldr_Init&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
+                            <param id="0" name="Name">&quot;ldr_Load&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;caves.txt&quot;{###}&quot;g_initialise&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -353,7 +353,10 @@
                                 </action>
                                 <action id="0" name="Call function" sid="204248903268805" type="f">
                                     <param id="0" name="Name">&quot;tiles_prefabAppend&quot;</param>
-                                    <param id="1" name="Parameter {n}">ldr_Storage.Get(&quot;caves&quot;)</param>
+                                    <param id="1" name="Parameter {n}">f.Param(0)</param>
+                                </action>
+                                <action id="0" name="Alert" sid="885135555813804" type="Browser">
+                                    <param id="0" name="Message">f.Param(0)</param>
                                 </action>
                                 <action id="0" name="Call function" sid="198017262255997" type="f">
                                     <param id="0" name="Name">&quot;tiles_formsInit&quot;</param>
