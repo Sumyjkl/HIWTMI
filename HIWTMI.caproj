@@ -441,6 +441,11 @@
                 <instance-variable name="gunMagCap" sid="803836454617078" type="number" />
                 <instance-variable name="onLadder" sid="490247061246556" type="boolean" />
             </instance-variables>
+            <behaviors>
+                <behavior-type name="Timer" sid="926090995425574">
+                    <behavior id="Timer" />
+                </behavior-type>
+            </behaviors>
         </family>
         <family name="jumpThru" plugin-id="Sprite" sid="927460790304511">
             <members>

@@ -42,20 +42,47 @@
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="213659506708427" type="f">
-                            <param id="0" name="Name">&quot;item_drop&quot;</param>
-                            <param id="1" name="Parameter {n}">player.X{###}player.Y{###}inventoryID</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="840061898381875" type="System">
-                            <param id="0" name="Variable">inventoryID</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="0" name="Call function" sid="308660647319733" type="f">
-                            <param id="0" name="Name">&quot;gui_blockIndicatorUpdate&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="699147162259625">
+                            <conditions>
+                                <condition id="7" name="Is mirrored" sid="620843286769212" type="player" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="213659506708427" type="f">
+                                    <param id="0" name="Name">&quot;item_drop&quot;</param>
+                                    <param id="1" name="Parameter {n}">player.X{###}player.Y{###}inventoryID{###}-1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="840061898381875" type="System">
+                                    <param id="0" name="Variable">inventoryID</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="308660647319733" type="f">
+                                    <param id="0" name="Name">&quot;gui_blockIndicatorUpdate&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="707137512925630">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="366534992920205" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="138122372832581" type="f">
+                                    <param id="0" name="Name">&quot;item_drop&quot;</param>
+                                    <param id="1" name="Parameter {n}">player.X{###}player.Y{###}inventoryID{###}1</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="709452007178740" type="System">
+                                    <param id="0" name="Variable">inventoryID</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="686567863169274" type="f">
+                                    <param id="0" name="Name">&quot;gui_blockIndicatorUpdate&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>
@@ -164,8 +191,8 @@
                             <param id="0" name="Instance variable">itemID</param>
                             <param id="1" name="Value">f.Param(2)</param>
                         </action>
-                        <action behavior="Platform" id="8" name="Set vector X" sid="820812814398524" type="itemEntity">
-                            <param id="0" name="Vector X">random(-50,50)</param>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="670356598036073" type="itemEntity">
+                            <param id="0" name="Vector X">random(60,80) * f.Param(3)</param>
                         </action>
                         <action behavior="Platform" id="9" name="Set vector Y" sid="955827396082286" type="itemEntity">
                             <param id="0" name="Vector Y">-50</param>

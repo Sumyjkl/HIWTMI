@@ -1247,7 +1247,7 @@
                         <action id="1" name="Set size" sid="425150766423728" type="tiles_damageArray">
                             <param id="0" name="Width">TileArray.Width</param>
                             <param id="1" name="Height">TileArray.Height</param>
-                            <param id="2" name="Depth">1</param>
+                            <param id="2" name="Depth">2</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -1275,10 +1275,17 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="3" name="Set at XY" sid="471945657759618" type="tiles_damageArray">
+                        <action id="4" name="Set at XYZ" sid="471945657759618" type="tiles_damageArray">
                             <param id="0" name="X">f.Param(0)</param>
                             <param id="1" name="Y">f.Param(1)</param>
-                            <param id="2" name="Value">tiles_strength.Get(TileArray.At(f.Param(0), f.Param(1)))</param>
+                            <param id="2" name="Z">0</param>
+                            <param id="3" name="Value">tiles_strength.Get(TileArray.At(f.Param(0), f.Param(1)))</param>
+                        </action>
+                        <action id="4" name="Set at XYZ" sid="437310301122230" type="tiles_damageArray">
+                            <param id="0" name="X">f.Param(0)</param>
+                            <param id="1" name="Y">f.Param(1)</param>
+                            <param id="2" name="Z">1</param>
+                            <param id="3" name="Value">tiles_strength.Get(TileArray.At(f.Param(0),f.Param(1)))</param>
                         </action>
                         <action id="0" name="Erase tile" sid="419177536508834" type="tileCracks">
                             <param id="0" name="Tile X">f.Param(0)</param>
@@ -1328,15 +1335,16 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="3" name="Set at XY" sid="106662241474804" type="tiles_damageArray">
+                        <action id="4" name="Set at XYZ" sid="106662241474804" type="tiles_damageArray">
                             <param id="0" name="X">f.Param(0)</param>
                             <param id="1" name="Y">f.Param(1)</param>
-                            <param id="2" name="Value">tiles_damageArray.At(f.Param(0), f.Param(1)) - f.Param(2)</param>
+                            <param id="2" name="Z">0</param>
+                            <param id="3" name="Value">tiles_damageArray.At(f.Param(0), f.Param(1)) - f.Param(2)</param>
                         </action>
                         <action id="1" name="Set tile" sid="407692751279801" type="tileCracks">
                             <param id="0" name="Tile X">f.Param(0)</param>
                             <param id="1" name="Tile Y">f.Param(1)</param>
-                            <param id="2" name="Tile">floor(tiles_damageArray.At(f.Param(0), f.Param(1)) / tiles_strength.Get(TileArray.At(f.Param(0),f.Param(1))) * 3)</param>
+                            <param id="2" name="Tile">floor(tiles_damageArray.At(f.Param(0), f.Param(1), 0) / tiles_strength.Get(TileArray.At(f.Param(0),f.Param(1))) * 3)</param>
                             <param id="3" name="State">0</param>
                         </action>
                     </actions>
@@ -1357,6 +1365,77 @@
                                     <param id="1" name="Parameter {n}">f.Param(0){###}f.Param(1)</param>
                                 </action>
                             </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="232402056093499">
+                    <conditions>
+                        <condition id="0" name="On function" sid="600885698563225" type="f">
+                            <param id="0" name="Name">&quot;tdm_replenish&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="516870948047044">
+                            <conditions>
+                                <condition id="4" name="Compare current value" sid="729449232006456" type="tiles_damageArray">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="623963000503995">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block disabled="1" sid="564508457929153">
+                    <conditions>
+                        <condition id="0" name="On function" sid="604025085233940" type="f">
+                            <param id="0" name="Name">&quot;tdm_replenish&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="652293247677053">
+                            <conditions>
+                                <condition id="-10" name="For" sid="178405280090723" type="System">
+                                    <param id="0" name="Name">&quot;X&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">tiles_damageArray.Width</param>
+                                </condition>
+                                <condition id="-10" name="For" sid="832925445808946" type="System">
+                                    <param id="0" name="Name">&quot;Y&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">tiles_damageArray.Height</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block disabled="1" sid="265147015243628">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Compare two values" sid="686822871760387" type="System">
+                                            <param id="0" name="First value">floor(Mouse.X / tileMapSize) - loopindex(&quot;X&quot;) + floor(Mouse.Y / tileMapSize) - loopindex(&quot;Y&quot;)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                        <condition id="1" name="Compare at XY" sid="804513879804202" type="tiles_damageArray">
+                                            <param id="0" name="X">f.Param(0)</param>
+                                            <param id="1" name="Y">f.Param(1)</param>
+                                            <param id="2" name="Comparison">4</param>
+                                            <param id="3" name="Value">tiles_damageArray.At(f.Param(0),f.Param(1),1)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="590035648862729" type="f">
+                                            <param id="0" name="Name">&quot;tdm_damageTile&quot;</param>
+                                            <param id="1" name="Parameter {n}">loopindex(&quot;X&quot;){###}loopindex(&quot;Y&quot;){###}-0.5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>

@@ -454,13 +454,16 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <variable comment="Mining time multiplier" constant="0" name="player_mineCoefficient" sid="477959342373194" static="0" type="number">1</variable>
+        <variable comment="Mining time multiplier" constant="0" name="player_mineCoefficient" sid="477959342373194" static="0" type="number">0.5</variable>
+        <variable comment="Mining time multiplier" constant="0" name="player_mineTime" sid="902699308264838" static="0" type="number">0.5</variable>
         <variable comment="How far the player can reach in build/mine, in pixels" constant="0" name="player_reach" sid="422304971703963" static="0" type="number">50</variable>
-        <event-group description="" sid="994005070384893" title="player_moreControls">
+        <variable comment="How far the player can reach in build/mine, in pixels" constant="0" name="player_reach2" sid="682093322795867" static="0" type="number">50</variable>
+        <variable comment="0 invalid; 1 mine; 2 build" constant="0" name="player_cursorMode" sid="663922848469166" static="0" type="number">0</variable>
+        <event-group description="" disabled="1" sid="994005070384893" title="player_moreControls">
             <sub-events>
-                <variable comment="0 invalid; 1 mine; 2 build" constant="0" name="player_cursorMode" sid="946206206251981" static="0" type="number">0</variable>
+                <variable comment="0 invalid; 1 mine; 2 build" constant="0" name="player_cursorMode3" sid="946206206251981" static="0" type="number">0</variable>
                 <comment>If in range, update mode</comment>
-                <event-block sid="973396816705165">
+                <event-block disabled="1" sid="973396816705165">
                     <conditions>
                         <condition id="-8" name="Compare two values" sid="684241652704975" type="System">
                             <param id="0" name="First value">distance(Mouse.X, Mouse.Y, player.X, player.Y)</param>
@@ -470,7 +473,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="830218759089264">
+                        <event-block disabled="1" sid="830218759089264">
                             <conditions>
                                 <condition id="1" name="Compare at XY" sid="809414175935743" type="TileArray">
                                     <param id="0" name="X">floor(Mouse.X / tileMapSize)</param>
@@ -481,18 +484,18 @@
                             </conditions>
                             <actions>
                                 <action id="-9" name="Set value" sid="752812228006544" type="System">
-                                    <param id="0" name="Variable">player_cursorMode</param>
+                                    <param id="0" name="Variable">player_cursorMode3</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="541275632985133">
+                        <event-block disabled="1" sid="541275632985133">
                             <conditions>
                                 <condition id="-22" name="Else" sid="300518350357298" type="System" />
                             </conditions>
                             <actions>
                                 <action id="-9" name="Set value" sid="465401417130199" type="System">
-                                    <param id="0" name="Variable">player_cursorMode</param>
+                                    <param id="0" name="Variable">player_cursorMode3</param>
                                     <param id="1" name="Value">2</param>
                                 </action>
                             </actions>
@@ -500,32 +503,32 @@
                     </sub-events>
                 </event-block>
                 <comment>Not in range</comment>
-                <event-block sid="532781092755389">
+                <event-block disabled="1" sid="532781092755389">
                     <conditions>
                         <condition id="-22" name="Else" sid="915275604055123" type="System" />
                     </conditions>
                     <actions>
                         <action id="-9" name="Set value" sid="574113555110482" type="System">
-                            <param id="0" name="Variable">player_cursorMode</param>
+                            <param id="0" name="Variable">player_cursorMode3</param>
                             <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>
                 <comment>Hold-to-mine</comment>
-                <event-block sid="814692640698775">
+                <event-block disabled="1" sid="814692640698775">
                     <conditions>
                         <condition id="2" name="Mouse button is down" sid="783648720357270" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="298266735717591" type="System">
-                            <param id="0" name="Variable">player_cursorMode</param>
+                            <param id="0" name="Variable">player_cursorMode3</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="482986771219223">
+                        <event-block disabled="1" sid="482986771219223">
                             <conditions />
                             <actions>
                                 <action id="0" name="Call function" sid="543499253412580" type="f">
@@ -537,21 +540,21 @@
                     </sub-events>
                 </event-block>
                 <comment>Build</comment>
-                <event-block sid="349654710102065">
+                <event-block disabled="1" sid="349654710102065">
                     <conditions>
                         <condition id="0" name="On click" sid="567835272543389" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
                             <param id="1" name="Click type">0</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="928267458438226" type="System">
-                            <param id="0" name="Variable">player_cursorMode</param>
+                            <param id="0" name="Variable">player_cursorMode3</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">2</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="179509769832709">
+                        <event-block disabled="1" sid="179509769832709">
                             <conditions />
                             <actions>
                                 <action disabled="1" id="0" name="Call function" sid="118439255476687" type="f">
@@ -567,7 +570,7 @@
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
                                 <action id="-9" name="Set value" sid="865157668610932" type="System">
-                                    <param id="0" name="Variable">player_cursorMode</param>
+                                    <param id="0" name="Variable">player_cursorMode3</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
                             </actions>
@@ -575,19 +578,238 @@
                     </sub-events>
                 </event-block>
                 <comment>Resetting logic</comment>
-                <event-block sid="411172860283569">
+                <event-block disabled="1" sid="411172860283569">
                     <conditions>
                         <condition id="3" name="On button released" sid="590497075425558" type="Mouse">
                             <param id="0" name="Mouse button">0</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="310815411241876" type="System">
-                            <param id="0" name="Variable">player_cursorMode</param>
+                            <param id="0" name="Variable">player_cursorMode3</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="0" name="Call function" sid="627378752396162" type="f">
+                            <param id="0" name="Name">&quot;tdm_checkDamage&quot;</param>
+                            <param id="1" name="Parameter {n}">floor(Mouse.X / tileMapSize){###}floor(Mouse.Y / tileMapSize)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="652330075456274" title="player_moreControls2">
+            <sub-events>
+                <comment>If in range, update mode</comment>
+                <event-block sid="667890067578907">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="676788113333785" type="System">
+                            <param id="0" name="First value">distance(Mouse.X, Mouse.Y, player.X, player.Y)</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">player_reach</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="633782624483627">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="548980410799864" type="TileArray">
+                                    <param id="0" name="X">floor(Mouse.X / tileMapSize)</param>
+                                    <param id="1" name="Y">floor(Mouse.Y / tileMapSize)</param>
+                                    <param id="2" name="Comparison">1</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="926165298192859" type="System">
+                                    <param id="0" name="Variable">player_cursorMode</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="331230487222744">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="569001397168081" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="605378521232708" type="System">
+                                    <param id="0" name="Variable">player_cursorMode</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Not in range</comment>
+                <event-block sid="222096955968997">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="606072723106811" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="779580812365590" type="System">
+                            <param id="0" name="Variable">player_cursorMode</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Hold-to-mine</comment>
+                <event-block sid="577330080877252">
+                    <conditions>
+                        <condition id="0" name="On click" sid="952489804952154" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="761288746362338" type="System">
+                            <param id="0" name="Variable">player_cursorMode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="205265325586744">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="631913625760036" type="f">
+                                    <param id="0" name="Name">&quot;player_mine&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="248830281843442">
+                    <conditions>
+                        <condition behavior="Timer" id="0" name="On timer" sid="276941506794225" type="player">
+                            <param id="0" name="Tag">&quot;mineDamage&quot;</param>
+                        </condition>
+                        <condition id="2" name="Mouse button is down" sid="400022923671871" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="704676885902573" type="System">
+                            <param id="0" name="Variable">player_cursorMode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="681594237907439" type="f">
+                            <param id="0" name="Name">&quot;player_mine&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="640130008181272">
+                    <conditions>
+                        <condition id="0" name="On function" sid="395507269013247" type="f">
+                            <param id="0" name="Name">&quot;player_mine&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="852955859436389">
+                            <conditions>
+                                <condition id="2" name="Compare at XYZ" sid="772723598799286" type="TileArray">
+                                    <param id="0" name="X">floor(Mouse.X / tileMapSize)</param>
+                                    <param id="1" name="Y">floor(Mouse.Y / tileMapSize)</param>
+                                    <param id="2" name="Z">0</param>
+                                    <param id="3" name="Comparison">2</param>
+                                    <param id="4" name="Value">500</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Play (by name)" sid="311539812836526" type="Audio">
+                                    <param id="0" name="Folder">0</param>
+                                    <param id="1" name="Audio file name">&quot;tinyClick&quot;</param>
+                                    <param id="3" name="Loop">0</param>
+                                    <param id="4" name="Volume">0</param>
+                                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="974541965531965" type="f">
+                                    <param id="0" name="Name">&quot;tdm_damageTile&quot;</param>
+                                    <param id="1" name="Parameter {n}">floor(Mouse.X / tileMapSize){###}floor(Mouse.Y / tileMapSize){###}player_mineCoefficient</param>
+                                </action>
+                                <action behavior="Timer" id="0" name="Start timer" sid="801184602971435" type="player">
+                                    <param id="0" name="Duration">player_mineTime</param>
+                                    <param id="1" name="Type">0</param>
+                                    <param id="2" name="Tag">&quot;mineDamage&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Build</comment>
+                <event-block sid="395268231888628">
+                    <conditions>
+                        <condition id="0" name="On click" sid="334494638418991" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="203554278730588" type="System">
+                            <param id="0" name="Variable">player_cursorMode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="527558999717676">
+                            <conditions>
+                                <condition id="2" name="Compare at XYZ" sid="454548483804246" type="TileArray">
+                                    <param id="0" name="X">floor(Mouse.X / tileMapSize)</param>
+                                    <param id="1" name="Y">floor(Mouse.Y / tileMapSize)</param>
+                                    <param id="2" name="Z">0</param>
+                                    <param id="3" name="Comparison">2</param>
+                                    <param id="4" name="Value">500</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="842364119612634" type="System">
+                                    <param id="0" name="Variable">inventoryID</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action disabled="1" id="0" name="Call function" sid="693727832965179" type="f">
+                                    <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
+                                    <param id="1" name="Parameter {n}">floor(Touch.X / tileMapSize){###}floor(Touch.Y / tileMapSize){###}3</param>
+                                </action>
+                                <action id="0" name="Call function" sid="284983302833169" type="f">
+                                    <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
+                                    <param id="1" name="Parameter {n}">floor(Mouse.X / tileMapSize){###}floor(Mouse.Y / tileMapSize){###}inventoryID</param>
+                                </action>
+                                <action id="0" name="Call function" sid="802265006621556" type="f">
+                                    <param id="0" name="Name">&quot;inv_use&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-9" name="Set value" sid="258768693027740" type="System">
+                                    <param id="0" name="Variable">player_cursorMode</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="7" name="Play (by name)" sid="287982038689830" type="Audio">
+                                    <param id="0" name="Folder">0</param>
+                                    <param id="1" name="Audio file name">&quot;tinyClick&quot;</param>
+                                    <param id="3" name="Loop">0</param>
+                                    <param id="4" name="Volume">0</param>
+                                    <param id="2" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Resetting logic</comment>
+                <event-block sid="176183433307420">
+                    <conditions>
+                        <condition id="3" name="On button released" sid="565632080519747" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="946400012700366" type="System">
+                            <param id="0" name="Variable">player_cursorMode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="705779271807837" type="f">
                             <param id="0" name="Name">&quot;tdm_checkDamage&quot;</param>
                             <param id="1" name="Parameter {n}">floor(Mouse.X / tileMapSize){###}floor(Mouse.Y / tileMapSize)</param>
                         </action>
