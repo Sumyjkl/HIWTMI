@@ -369,6 +369,7 @@
             <plugin id="TiledBg" />
             <instance-variables>
                 <instance-variable name="tile" sid="322231276935707" type="string" />
+                <instance-variable name="offsetX" sid="160094497571885" type="number" />
             </instance-variables>
             <container>
                 <type>ladderPlatform</type>

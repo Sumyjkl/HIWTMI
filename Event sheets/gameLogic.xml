@@ -9,6 +9,7 @@
         <include>playerEvents</include>
         <include>projectileEvents</include>
         <include>inventoryEvents</include>
+        <variable constant="0" name="ladder_offsetX" sid="951898758445304" static="0" type="number">4</variable>
         <event-block sid="817455153067537">
             <conditions>
                 <condition id="0" name="On function" sid="226941830366939" type="f">
@@ -23,8 +24,17 @@
                         <action id="-3" name="Create object" sid="207325102406844" type="System">
                             <param id="0" name="Object to create">ladder</param>
                             <param id="1" name="Layer">&quot;tiles&quot;</param>
-                            <param id="2" name="X">f.Param(0) * tileMapSize</param>
+                            <param id="2" name="X">f.Param(0) * tileMapSize + ladder_offsetX</param>
                             <param id="3" name="Y">f.Param(1) * tileMapSize</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="734481971214577" type="ladderPlatform">
+                            <param id="0" name="X">Self.X - ladder_offsetX</param>
+                        </action>
+                        <action id="4" name="Set at XYZ" sid="797139181368912" type="TileArray">
+                            <param id="0" name="X">f.Param(0)</param>
+                            <param id="1" name="Y">f.Param(1)</param>
+                            <param id="2" name="Z">0</param>
+                            <param id="3" name="Value">501</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -47,7 +57,7 @@
                                             <param id="3" name="Comparison">0</param>
                                             <param id="4" name="Value">0</param>
                                         </condition>
-                                        <condition id="-8" name="Compare two values" sid="156047643121655" type="System">
+                                        <condition disabled="1" id="-8" name="Compare two values" sid="156047643121655" type="System">
                                             <param id="0" name="First value">f.Call(&quot;ladder_exists&quot;, f.Param(0), f.Param(1) + loopindex, ladder.UID)</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Second value">1</param>
@@ -57,6 +67,12 @@
                                         <action id="-6" name="Set height" sid="944584251956851" type="ladder">
                                             <param id="0" name="Height">tileMapSize + loopindex * tileMapSize</param>
                                         </action>
+                                        <action id="4" name="Set at XYZ" sid="375566903629520" type="TileArray">
+                                            <param id="0" name="X">f.Param(0)</param>
+                                            <param id="1" name="Y">f.Param(1) + loopindex</param>
+                                            <param id="2" name="Z">0</param>
+                                            <param id="3" name="Value">501</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="467593871906758">
@@ -65,6 +81,9 @@
                                     </conditions>
                                     <actions>
                                         <action id="-24" name="Stop loop" sid="382548526678334" type="System" />
+                                        <action disabled="1" id="-6" name="Set height" sid="768245731038338" type="ladder">
+                                            <param id="0" name="Height">Self.Height - 4</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -85,7 +104,7 @@
                     <conditions>
                         <condition id="-1" name="Compare X" sid="539371050685130" type="ladder">
                             <param id="0" name="Comparison">0</param>
-                            <param id="1" name="X co-ordinate">f.Param(0) * tileMapSize</param>
+                            <param id="1" name="X co-ordinate">f.Param(0) * tileMapSize + ladder_offsetX</param>
                         </condition>
                         <condition id="-2" name="Compare Y" sid="820812108377721" type="ladder">
                             <param id="0" name="Comparison">0</param>
@@ -120,6 +139,13 @@
                     <param id="0" name="First value">inventoryID</param>
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Second value">4</param>
+                </condition>
+                <condition id="2" name="Compare at XYZ" sid="634201490399158" type="TileArray">
+                    <param id="0" name="X">floor(Mouse.X / tileMapSize)</param>
+                    <param id="1" name="Y">floor(Mouse.Y / tileMapSize)</param>
+                    <param id="2" name="Z">0</param>
+                    <param id="3" name="Comparison">0</param>
+                    <param id="4" name="Value">0</param>
                 </condition>
             </conditions>
             <actions>

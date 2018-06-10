@@ -394,14 +394,15 @@
                     </properties>
                     <instance-variables>
                         <tile></tile>
+                        <offsetX>4</offsetX>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>38</x>
+                        <x>42</x>
                         <y>93</y>
                         <z>0</z>
-                        <width>16</width>
+                        <width>8</width>
                         <height>33</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>

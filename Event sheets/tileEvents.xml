@@ -163,7 +163,15 @@
                     <actions />
                     <sub-events>
                         <event-block sid="516834474206287">
-                            <conditions />
+                            <conditions>
+                                <condition id="2" name="Compare at XYZ" sid="821508540203928" type="TileArray">
+                                    <param id="0" name="X">f.Param(0)</param>
+                                    <param id="1" name="Y">f.Param(1)+loopindex</param>
+                                    <param id="2" name="Z">0</param>
+                                    <param id="3" name="Comparison">2</param>
+                                    <param id="4" name="Value">500</param>
+                                </condition>
+                            </conditions>
                             <actions>
                                 <action id="3" name="Set at XY" sid="464055124337194" type="TileArray">
                                     <param id="0" name="X">f.Param(0)</param>
@@ -455,6 +463,11 @@
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">9</param>
                                 </condition>
+                                <condition id="-14" name="Compare variable" sid="953094070461080" type="System">
+                                    <param id="0" name="Variable">tmpZ</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">500</param>
+                                </condition>
                             </conditions>
                             <actions />
                             <sub-events>
@@ -614,13 +627,13 @@
                             </sub-events>
                         </event-block>
                         <comment>otherwise if it isn&apos;t a certain tile, delete it</comment>
-                        <event-block sid="709614030771405">
+                        <event-block sid="487285400327864">
                             <conditions>
-                                <condition id="-22" name="Else" sid="159664300610345" type="System" />
-                                <condition id="-14" inverted="1" name="Compare variable" sid="879797268633693" type="System">
+                                <condition id="-22" name="Else" sid="492716049328495" type="System" />
+                                <condition id="-14" name="Compare variable" sid="317149549106669" type="System">
                                     <param id="0" name="Variable">tmpZ</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">9</param>
+                                    <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -629,6 +642,22 @@
                                     <param id="1" name="Tile Y">tmpY</param>
                                 </action>
                             </actions>
+                        </event-block>
+                        <event-block sid="709614030771405">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="159664300610345" type="System" />
+                                <condition id="-14" inverted="1" name="Compare variable" sid="879797268633693" type="System">
+                                    <param id="0" name="Variable">tmpZ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">9</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="675983311112553" type="System">
+                                    <param id="0" name="Variable">tmpZ</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">500</param>
+                                </condition>
+                            </conditions>
+                            <actions />
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -1262,6 +1291,13 @@
                     <conditions>
                         <condition id="0" name="On function" sid="789710115640086" type="f">
                             <param id="0" name="Name">&quot;tdm_damageTile&quot;</param>
+                        </condition>
+                        <condition id="2" name="Compare at XYZ" sid="544376154048338" type="TileArray">
+                            <param id="0" name="X">f.Param(0)</param>
+                            <param id="1" name="Y">f.Param(1)</param>
+                            <param id="2" name="Z">0</param>
+                            <param id="3" name="Comparison">2</param>
+                            <param id="4" name="Value">500</param>
                         </condition>
                     </conditions>
                     <actions>
