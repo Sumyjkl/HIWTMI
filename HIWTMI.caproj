@@ -346,6 +346,23 @@
             <texture />
             <tiles />
         </object-type>
+        <object-type name="blockSelectionIndicator" sid="509459042255010">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="i0" pingpong="0" repeatcount="1" repeatto="0" sid="886906958310365" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="i1" pingpong="0" repeatcount="1" repeatto="0" sid="991014366622564" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="i4" pingpong="0" repeatcount="1" repeatto="0" sid="933364890524259" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="i5" pingpong="0" repeatcount="1" repeatto="0" sid="708708925724709" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="turret" plugin-id="Sprite" sid="705466075700669">

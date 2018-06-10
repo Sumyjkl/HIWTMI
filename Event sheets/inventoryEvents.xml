@@ -18,6 +18,10 @@
                             <param id="0" name="Variable">inventoryID</param>
                             <param id="1" name="Value">f.Param(0)</param>
                         </action>
+                        <action id="0" name="Call function" sid="616094749508719" type="f">
+                            <param id="0" name="Name">&quot;gui_blockIndicatorUpdate&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -47,6 +51,10 @@
                             <param id="0" name="Variable">inventoryID</param>
                             <param id="1" name="Value">0</param>
                         </action>
+                        <action id="0" name="Call function" sid="308660647319733" type="f">
+                            <param id="0" name="Name">&quot;gui_blockIndicatorUpdate&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -65,6 +73,10 @@
                         <action id="-9" name="Set value" sid="528277375542400" type="System">
                             <param id="0" name="Variable">inventoryID</param>
                             <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="490447284110797" type="f">
+                            <param id="0" name="Name">&quot;gui_blockIndicatorUpdate&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>
