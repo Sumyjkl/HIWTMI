@@ -8,5 +8,6 @@
         <include>turretEvents</include>
         <include>playerEvents</include>
         <include>projectileEvents</include>
+        <include>inventoryEvents</include>
     </events>
 </c2eventsheet>

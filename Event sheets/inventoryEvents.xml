@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>inventoryEvents</name>
+    <events>
+        <event-block sid="762483907368422">
+            <conditions>
+                <condition id="0" name="On function" sid="116943072453087" type="f">
+                    <param id="0" name="Name">&quot;inv_add&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="638098363214771">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="554408247248876" type="System">
+                            <param id="0" name="Variable">inventoryID</param>
+                            <param id="1" name="Value">f.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="454336990882041">
+            <conditions>
+                <condition id="0" name="On function" sid="856725226086776" type="f">
+                    <param id="0" name="Name">&quot;inv_drop&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="204269497706066">
+                    <conditions>
+                        <condition id="-14" inverted="1" name="Compare variable" sid="502229823273175" type="System">
+                            <param id="0" name="Variable">inventoryID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="213659506708427" type="f">
+                            <param id="0" name="Name">&quot;item_drop&quot;</param>
+                            <param id="1" name="Parameter {n}">player.X{###}player.Y{###}inventoryID</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="840061898381875" type="System">
+                            <param id="0" name="Variable">inventoryID</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="808093026296359">
+            <conditions>
+                <condition id="0" name="On function" sid="244708640552605" type="f">
+                    <param id="0" name="Name">&quot;inv_use&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="780618516324803">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Set value" sid="528277375542400" type="System">
+                            <param id="0" name="Variable">inventoryID</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="294634243724826">
+            <conditions>
+                <condition id="0" name="On function" sid="164748393142937" type="f">
+                    <param id="0" name="Name">&quot;inv_hasSpace&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="357738657471521">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="701064267726393" type="System">
+                            <param id="0" name="Variable">inventoryID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="511992779243868" type="f">
+                            <param id="0" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="297325924324900">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="853107424262053" type="player">
+                    <param id="0" name="Object">itemEntity</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="870176509379944">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="596593604404738" type="itemEntity">
+                            <param id="0" name="Instance variable">itemPickup</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="988362278503283" type="System">
+                            <param id="0" name="First value">f.Call(&quot;inv_hasSpace&quot;)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                        <condition id="-17" name="Pick top/bottom" sid="989547050520194" type="itemEntity">
+                            <param id="0" name="Which">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="170179288914790" type="f">
+                            <param id="0" name="Name">&quot;inv_add&quot;</param>
+                            <param id="1" name="Parameter {n}">itemEntity.itemID</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="235343799588546" type="itemEntity" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment></comment>
+        <event-block sid="469665808021836">
+            <conditions>
+                <condition id="0" name="On function" sid="567951624880733" type="f">
+                    <param id="0" name="Name">&quot;item_drop&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="118021472161797">
+                    <conditions />
+                    <actions>
+                        <action id="-3" name="Create object" sid="518621721193224" type="System">
+                            <param id="0" name="Object to create">itemEntity</param>
+                            <param id="1" name="Layer">&quot;player&quot;</param>
+                            <param id="2" name="X">f.Param(0)</param>
+                            <param id="3" name="Y">f.Param(1)</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="671421158511907" type="itemEntity">
+                            <param id="0" name="Animation">&quot;i&quot;&amp;f.Param(2)</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="390029077865154" type="itemEntity">
+                            <param id="0" name="Instance variable">itemID</param>
+                            <param id="1" name="Value">f.Param(2)</param>
+                        </action>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="820812814398524" type="itemEntity">
+                            <param id="0" name="Vector X">random(-50,50)</param>
+                        </action>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="955827396082286" type="itemEntity">
+                            <param id="0" name="Vector Y">-50</param>
+                        </action>
+                        <action behavior="Timer" id="0" name="Start timer" sid="557705683554692" type="itemEntity">
+                            <param id="0" name="Duration">1.0</param>
+                            <param id="1" name="Type">0</param>
+                            <param id="2" name="Tag">&quot;active&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="116555692488780">
+            <conditions>
+                <condition id="0" name="On function" sid="444383369853371" type="f">
+                    <param id="0" name="Name">&quot;item_spawn&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="140948322525783">
+                    <conditions />
+                    <actions>
+                        <action id="-3" name="Create object" sid="512824943538835" type="System">
+                            <param id="0" name="Object to create">itemEntity</param>
+                            <param id="1" name="Layer">&quot;player&quot;</param>
+                            <param id="2" name="X">f.Param(0)</param>
+                            <param id="3" name="Y">f.Param(1)</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="709676912444273" type="itemEntity">
+                            <param id="0" name="Animation">&quot;i&quot;&amp;f.Param(2)</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="558770256091781" type="itemEntity">
+                            <param id="0" name="Instance variable">itemID</param>
+                            <param id="1" name="Value">f.Param(2)</param>
+                        </action>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="605208922410983" type="itemEntity">
+                            <param id="0" name="Vector X">random(-50,50)</param>
+                        </action>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="758990284801463" type="itemEntity">
+                            <param id="0" name="Vector Y">-50</param>
+                        </action>
+                        <action behavior="Timer" id="0" name="Start timer" sid="829414512631214" type="itemEntity">
+                            <param id="0" name="Duration">0.1</param>
+                            <param id="1" name="Type">0</param>
+                            <param id="2" name="Tag">&quot;active&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="646137266058176">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="609300532300296" type="itemEntity" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" disabled="1" id="11" name="Set enabled" sid="288402230999472" type="itemEntity">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Sine" disabled="1" id="0" name="Set active" sid="417161561862493" type="itemEntity">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action disabled="1" id="-2" name="Set Y" sid="886490465505559" type="itemEntity">
+                    <param id="0" name="Y">Self.Y - 2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="523349989191966">
+            <conditions>
+                <condition behavior="Timer" id="0" name="On timer" sid="408051606921505" type="itemEntity">
+                    <param id="0" name="Tag">&quot;active&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="259699248626488" type="itemEntity">
+                    <param id="0" name="Instance variable">itemPickup</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="969609253439163">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="828198564554851" type="Keyboard">
+                    <param id="0" name="Key">81</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="786158073144356" type="f">
+                    <param id="0" name="Name">&quot;inv_drop&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
