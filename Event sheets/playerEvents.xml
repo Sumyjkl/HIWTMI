@@ -205,6 +205,16 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="136106427732479">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="505971316342151" type="Keyboard">
+                            <param id="0" name="Key">83</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="12" name="Fall through" sid="113934039316591" type="player" />
+                    </actions>
+                </event-block>
                 <event-block sid="370165098164414">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="506477997797523" type="Keyboard">

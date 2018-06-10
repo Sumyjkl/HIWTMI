@@ -278,6 +278,7 @@
                         <gunReload>2</gunReload>
                         <gunMag>1</gunMag>
                         <gunMagCap>1</gunMagCap>
+                        <onLadder>false</onLadder>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">

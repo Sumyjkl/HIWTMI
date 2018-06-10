@@ -21,6 +21,7 @@
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
         <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
@@ -33,6 +34,7 @@
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="Timer" version="1">Timer</behavior>
         <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
+        <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -363,6 +365,29 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="ladder" sid="475295915979339">
+            <plugin id="TiledBg" />
+            <instance-variables>
+                <instance-variable name="tile" sid="322231276935707" type="string" />
+            </instance-variables>
+            <container>
+                <type>ladderPlatform</type>
+                <type>ladder</type>
+            </container>
+            <texture />
+        </object-type>
+        <object-type name="ladderPlatform" sid="677849298339463">
+            <plugin id="Sprite" />
+            <container>
+                <type>ladderPlatform</type>
+                <type>ladder</type>
+            </container>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="254386857230908" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="turret" plugin-id="Sprite" sid="705466075700669">
@@ -413,7 +438,18 @@
                 <instance-variable name="gunReload" sid="233567987916520" type="number" />
                 <instance-variable name="gunMag" sid="870726986334534" type="number" />
                 <instance-variable name="gunMagCap" sid="803836454617078" type="number" />
+                <instance-variable name="onLadder" sid="490247061246556" type="boolean" />
             </instance-variables>
+        </family>
+        <family name="jumpThru" plugin-id="Sprite" sid="927460790304511">
+            <members>
+                <member>ladderPlatform</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="690603732642757">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
         </family>
     </families>
     <layout-folder>
