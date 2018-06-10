@@ -1286,6 +1286,33 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>Reset if over 50% of strength is retained</comment>
+                <event-block sid="964492173145470">
+                    <conditions>
+                        <condition id="0" name="On function" sid="758706785390722" type="f">
+                            <param id="0" name="Name">&quot;tdm_checkDamage&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="867973361014875">
+                            <conditions>
+                                <condition id="1" name="Compare at XY" sid="548216492890430" type="tiles_damageArray">
+                                    <param id="0" name="X">f.Param(0)</param>
+                                    <param id="1" name="Y">f.Param(1)</param>
+                                    <param id="2" name="Comparison">5</param>
+                                    <param id="3" name="Value">tiles_strength.Get(TileArray.At(f.Param(0),f.Param(1))) / 2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="609027965742236" type="f">
+                                    <param id="0" name="Name">&quot;tdm_updateTile&quot;</param>
+                                    <param id="1" name="Parameter {n}">f.Param(0){###}f.Param(1)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <comment>Remove [2] from a [0],[1] tile&apos;s strength</comment>
                 <event-block sid="451344307302121">
                     <conditions>

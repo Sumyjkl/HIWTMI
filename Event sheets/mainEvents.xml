@@ -269,52 +269,6 @@
         </event-group>
         <event-group description="" sid="237028099788876" title="other misc">
             <sub-events>
-                <event-block sid="817741621018903">
-                    <conditions>
-                        <condition id="0" name="On click" sid="603872770146450" type="Mouse">
-                            <param id="0" name="Mouse button">0</param>
-                            <param id="1" name="Click type">0</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="702945611908532">
-                            <conditions>
-                                <condition id="1" name="Compare at XY" sid="352266534287597" type="TileArray">
-                                    <param id="0" name="X">floor(Mouse.X / tileMapSize)</param>
-                                    <param id="1" name="Y">floor(Mouse.Y / tileMapSize)</param>
-                                    <param id="2" name="Comparison">1</param>
-                                    <param id="3" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="553259141811958" type="f">
-                                    <param id="0" name="Name">&quot;tdm_damageTile&quot;</param>
-                                    <param id="1" name="Parameter {n}">floor(Mouse.X / tileMapSize){###}floor(Mouse.Y / tileMapSize){###}0.5</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="575054164387495">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="112617850615639" type="System" />
-                            </conditions>
-                            <actions>
-                                <action disabled="1" id="0" name="Call function" sid="573140888329207" type="f">
-                                    <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
-                                    <param id="1" name="Parameter {n}">floor(Touch.X / tileMapSize){###}floor(Touch.Y / tileMapSize){###}3</param>
-                                </action>
-                                <action id="0" name="Call function" sid="168316294420463" type="f">
-                                    <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
-                                    <param id="1" name="Parameter {n}">floor(Mouse.X / tileMapSize){###}floor(Mouse.Y / tileMapSize){###}inventoryID</param>
-                                </action>
-                                <action id="0" name="Call function" sid="119719114389994" type="f">
-                                    <param id="0" name="Name">&quot;inv_use&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
                 <comment>debug</comment>
                 <event-block sid="288057467835352">
                     <conditions>
