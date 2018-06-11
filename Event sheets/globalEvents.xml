@@ -111,5 +111,25 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <comment>call a function from a string with arguments</comment>
+        <event-block sid="191068020446212">
+            <conditions>
+                <condition id="0" name="On function" sid="697837262104100" type="f">
+                    <param id="0" name="Name">&quot;function&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="759966160031209">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Call function" sid="389499508545256" type="f">
+                            <param id="0" name="Name">tokenat(f.Param(0), 0, &quot;;&quot;)</param>
+                            <param id="1" name="Parameter {n}">tokenat(f.Param(0), 1, &quot;;&quot;){###}tokenat(f.Param(0), 2, &quot;;&quot;){###}tokenat(f.Param(0), 3, &quot;;&quot;){###}tokenat(f.Param(0), 4, &quot;;&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>

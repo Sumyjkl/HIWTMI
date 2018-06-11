@@ -92,6 +92,39 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <comment></comment>
+        <event-block sid="146800478553879">
+            <conditions>
+                <condition id="0" name="On function" sid="617218853546458" type="f">
+                    <param id="0" name="Name">&quot;ladder_canPlace&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="590460484344539">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="597626726770057" type="System">
+                            <param id="0" name="First value">inventoryID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">4</param>
+                        </condition>
+                        <condition id="2" name="Compare at XYZ" sid="581662231261986" type="TileArray">
+                            <param id="0" name="X">floor(Mouse.X / tileMapSize)</param>
+                            <param id="1" name="Y">floor(Mouse.Y / tileMapSize)</param>
+                            <param id="2" name="Z">0</param>
+                            <param id="3" name="Comparison">0</param>
+                            <param id="4" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="628291459096870" type="f">
+                            <param id="0" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>probably defunct</comment>
         <event-block sid="163702627843294">
             <conditions>
                 <condition id="0" name="On function" sid="454071531735655" type="f">
@@ -130,24 +163,68 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <comment>place at mouse</comment>
+        <event-block sid="375308470193928">
+            <conditions>
+                <condition id="0" name="On function" sid="645932168813133" type="f">
+                    <param id="0" name="Name">&quot;ladder_placeAtMouse&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="605280423293483">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="152220345195817" type="radialSeg">
+                            <param id="0" name="Instance variable">center</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="153673727362138" type="System">
+                            <param id="0" name="First value">f.Call(&quot;ladder_canPlace&quot;, floor(radialSeg.X / tileMapSize), floor(radialSeg.Y / tileMapSize))</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="390528563254169" type="f">
+                            <param id="0" name="Name">&quot;ladder_create&quot;</param>
+                            <param id="1" name="Parameter {n}">floor(radialSeg.X / tileMapSize){###}floor(radialSeg.Y / tileMapSize)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="689591662174736" type="f">
+                            <param id="0" name="Name">&quot;inv_use&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>place with L key</comment>
         <event-block sid="240029840251336">
             <conditions>
                 <condition id="0" name="On key pressed" sid="683493382626784" type="Keyboard">
                     <param id="0" name="Key">76</param>
                 </condition>
-                <condition id="-8" name="Compare two values" sid="985321965390449" type="System">
+                <condition disabled="1" id="-8" name="Compare two values" sid="985321965390449" type="System">
                     <param id="0" name="First value">inventoryID</param>
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Second value">4</param>
                 </condition>
-                <condition id="2" name="Compare at XYZ" sid="634201490399158" type="TileArray">
+                <condition disabled="1" id="2" name="Compare at XYZ" sid="634201490399158" type="TileArray">
                     <param id="0" name="X">floor(Mouse.X / tileMapSize)</param>
                     <param id="1" name="Y">floor(Mouse.Y / tileMapSize)</param>
                     <param id="2" name="Z">0</param>
                     <param id="3" name="Comparison">0</param>
                     <param id="4" name="Value">0</param>
                 </condition>
-                <condition id="-14" name="Compare variable" sid="700308881537337" type="System">
+                <condition disabled="1" id="-14" name="Compare variable" sid="700308881537337" type="System">
+                    <param id="0" name="Variable">player_cursorMode</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="525926796471318" type="System">
+                    <param id="0" name="First value">f.Call(&quot;ladder_canPlace&quot;, floor(Mouse.X / tileMapSize), floor(Mouse.Y / tileMapSize))</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Second value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="701069143281010" type="System">
                     <param id="0" name="Variable">player_cursorMode</param>
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">2</param>

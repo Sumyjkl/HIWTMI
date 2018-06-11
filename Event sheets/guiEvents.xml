@@ -37,5 +37,147 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <comment>v</comment>
+        <variable constant="0" name="radialOpen" sid="126438746852101" static="0" type="number">0</variable>
+        <event-block sid="954811007410408">
+            <conditions>
+                <condition id="0" name="On click" sid="808560329386221" type="Mouse">
+                    <param id="0" name="Mouse button">2</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="717132990110600" type="System">
+                    <param id="0" name="Variable">radialOpen</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="171639782289774" type="System">
+                    <param id="0" name="Variable">player_cursorMode</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="212242322266029" type="f">
+                    <param id="0" name="Name">&quot;radialOpen&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="763615572606911">
+            <conditions>
+                <condition id="3" name="On button released" sid="778282662030604" type="Mouse">
+                    <param id="0" name="Mouse button">2</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="267322947683583" type="System">
+                    <param id="0" name="Variable">radialOpen</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="146522366682748">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="187621802647994" type="Mouse">
+                            <param id="0" name="Object">radialSeg</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="415339614821879" type="f">
+                            <param id="0" name="Name">&quot;radialClose&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="460150595038275" type="f">
+                            <param id="0" name="Name">&quot;function&quot;</param>
+                            <param id="1" name="Parameter {n}">radialSeg.function</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="317237348804763">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="299763498009510" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="464157963330640" type="f">
+                            <param id="0" name="Name">&quot;radialClose&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="265355466266457">
+            <conditions>
+                <condition id="0" name="On function" sid="754563519888277" type="f">
+                    <param id="0" name="Name">&quot;radialOpen&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="277381783140707">
+                    <conditions />
+                    <actions>
+                        <action id="-15" name="Set visible" sid="557491782497406" type="radialSeg">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="739492561281241" type="radialOverlay">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="683344314146141" type="radialSeg">
+                            <param id="0" name="X">floor(Mouse.X/tileMapSize)*tileMapSize + tileMapSize * Self.offsetX</param>
+                            <param id="1" name="Y">floor(Mouse.Y/tileMapSize)*tileMapSize + tileMapSize * Self.offsetY</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="418739738873005" type="System">
+                            <param id="0" name="Variable">radialOpen</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="785092984370788" type="radialSeg">
+                            <param id="0" name="X">floor(Mouse.X/tileMapSize)*tileMapSize + tileMapSize * Self.offsetX</param>
+                            <param id="1" name="Y">floor(Mouse.Y/tileMapSize)*tileMapSize + tileMapSize * Self.offsetY</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="397164543357463">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="571553381157666" type="radialSeg">
+                                    <param id="0" name="Instance variable">center</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-4" name="Set position to another object" sid="851948212157502" type="radialOverlay">
+                                    <param id="0" name="Object">radialSeg</param>
+                                    <param id="1" name="Image point (optional)">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="336411783200170">
+            <conditions>
+                <condition id="0" name="On function" sid="186375351733117" type="f">
+                    <param id="0" name="Name">&quot;radialClose&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="508252321614431">
+                    <conditions />
+                    <actions>
+                        <action id="-15" name="Set visible" sid="137417168582417" type="radialSeg">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="954162588191720" type="radialOverlay">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="563162355781601" type="System">
+                            <param id="0" name="Variable">radialOpen</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>

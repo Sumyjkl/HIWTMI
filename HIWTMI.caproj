@@ -389,6 +389,28 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="radialSeg" sid="202273243316070">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="function" sid="257890806487483" type="string" />
+                <instance-variable name="offsetX" sid="474890037471641" type="number" />
+                <instance-variable name="offsetY" sid="265796095789119" type="number" />
+                <instance-variable name="center" sid="380373799517205" type="boolean" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="i1" pingpong="0" repeatcount="1" repeatto="0" sid="529499927076536" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="radialOverlay" sid="153084992964542">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="177585351637409" speed="5">
+                    <frame duration="1" hotspotX="0.333333" hotspotY="0.333333" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="turret" plugin-id="Sprite" sid="705466075700669">
