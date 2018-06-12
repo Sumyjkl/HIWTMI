@@ -131,5 +131,25 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <comment>debug</comment>
+        <event-block sid="938624579921828">
+            <conditions>
+                <condition disabled="1" id="-6" name="Every X seconds" sid="768825353246468" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+                <condition behavior="Solid" id="0" name="Is enabled" sid="110499077620041" type="TileMap" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="500755344929939" type="Text">
+                    <param id="0" name="Text">&quot;tile &quot; &amp; TileArray.At(floor(Mouse.X / tileMapSize),floor(Mouse.Y / tileMapSize),0)</param>
+                </action>
+                <action id="1" name="Append text" sid="881761423407272" type="Text">
+                    <param id="0" name="Text">newline &amp; &quot;tile &quot; &amp; TileMap.TileAt(floor(Mouse.X / tileMapSize),floor(Mouse.Y / tileMapSize))</param>
+                </action>
+                <action id="1" name="Append text" sid="711788072736743" type="Text">
+                    <param id="0" name="Text">newline &amp; tileCracks.TileAt(floor(Mouse.X / tileMapSize),floor(Mouse.Y / tileMapSize))</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

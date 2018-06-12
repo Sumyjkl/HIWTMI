@@ -822,6 +822,140 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>ladder effect</comment>
+                <event-block sid="954980318776545">
+                    <conditions>
+                        <condition id="0" name="On function" sid="953783952329620" type="f">
+                            <param id="0" name="Name">&quot;player_ladder&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="956778059027868">
+                            <conditions />
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="328428111549544" type="player">
+                                    <param id="0" name="Instance variable">onLadder</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Platform" disabled="1" id="0" name="Set ignoring input" sid="839742663312247" type="player">
+                                    <param id="0" name="Input">1</param>
+                                </action>
+                                <action behavior="Platform" id="5" name="Set gravity" sid="159311041856972" type="player">
+                                    <param id="0" name="Gravity">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment></comment>
+                <event-block sid="281485243460775">
+                    <conditions>
+                        <condition id="0" name="On function" sid="977813270474368" type="f">
+                            <param id="0" name="Name">&quot;player_ladderEject&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="476096642026535">
+                            <conditions />
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="556687389624813" type="player">
+                                    <param id="0" name="Instance variable">onLadder</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Platform" disabled="1" id="0" name="Set ignoring input" sid="973795064862844" type="player">
+                                    <param id="0" name="Input">0</param>
+                                </action>
+                                <action behavior="Platform" id="5" name="Set gravity" sid="471135166959849" type="player">
+                                    <param id="0" name="Gravity">500</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="279372719356983">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="972774934158459" type="player">
+                            <param id="0" name="Instance variable">onLadder</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="128014273917237" type="player">
+                            <param id="0" name="Object">ladder</param>
+                        </condition>
+                        <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="971391435784073" type="player" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="751217645148084">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="510446846564787" type="f">
+                                    <param id="0" name="Name">&quot;player_ladder&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="629284822706253">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="117760480835384" type="System" />
+                        <condition id="-8" name="Is boolean instance variable set" sid="908620414227897" type="player">
+                            <param id="0" name="Instance variable">onLadder</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="564134294635780" type="f">
+                            <param id="0" name="Name">&quot;player_ladderEject&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="867536617077928">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="325676175335418" type="player">
+                            <param id="0" name="Instance variable">onLadder</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="231454981757260">
+                            <conditions>
+                                <condition id="2" name="Key is down" sid="126019506928402" type="Keyboard">
+                                    <param id="0" name="Key">87</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="983357478318979" type="player">
+                                    <param id="0" name="Vector Y">-50</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="704552857978600">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="550287005568822" type="System" />
+                                <condition id="2" name="Key is down" sid="222923059375078" type="Keyboard">
+                                    <param id="0" name="Key">83</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="939873607230139" type="player">
+                                    <param id="0" name="Vector Y">50</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="344090001086745">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="189928733378066" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="684582994928286" type="player">
+                                    <param id="0" name="Vector Y">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
     </events>

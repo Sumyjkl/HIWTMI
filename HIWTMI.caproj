@@ -396,9 +396,19 @@
                 <instance-variable name="offsetX" sid="474890037471641" type="number" />
                 <instance-variable name="offsetY" sid="265796095789119" type="number" />
                 <instance-variable name="center" sid="380373799517205" type="boolean" />
+                <instance-variable name="anim" sid="488015487726242" type="string" />
             </instance-variables>
             <animation-folder>
-                <animation framecount="1" loop="0" name="i1" pingpong="0" repeatcount="1" repeatto="0" sid="529499927076536" speed="5">
+                <animation framecount="1" loop="0" name="off1" pingpong="0" repeatcount="1" repeatto="0" sid="529499927076536" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="on1" pingpong="0" repeatcount="1" repeatto="0" sid="285703586660612" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="off2" pingpong="0" repeatcount="1" repeatto="0" sid="591545097560183" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+                <animation framecount="1" loop="0" name="on2" pingpong="0" repeatcount="1" repeatto="0" sid="484901265601861" speed="5">
                     <frame duration="1" hotspotX="0" hotspotY="0" />
                 </animation>
             </animation-folder>

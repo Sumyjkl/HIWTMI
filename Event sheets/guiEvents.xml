@@ -179,5 +179,64 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-group description="" sid="875219402539574" title="tempRad">
+            <sub-events>
+                <event-block sid="552637850748815">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="403505630505912" type="Mouse">
+                            <param id="0" name="Object">radialSeg</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="629199195334617" type="radialSeg">
+                            <param id="0" name="Animation">&quot;on&quot;&amp;Self.anim</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="518971384198744" type="f">
+                            <param id="0" name="Name">&quot;radialHighlightReset&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="4" name="Set animation" sid="979386848832710" type="radialSeg">
+                            <param id="0" name="Animation">&quot;on&quot;&amp;Self.anim</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="564848273254269">
+                    <conditions>
+                        <condition id="7" inverted="1" name="Cursor is over object" sid="371378498214054" type="Mouse">
+                            <param id="0" name="Object">radialSeg</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="543201041592179" type="radialSeg">
+                            <param id="0" name="Animation">&quot;off&quot;&amp;Self.anim</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="519759619871715" type="radialSeg">
+                            <param id="0" name="Animation">&quot;off&quot;&amp;Self.anim</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="567825166700799">
+                    <conditions>
+                        <condition id="0" name="On function" sid="670986514219646" type="f">
+                            <param id="0" name="Name">&quot;radialHighlightReset&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="890491384493663">
+                            <conditions />
+                            <actions>
+                                <action id="4" name="Set animation" sid="218504609832891" type="radialSeg">
+                                    <param id="0" name="Animation">&quot;off&quot;&amp;Self.anim</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

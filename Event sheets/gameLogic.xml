@@ -10,412 +10,247 @@
         <include>projectileEvents</include>
         <include>inventoryEvents</include>
         <variable constant="0" name="ladder_offsetX" sid="951898758445304" static="0" type="number">4</variable>
-        <event-block sid="817455153067537">
-            <conditions>
-                <condition id="0" name="On function" sid="226941830366939" type="f">
-                    <param id="0" name="Name">&quot;ladder_create&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
+        <event-group description="" sid="792767968556085" title="ladder">
             <sub-events>
-                <event-block sid="686194583953082">
-                    <conditions />
-                    <actions>
-                        <action id="-3" name="Create object" sid="207325102406844" type="System">
-                            <param id="0" name="Object to create">ladder</param>
-                            <param id="1" name="Layer">&quot;tiles&quot;</param>
-                            <param id="2" name="X">f.Param(0) * tileMapSize + ladder_offsetX</param>
-                            <param id="3" name="Y">f.Param(1) * tileMapSize</param>
-                        </action>
-                        <action id="-1" name="Set X" sid="734481971214577" type="ladderPlatform">
-                            <param id="0" name="X">Self.X - ladder_offsetX</param>
-                        </action>
-                        <action id="4" name="Set at XYZ" sid="797139181368912" type="TileArray">
-                            <param id="0" name="X">f.Param(0)</param>
-                            <param id="1" name="Y">f.Param(1)</param>
-                            <param id="2" name="Z">0</param>
-                            <param id="3" name="Value">501</param>
-                        </action>
-                    </actions>
+                <event-block sid="817455153067537">
+                    <conditions>
+                        <condition id="0" name="On function" sid="226941830366939" type="f">
+                            <param id="0" name="Name">&quot;ladder_create&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
                     <sub-events>
-                        <variable constant="0" name="var" sid="897044752421152" static="0" type="number">0</variable>
-                        <event-block sid="111872760935872">
-                            <conditions>
-                                <condition id="-10" name="For" sid="215723581184849" type="System">
-                                    <param id="0" name="Name">&quot;&quot;</param>
-                                    <param id="1" name="Start index">1</param>
-                                    <param id="2" name="End index">5</param>
-                                </condition>
-                            </conditions>
-                            <actions />
+                        <event-block sid="686194583953082">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Create object" sid="207325102406844" type="System">
+                                    <param id="0" name="Object to create">ladder</param>
+                                    <param id="1" name="Layer">&quot;tiles&quot;</param>
+                                    <param id="2" name="X">f.Param(0) * tileMapSize + ladder_offsetX</param>
+                                    <param id="3" name="Y">f.Param(1) * tileMapSize</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="734481971214577" type="ladderPlatform">
+                                    <param id="0" name="X">Self.X - ladder_offsetX</param>
+                                </action>
+                                <action id="4" name="Set at XYZ" sid="797139181368912" type="TileArray">
+                                    <param id="0" name="X">f.Param(0)</param>
+                                    <param id="1" name="Y">f.Param(1)</param>
+                                    <param id="2" name="Z">0</param>
+                                    <param id="3" name="Value">501</param>
+                                </action>
+                            </actions>
                             <sub-events>
-                                <event-block sid="465073469984598">
+                                <variable constant="0" name="var" sid="897044752421152" static="0" type="number">0</variable>
+                                <event-block sid="111872760935872">
                                     <conditions>
-                                        <condition id="2" name="Compare at XYZ" sid="845569301262973" type="TileArray">
-                                            <param id="0" name="X">f.Param(0)</param>
-                                            <param id="1" name="Y">f.Param(1)+loopindex</param>
-                                            <param id="2" name="Z">0</param>
-                                            <param id="3" name="Comparison">0</param>
-                                            <param id="4" name="Value">0</param>
-                                        </condition>
-                                        <condition disabled="1" id="-8" name="Compare two values" sid="156047643121655" type="System">
-                                            <param id="0" name="First value">f.Call(&quot;ladder_exists&quot;, f.Param(0), f.Param(1) + loopindex, ladder.UID)</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Second value">1</param>
-                                        </condition>
-                                        <condition id="-14" name="Compare variable" sid="855715226161055" type="System">
-                                            <param id="0" name="Variable">var</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">0</param>
+                                        <condition id="-10" name="For" sid="215723581184849" type="System">
+                                            <param id="0" name="Name">&quot;&quot;</param>
+                                            <param id="1" name="Start index">1</param>
+                                            <param id="2" name="End index">5</param>
                                         </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="4" name="Set at XYZ" sid="375566903629520" type="TileArray">
-                                            <param id="0" name="X">f.Param(0)</param>
-                                            <param id="1" name="Y">f.Param(1) + loopindex</param>
-                                            <param id="2" name="Z">0</param>
-                                            <param id="3" name="Value">501</param>
-                                        </action>
-                                        <action id="-6" name="Set height" sid="944584251956851" type="ladder">
-                                            <param id="0" name="Height">tileMapSize + loopindex * tileMapSize</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="467593871906758">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="999716505791964" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="169452173835597" type="System">
-                                            <param id="0" name="Variable">var</param>
-                                            <param id="1" name="Value">1</param>
-                                        </action>
-                                        <action disabled="1" id="-6" name="Set height" sid="768245731038338" type="ladder">
-                                            <param id="0" name="Height">Self.Height - 2</param>
-                                        </action>
-                                        <action id="0" name="Set text" sid="456359657121574" type="Text">
-                                            <param id="0" name="Text">loopindex</param>
-                                        </action>
-                                        <action disabled="1" id="4" name="Set at XYZ" sid="556471849847503" type="TileArray">
-                                            <param id="0" name="X">f.Param(0)</param>
-                                            <param id="1" name="Y">f.Param(1) + loopindex</param>
-                                            <param id="2" name="Z">0</param>
-                                            <param id="3" name="Value">0</param>
-                                        </action>
-                                        <action id="0" name="Call function" sid="198363631696023" type="f">
-                                            <param id="0" name="Name">&quot;tiles_updateAll&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
-                                        <action id="-24" name="Stop loop" sid="382548526678334" type="System" />
-                                    </actions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="465073469984598">
+                                            <conditions>
+                                                <condition id="2" name="Compare at XYZ" sid="845569301262973" type="TileArray">
+                                                    <param id="0" name="X">f.Param(0)</param>
+                                                    <param id="1" name="Y">f.Param(1)+loopindex</param>
+                                                    <param id="2" name="Z">0</param>
+                                                    <param id="3" name="Comparison">0</param>
+                                                    <param id="4" name="Value">0</param>
+                                                </condition>
+                                                <condition disabled="1" id="-8" name="Compare two values" sid="156047643121655" type="System">
+                                                    <param id="0" name="First value">f.Call(&quot;ladder_exists&quot;, f.Param(0), f.Param(1) + loopindex, ladder.UID)</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">1</param>
+                                                </condition>
+                                                <condition id="-14" name="Compare variable" sid="855715226161055" type="System">
+                                                    <param id="0" name="Variable">var</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set at XYZ" sid="375566903629520" type="TileArray">
+                                                    <param id="0" name="X">f.Param(0)</param>
+                                                    <param id="1" name="Y">f.Param(1) + loopindex</param>
+                                                    <param id="2" name="Z">0</param>
+                                                    <param id="3" name="Value">501</param>
+                                                </action>
+                                                <action id="-6" name="Set height" sid="944584251956851" type="ladder">
+                                                    <param id="0" name="Height">tileMapSize + loopindex * tileMapSize</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="467593871906758">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="999716505791964" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="169452173835597" type="System">
+                                                    <param id="0" name="Variable">var</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                                <action disabled="1" id="-6" name="Set height" sid="768245731038338" type="ladder">
+                                                    <param id="0" name="Height">Self.Height - 2</param>
+                                                </action>
+                                                <action id="0" name="Set text" sid="456359657121574" type="Text">
+                                                    <param id="0" name="Text">loopindex</param>
+                                                </action>
+                                                <action disabled="1" id="4" name="Set at XYZ" sid="556471849847503" type="TileArray">
+                                                    <param id="0" name="X">f.Param(0)</param>
+                                                    <param id="1" name="Y">f.Param(1) + loopindex</param>
+                                                    <param id="2" name="Z">0</param>
+                                                    <param id="3" name="Value">0</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="198363631696023" type="f">
+                                                    <param id="0" name="Name">&quot;tiles_updateAll&quot;</param>
+                                                    <param id="1" name="Parameter {n}"></param>
+                                                </action>
+                                                <action id="-24" name="Stop loop" sid="382548526678334" type="System" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
-            </sub-events>
-        </event-block>
-        <comment></comment>
-        <event-block sid="146800478553879">
-            <conditions>
-                <condition id="0" name="On function" sid="617218853546458" type="f">
-                    <param id="0" name="Name">&quot;ladder_canPlace&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="590460484344539">
+                <comment></comment>
+                <event-block sid="146800478553879">
                     <conditions>
-                        <condition id="-8" name="Compare two values" sid="597626726770057" type="System">
-                            <param id="0" name="First value">inventoryID</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Second value">4</param>
-                        </condition>
-                        <condition id="2" name="Compare at XYZ" sid="581662231261986" type="TileArray">
-                            <param id="0" name="X">f.Param(0)</param>
-                            <param id="1" name="Y">f.Param(1)</param>
-                            <param id="2" name="Z">0</param>
-                            <param id="3" name="Comparison">0</param>
-                            <param id="4" name="Value">0</param>
+                        <condition id="0" name="On function" sid="617218853546458" type="f">
+                            <param id="0" name="Name">&quot;ladder_canPlace&quot;</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="1" name="Set return value" sid="628291459096870" type="f">
-                            <param id="0" name="Value">1</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="590460484344539">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="597626726770057" type="System">
+                                    <param id="0" name="First value">inventoryID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">4</param>
+                                </condition>
+                                <condition id="2" name="Compare at XYZ" sid="581662231261986" type="TileArray">
+                                    <param id="0" name="X">f.Param(0)</param>
+                                    <param id="1" name="Y">f.Param(1)</param>
+                                    <param id="2" name="Z">0</param>
+                                    <param id="3" name="Comparison">0</param>
+                                    <param id="4" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="628291459096870" type="f">
+                                    <param id="0" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
-            </sub-events>
-        </event-block>
-        <comment>probably defunct</comment>
-        <event-block sid="163702627843294">
-            <conditions>
-                <condition id="0" name="On function" sid="454071531735655" type="f">
-                    <param id="0" name="Name">&quot;ladder_exists&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="166481894562666">
+                <comment>probably defunct</comment>
+                <event-block sid="163702627843294">
                     <conditions>
-                        <condition id="-1" name="Compare X" sid="539371050685130" type="ladder">
-                            <param id="0" name="Comparison">0</param>
-                            <param id="1" name="X co-ordinate">f.Param(0) * tileMapSize + ladder_offsetX</param>
-                        </condition>
-                        <condition id="-2" name="Compare Y" sid="820812108377721" type="ladder">
-                            <param id="0" name="Comparison">0</param>
-                            <param id="1" name="Y co-ordinate">f.Param(1) * tileMapSize</param>
+                        <condition id="0" name="On function" sid="454071531735655" type="f">
+                            <param id="0" name="Name">&quot;ladder_exists&quot;</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="1" name="Set return value" sid="287057819784256" type="f">
-                            <param id="0" name="Value">0</param>
-                        </action>
-                        <action disabled="1" id="-9" name="Destroy" sid="767049418733783" type="ladder" />
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="166481894562666">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="539371050685130" type="ladder">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="X co-ordinate">f.Param(0) * tileMapSize + ladder_offsetX</param>
+                                </condition>
+                                <condition id="-2" name="Compare Y" sid="820812108377721" type="ladder">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Y co-ordinate">f.Param(1) * tileMapSize</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="287057819784256" type="f">
+                                    <param id="0" name="Value">0</param>
+                                </action>
+                                <action disabled="1" id="-9" name="Destroy" sid="767049418733783" type="ladder" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="372411130153040">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="909251680107319" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="590128701924868" type="f">
+                                    <param id="0" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
-                <event-block sid="372411130153040">
+                <comment>place at mouse</comment>
+                <event-block sid="375308470193928">
                     <conditions>
-                        <condition id="-22" name="Else" sid="909251680107319" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="1" name="Set return value" sid="590128701924868" type="f">
-                            <param id="0" name="Value">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <comment>place at mouse</comment>
-        <event-block sid="375308470193928">
-            <conditions>
-                <condition id="0" name="On function" sid="645932168813133" type="f">
-                    <param id="0" name="Name">&quot;ladder_placeAtMouse&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="605280423293483">
-                    <conditions>
-                        <condition id="-8" name="Is boolean instance variable set" sid="152220345195817" type="radialSeg">
-                            <param id="0" name="Instance variable">center</param>
+                        <condition id="0" name="On function" sid="645932168813133" type="f">
+                            <param id="0" name="Name">&quot;ladder_placeAtRadial&quot;</param>
                         </condition>
-                        <condition id="-8" name="Compare two values" sid="153673727362138" type="System">
-                            <param id="0" name="First value">f.Call(&quot;ladder_canPlace&quot;, (radialSeg.X / tileMapSize), (radialSeg.Y / tileMapSize))</param>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="605280423293483">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="152220345195817" type="radialSeg">
+                                    <param id="0" name="Instance variable">center</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="153673727362138" type="System">
+                                    <param id="0" name="First value">f.Call(&quot;ladder_canPlace&quot;, (radialSeg.X / tileMapSize), (radialSeg.Y / tileMapSize))</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="390528563254169" type="f">
+                                    <param id="0" name="Name">&quot;ladder_create&quot;</param>
+                                    <param id="1" name="Parameter {n}">floor(radialSeg.X / tileMapSize){###}floor(radialSeg.Y / tileMapSize)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="689591662174736" type="f">
+                                    <param id="0" name="Name">&quot;inv_use&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>place with L key</comment>
+                <event-block sid="240029840251336">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="683493382626784" type="Keyboard">
+                            <param id="0" name="Key">76</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="525926796471318" type="System">
+                            <param id="0" name="First value">f.Call(&quot;ladder_canPlace&quot;, floor(Mouse.X / tileMapSize), floor(Mouse.Y / tileMapSize))</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Second value">1</param>
                         </condition>
+                        <condition id="-14" name="Compare variable" sid="701069143281010" type="System">
+                            <param id="0" name="Variable">player_cursorMode</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Call function" sid="390528563254169" type="f">
+                        <action id="0" name="Call function" sid="550154908882262" type="f">
                             <param id="0" name="Name">&quot;ladder_create&quot;</param>
-                            <param id="1" name="Parameter {n}">floor(radialSeg.X / tileMapSize){###}floor(radialSeg.Y / tileMapSize)</param>
+                            <param id="1" name="Parameter {n}">floor(Mouse.X / tileMapSize){###}floor(Mouse.Y / tileMapSize)</param>
                         </action>
-                        <action id="0" name="Call function" sid="689591662174736" type="f">
+                        <action id="0" name="Call function" sid="951654929705891" type="f">
                             <param id="0" name="Name">&quot;inv_use&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>
             </sub-events>
-        </event-block>
-        <comment>place with L key</comment>
-        <event-block sid="240029840251336">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="683493382626784" type="Keyboard">
-                    <param id="0" name="Key">76</param>
-                </condition>
-                <condition disabled="1" id="-8" name="Compare two values" sid="985321965390449" type="System">
-                    <param id="0" name="First value">inventoryID</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Second value">4</param>
-                </condition>
-                <condition disabled="1" id="2" name="Compare at XYZ" sid="634201490399158" type="TileArray">
-                    <param id="0" name="X">floor(Mouse.X / tileMapSize)</param>
-                    <param id="1" name="Y">floor(Mouse.Y / tileMapSize)</param>
-                    <param id="2" name="Z">0</param>
-                    <param id="3" name="Comparison">0</param>
-                    <param id="4" name="Value">0</param>
-                </condition>
-                <condition disabled="1" id="-14" name="Compare variable" sid="700308881537337" type="System">
-                    <param id="0" name="Variable">player_cursorMode</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">2</param>
-                </condition>
-                <condition id="-8" name="Compare two values" sid="525926796471318" type="System">
-                    <param id="0" name="First value">f.Call(&quot;ladder_canPlace&quot;, floor(Mouse.X / tileMapSize), floor(Mouse.Y / tileMapSize))</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Second value">1</param>
-                </condition>
-                <condition id="-14" name="Compare variable" sid="701069143281010" type="System">
-                    <param id="0" name="Variable">player_cursorMode</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">2</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Call function" sid="550154908882262" type="f">
-                    <param id="0" name="Name">&quot;ladder_create&quot;</param>
-                    <param id="1" name="Parameter {n}">floor(Mouse.X / tileMapSize){###}floor(Mouse.Y / tileMapSize)</param>
-                </action>
-                <action id="0" name="Call function" sid="951654929705891" type="f">
-                    <param id="0" name="Name">&quot;inv_use&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="327235897985911">
-            <conditions>
-                <condition id="1" name="Is overlapping another object" sid="107342517436815" type="player">
-                    <param id="0" name="Object">ladder</param>
-                </condition>
-                <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="275168203097258" type="player" />
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="370380797755351">
-                    <conditions>
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="346632760657660" type="player">
-                            <param id="0" name="Instance variable">onLadder</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="711933236206435" type="f">
-                            <param id="0" name="Name">&quot;player_ladder&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="111550953307213">
-            <conditions>
-                <condition id="-22" name="Else" sid="154613682034204" type="System" />
-                <condition id="-8" name="Is boolean instance variable set" sid="768402085781361" type="player">
-                    <param id="0" name="Instance variable">onLadder</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Call function" sid="576767168042536" type="f">
-                    <param id="0" name="Name">&quot;player_ladderEject&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="577355925732189">
-            <conditions>
-                <condition id="0" name="On function" sid="786611452104672" type="f">
-                    <param id="0" name="Name">&quot;player_ladder&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="967511584802383">
-                    <conditions />
-                    <actions>
-                        <action id="-13" name="Set boolean" sid="397951034992289" type="player">
-                            <param id="0" name="Instance variable">onLadder</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action behavior="Platform" disabled="1" id="0" name="Set ignoring input" sid="963270954147368" type="player">
-                            <param id="0" name="Input">1</param>
-                        </action>
-                        <action behavior="Platform" id="5" name="Set gravity" sid="253800383608761" type="player">
-                            <param id="0" name="Gravity">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="486979032394455">
-            <conditions>
-                <condition id="0" name="On function" sid="187736996746841" type="f">
-                    <param id="0" name="Name">&quot;player_ladderEject&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="939292296548539">
-                    <conditions />
-                    <actions>
-                        <action id="-13" name="Set boolean" sid="250018395787239" type="player">
-                            <param id="0" name="Instance variable">onLadder</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action behavior="Platform" disabled="1" id="0" name="Set ignoring input" sid="996570755307052" type="player">
-                            <param id="0" name="Input">0</param>
-                        </action>
-                        <action behavior="Platform" id="5" name="Set gravity" sid="892555524792302" type="player">
-                            <param id="0" name="Gravity">500</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="570441330892605">
-            <conditions>
-                <condition id="-8" name="Is boolean instance variable set" sid="410828970880313" type="player">
-                    <param id="0" name="Instance variable">onLadder</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="663319819334429">
-                    <conditions>
-                        <condition id="2" name="Key is down" sid="821685036101138" type="Keyboard">
-                            <param id="0" name="Key">87</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action behavior="Platform" id="9" name="Set vector Y" sid="651407436167608" type="player">
-                            <param id="0" name="Vector Y">-50</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="878349781852032">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="434417588431490" type="System" />
-                        <condition id="2" name="Key is down" sid="790597495288696" type="Keyboard">
-                            <param id="0" name="Key">83</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action behavior="Platform" id="9" name="Set vector Y" sid="142753482748748" type="player">
-                            <param id="0" name="Vector Y">50</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="297040713835296">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="130121517274409" type="System" />
-                    </conditions>
-                    <actions>
-                        <action behavior="Platform" id="9" name="Set vector Y" sid="613336267638724" type="player">
-                            <param id="0" name="Vector Y">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="887308974229754">
-            <conditions>
-                <condition disabled="1" id="-6" name="Every X seconds" sid="762490893279987" type="System">
-                    <param id="0" name="Interval (seconds)">1.0</param>
-                </condition>
-                <condition behavior="Solid" id="0" name="Is enabled" sid="586330766988119" type="TileMap" />
-            </conditions>
-            <actions>
-                <action id="0" name="Set text" sid="299046757028422" type="Text">
-                    <param id="0" name="Text">&quot;tile &quot; &amp; TileArray.At(floor(Mouse.X / tileMapSize),floor(Mouse.Y / tileMapSize),0)</param>
-                </action>
-                <action id="1" name="Append text" sid="334131247300499" type="Text">
-                    <param id="0" name="Text">newline &amp; &quot;tile &quot; &amp; TileMap.TileAt(floor(Mouse.X / tileMapSize),floor(Mouse.Y / tileMapSize))</param>
-                </action>
-                <action id="1" name="Append text" sid="812664724497541" type="Text">
-                    <param id="0" name="Text">newline &amp; tileCracks.TileAt(floor(Mouse.X / tileMapSize),floor(Mouse.Y / tileMapSize))</param>
-                </action>
-            </actions>
-        </event-block>
+        </event-group>
         <event-block sid="655597454013358">
             <conditions>
                 <condition id="0" name="On key pressed" sid="359642572317457" type="Keyboard">
@@ -482,5 +317,13 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-group description="" sid="107422202580552" title="door">
+            <sub-events>
+                <event-block sid="476152720000047">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
