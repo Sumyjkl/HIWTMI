@@ -762,6 +762,13 @@
                                     <param id="3" name="Comparison">2</param>
                                     <param id="4" name="Value">500</param>
                                 </condition>
+                                <condition id="2" name="Compare at XYZ" sid="313783408902270" type="TileArray">
+                                    <param id="0" name="X">floor(Mouse.X / tileMapSize)</param>
+                                    <param id="1" name="Y">floor(Mouse.Y / tileMapSize)</param>
+                                    <param id="2" name="Z">0</param>
+                                    <param id="3" name="Comparison">0</param>
+                                    <param id="4" name="Value">0</param>
+                                </condition>
                                 <condition id="-14" name="Compare variable" sid="842364119612634" type="System">
                                     <param id="0" name="Variable">inventoryID</param>
                                     <param id="1" name="Comparison">4</param>

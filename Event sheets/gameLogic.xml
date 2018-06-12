@@ -38,6 +38,7 @@
                         </action>
                     </actions>
                     <sub-events>
+                        <variable constant="0" name="var" sid="897044752421152" static="0" type="number">0</variable>
                         <event-block sid="111872760935872">
                             <conditions>
                                 <condition id="-10" name="For" sid="215723581184849" type="System">
@@ -62,16 +63,21 @@
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Second value">1</param>
                                         </condition>
+                                        <condition id="-14" name="Compare variable" sid="855715226161055" type="System">
+                                            <param id="0" name="Variable">var</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-6" name="Set height" sid="944584251956851" type="ladder">
-                                            <param id="0" name="Height">tileMapSize + loopindex * tileMapSize</param>
-                                        </action>
                                         <action id="4" name="Set at XYZ" sid="375566903629520" type="TileArray">
                                             <param id="0" name="X">f.Param(0)</param>
                                             <param id="1" name="Y">f.Param(1) + loopindex</param>
                                             <param id="2" name="Z">0</param>
                                             <param id="3" name="Value">501</param>
+                                        </action>
+                                        <action id="-6" name="Set height" sid="944584251956851" type="ladder">
+                                            <param id="0" name="Height">tileMapSize + loopindex * tileMapSize</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -80,10 +86,27 @@
                                         <condition id="-22" name="Else" sid="999716505791964" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-24" name="Stop loop" sid="382548526678334" type="System" />
-                                        <action disabled="1" id="-6" name="Set height" sid="768245731038338" type="ladder">
-                                            <param id="0" name="Height">Self.Height - 4</param>
+                                        <action id="-9" name="Set value" sid="169452173835597" type="System">
+                                            <param id="0" name="Variable">var</param>
+                                            <param id="1" name="Value">1</param>
                                         </action>
+                                        <action disabled="1" id="-6" name="Set height" sid="768245731038338" type="ladder">
+                                            <param id="0" name="Height">Self.Height - 2</param>
+                                        </action>
+                                        <action id="0" name="Set text" sid="456359657121574" type="Text">
+                                            <param id="0" name="Text">loopindex</param>
+                                        </action>
+                                        <action disabled="1" id="4" name="Set at XYZ" sid="556471849847503" type="TileArray">
+                                            <param id="0" name="X">f.Param(0)</param>
+                                            <param id="1" name="Y">f.Param(1) + loopindex</param>
+                                            <param id="2" name="Z">0</param>
+                                            <param id="3" name="Value">0</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="198363631696023" type="f">
+                                            <param id="0" name="Name">&quot;tiles_updateAll&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="-24" name="Stop loop" sid="382548526678334" type="System" />
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -178,7 +201,7 @@
                             <param id="0" name="Instance variable">center</param>
                         </condition>
                         <condition id="-8" name="Compare two values" sid="153673727362138" type="System">
-                            <param id="0" name="First value">f.Call(&quot;ladder_canPlace&quot;, floor(radialSeg.X / tileMapSize), floor(radialSeg.Y / tileMapSize))</param>
+                            <param id="0" name="First value">f.Call(&quot;ladder_canPlace&quot;, (radialSeg.X / tileMapSize), (radialSeg.Y / tileMapSize))</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Second value">1</param>
                         </condition>
@@ -373,6 +396,66 @@
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="887308974229754">
+            <conditions>
+                <condition disabled="1" id="-6" name="Every X seconds" sid="762490893279987" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+                <condition behavior="Solid" id="0" name="Is enabled" sid="586330766988119" type="TileMap" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="299046757028422" type="Text">
+                    <param id="0" name="Text">&quot;tile &quot; &amp; TileArray.At(floor(Mouse.X / tileMapSize),floor(Mouse.Y / tileMapSize),0)</param>
+                </action>
+                <action id="1" name="Append text" sid="334131247300499" type="Text">
+                    <param id="0" name="Text">newline &amp; &quot;tile &quot; &amp; TileMap.TileAt(floor(Mouse.X / tileMapSize),floor(Mouse.Y / tileMapSize))</param>
+                </action>
+                <action id="1" name="Append text" sid="812664724497541" type="Text">
+                    <param id="0" name="Text">newline &amp; tileCracks.TileAt(floor(Mouse.X / tileMapSize),floor(Mouse.Y / tileMapSize))</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="655597454013358">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="359642572317457" type="Keyboard">
+                    <param id="0" name="Key">85</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="759797681888677" type="f">
+                    <param id="0" name="Name">&quot;tiles_updateAll&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="826672097298658">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="562676765188048" type="Keyboard">
+                    <param id="0" name="Key">80</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="538350318494661" type="TileMap">
+                    <param id="0" name="Unique ID">15</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Solid" id="0" name="Set enabled" sid="230056421066924" type="TileMap">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="387645944291519">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="500571303859536" type="Keyboard">
+                    <param id="0" name="Key">89</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="214399372846485" type="f">
+                    <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
+                    <param id="1" name="Parameter {n}">floor(Mouse.X / tileMapSize){###}floor(Mouse.Y / tileMapSize){###}0</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
