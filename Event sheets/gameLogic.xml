@@ -132,8 +132,8 @@
                             <param id="2" name="Second value">4</param>
                         </condition>
                         <condition id="2" name="Compare at XYZ" sid="581662231261986" type="TileArray">
-                            <param id="0" name="X">floor(Mouse.X / tileMapSize)</param>
-                            <param id="1" name="Y">floor(Mouse.Y / tileMapSize)</param>
+                            <param id="0" name="X">f.Param(0)</param>
+                            <param id="1" name="Y">f.Param(1)</param>
                             <param id="2" name="Z">0</param>
                             <param id="3" name="Comparison">0</param>
                             <param id="4" name="Value">0</param>
