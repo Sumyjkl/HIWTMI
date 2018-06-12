@@ -166,7 +166,7 @@
                             <conditions>
                                 <condition id="2" name="Compare at XYZ" sid="821508540203928" type="TileArray">
                                     <param id="0" name="X">f.Param(0)</param>
-                                    <param id="1" name="Y">f.Param(1)+loopindex</param>
+                                    <param id="1" name="Y">f.Param(1)</param>
                                     <param id="2" name="Z">0</param>
                                     <param id="3" name="Comparison">2</param>
                                     <param id="4" name="Value">500</param>

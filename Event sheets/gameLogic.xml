@@ -457,5 +457,30 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="471314575263050">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="720328970432877" type="Keyboard">
+                    <param id="0" name="Key">84</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="330413199505682">
+                    <conditions />
+                    <actions>
+                        <action id="4" name="Set at XYZ" sid="309963377947415" type="TileArray">
+                            <param id="0" name="X">floor(Mouse.X / tileMapSize)</param>
+                            <param id="1" name="Y">floor(Mouse.Y / tileMapSize)</param>
+                            <param id="2" name="Z">0</param>
+                            <param id="3" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Erase tile" sid="462885811780214" type="TileMap">
+                            <param id="0" name="Tile X">floor(Mouse.X / tileMapSize)</param>
+                            <param id="1" name="Tile Y">floor(Mouse.Y / tileMapSize)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>
