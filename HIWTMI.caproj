@@ -424,7 +424,7 @@
         <object-type name="slime" sid="657577531530066">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="3" loop="1" name="idle" pingpong="1" repeatcount="1" repeatto="0" sid="201465717924639" speed="5">
+                <animation framecount="3" loop="0" name="idle" pingpong="1" repeatcount="1" repeatto="0" sid="201465717924639" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="1">
                         <collision-poly>
                             <point x="0.125" y="0.5" />
@@ -571,6 +571,20 @@
             <behaviors>
                 <behavior-type name="Jumpthru" sid="690603732642757">
                     <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+        </family>
+        <family name="slimeType" plugin-id="Sprite" sid="363963479292774">
+            <members>
+                <member>slime</member>
+            </members>
+            <instance-variables>
+                <instance-variable name="aiDirection" sid="306516760939745" type="number" />
+                <instance-variable name="aiTarget" sid="119551128018165" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Platform" sid="452767039978381">
+                    <behavior id="Platform" />
                 </behavior-type>
             </behaviors>
         </family>

@@ -447,11 +447,31 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <aiDirection>1</aiDirection>
+                        <aiTarget>0</aiTarget>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Platform">
+                            <properties>
+                                <max-speed>50</max-speed>
+                                <acceleration>1000</acceleration>
+                                <deceleration>1000</deceleration>
+                                <jump-strength>650</jump-strength>
+                                <gravity>200</gravity>
+                                <max-fall-speed>500</max-fall-speed>
+                                <double-jump>Disabled</double-jump>
+                                <jump-sustain>0</jump-sustain>
+                                <default-controls>Yes</default-controls>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>117</x>
-                        <y>117</y>
+                        <y>120</y>
                         <z>0</z>
                         <width>8</width>
                         <height>8</height>
