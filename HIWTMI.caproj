@@ -588,6 +588,16 @@
                 </behavior-type>
             </behaviors>
         </family>
+        <family name="turretBase" plugin-id="Sprite" sid="396217299369715">
+            <members>
+                <member>turretMountCannon</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Solid" sid="575543270423564">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+        </family>
     </families>
     <layout-folder>
         <layout>main.xml</layout>

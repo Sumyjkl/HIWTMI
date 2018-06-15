@@ -341,117 +341,6 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>moves a bullet forward until it hits something</comment>
-                <event-block sid="140670612535861">
-                    <conditions>
-                        <condition id="0" name="On function" sid="408987839094754" type="f">
-                            <param id="0" name="Name">&quot;shotCalc&quot;</param>
-                        </condition>
-                        <condition id="-14" name="Pick by unique ID" sid="517314929800259" type="playerBBshot">
-                            <param id="0" name="Unique ID">f.Param(0)</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action behavior="Bullet" id="0" name="Set speed" sid="525651271316513" type="playerBBshot">
-                            <param id="0" name="Speed">0</param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block sid="571125296951675">
-                            <conditions>
-                                <condition id="-10" name="For" sid="826845833959532" type="System">
-                                    <param id="0" name="Name">&quot;&quot;</param>
-                                    <param id="1" name="Start index">1</param>
-                                    <param id="2" name="End index">100</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="866791802459504">
-                                    <conditions>
-                                        <condition id="1" inverted="1" name="Is overlapping another object" sid="790150569484416" type="playerBBshot">
-                                            <param id="0" name="Object">TileMap</param>
-                                        </condition>
-                                        <condition disabled="1" id="1" inverted="1" name="Is overlapping another object" sid="946078904849596" type="playerBBshot">
-                                            <param id="0" name="Object">player</param>
-                                        </condition>
-                                        <condition id="1" inverted="1" name="Is overlapping another object" sid="610508276607548" type="playerBBshot">
-                                            <param id="0" name="Object">door</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-17" name="Move forward" sid="396820896745044" type="playerBBshot">
-                                            <param id="0" name="Distance">4</param>
-                                        </action>
-                                    </actions>
-                                    <sub-events>
-                                        <event-block sid="173204658174782">
-                                            <conditions>
-                                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="842597627707907" type="playerBBshot">
-                                                    <param id="0" name="Instance variable">armed</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="-13" name="Set boolean" sid="712572535625556" type="playerBBshot">
-                                                    <param id="0" name="Instance variable">armed</param>
-                                                    <param id="1" name="Value">1</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                                <event-block sid="196143666485000">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="641829053438134" type="System" />
-                                        <condition id="-8" name="Is boolean instance variable set" sid="516855629976692" type="playerBBshot">
-                                            <param id="0" name="Instance variable">armed</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Spawn another object" sid="451657237339329" type="playerBBshot">
-                                            <param id="0" name="Object">Particles2</param>
-                                            <param id="1" name="Layer">&quot;player&quot;</param>
-                                            <param id="2" name="Image point">0</param>
-                                        </action>
-                                        <action disabled="1" id="-9" name="Destroy" sid="230186810296534" type="playerBBshot" />
-                                        <action id="-13" name="Set boolean" sid="769679772893893" type="playerBBshot">
-                                            <param id="0" name="Instance variable">armed</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="4" name="Set speed" sid="350618552344910" type="Particles2">
-                                            <param id="0" name="Speed">0</param>
-                                        </action>
-                                        <action id="10" name="Set speed randomiser" sid="240805186725329" type="Particles2">
-                                            <param id="0" name="Speed randomiser">8</param>
-                                        </action>
-                                        <action id="1" name="Set rate" sid="641686411838109" type="Particles2">
-                                            <param id="0" name="Rate">5</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="552097861487648" type="System">
-                                            <param id="0" name="Seconds">loopindex / 1000</param>
-                                        </action>
-                                        <action id="7" name="Play (by name)" sid="973189135149712" type="Audio">
-                                            <param id="0" name="Folder">0</param>
-                                            <param id="1" name="Audio file name">&quot;tinyClick&quot;</param>
-                                            <param id="3" name="Loop">0</param>
-                                            <param id="4" name="Volume">0</param>
-                                            <param id="2" name="Tag (optional)">&quot;sfx&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="962434160398739">
-                            <conditions />
-                            <actions>
-                                <action disabled="1" id="-16" name="Wait" sid="830016634881733" type="System">
-                                    <param id="0" name="Seconds">0.1</param>
-                                </action>
-                                <action id="-9" name="Destroy" sid="821860158421250" type="playerBBshot" />
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
             </sub-events>
         </event-group>
         <variable comment="Mining time multiplier" constant="0" name="player_mineCoefficient" sid="477959342373194" static="0" type="number">0.5</variable>
@@ -876,9 +765,6 @@
                 </event-block>
                 <event-block sid="279372719356983">
                     <conditions>
-                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="972774934158459" type="player">
-                            <param id="0" name="Instance variable">onLadder</param>
-                        </condition>
                         <condition id="1" name="Is overlapping another object" sid="128014273917237" type="player">
                             <param id="0" name="Object">ladder</param>
                         </condition>
@@ -887,7 +773,11 @@
                     <actions />
                     <sub-events>
                         <event-block sid="751217645148084">
-                            <conditions />
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="972774934158459" type="player">
+                                    <param id="0" name="Instance variable">onLadder</param>
+                                </condition>
+                            </conditions>
                             <actions>
                                 <action id="0" name="Call function" sid="510446846564787" type="f">
                                     <param id="0" name="Name">&quot;player_ladder&quot;</param>

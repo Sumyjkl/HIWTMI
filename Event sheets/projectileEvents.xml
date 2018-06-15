@@ -60,9 +60,6 @@
                         <condition id="1" name="Is overlapping another object" sid="295702245517889" type="projectile">
                             <param id="0" name="Object">TileMap</param>
                         </condition>
-                        <condition id="1" name="Is overlapping another object" sid="219268164211329" type="projectile">
-                            <param id="0" name="Object">door</param>
-                        </condition>
                     </conditions>
                     <actions />
                     <sub-events>
@@ -79,6 +76,79 @@
                                 <action id="0" name="Call function" sid="487769278045254" type="f">
                                     <param id="0" name="Name">&quot;projectileStop&quot;</param>
                                     <param id="1" name="Parameter {n}">projectile.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="119774586711816">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="421314696872096" type="projectile">
+                            <param id="0" name="Instance variable">armed</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="703217062152644" type="projectile">
+                            <param id="0" name="Object">door</param>
+                        </condition>
+                        <condition behavior="Solid" id="0" name="Is enabled" sid="696091250463994" type="door" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="950547422489587" type="f">
+                            <param id="0" name="Name">&quot;projectileStop&quot;</param>
+                            <param id="1" name="Parameter {n}">projectile.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="800431260408129">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="377543522424395" type="projectile">
+                            <param id="0" name="Instance variable">armed</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="207043840255330" type="projectile">
+                            <param id="0" name="Object">slime</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="520151293629607" type="f">
+                            <param id="0" name="Name">&quot;projectileStop&quot;</param>
+                            <param id="1" name="Parameter {n}">projectile.UID</param>
+                        </action>
+                        <action disabled="1" id="-9" name="Destroy" sid="265139066204448" type="slime" />
+                    </actions>
+                </event-block>
+                <comment>hit slimes</comment>
+                <event-block sid="686224593182236">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="413207179238895" type="projectile">
+                            <param id="0" name="Object">slime</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="196245839318165">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="937000314120748" type="slime">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">projectile.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="925370324553495" type="f">
+                                    <param id="0" name="Name">&quot;slime_knockback&quot;</param>
+                                    <param id="1" name="Parameter {n}">slime.UID{###}1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="542399318758992">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="403815523026977" type="slime">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">projectile.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="862436317181215" type="f">
+                                    <param id="0" name="Name">&quot;slime_knockback&quot;</param>
+                                    <param id="1" name="Parameter {n}">slime.UID{###}-1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -130,5 +200,196 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <comment>moves a bullet forward until it hits something</comment>
+        <event-block sid="803695277388154">
+            <conditions>
+                <condition id="0" name="On function" sid="102718851582759" type="f">
+                    <param id="0" name="Name">&quot;shotCalc&quot;</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="941677017239911" type="playerBBshot">
+                    <param id="0" name="Unique ID">f.Param(0)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="0" name="Set speed" sid="807617034847768" type="playerBBshot">
+                    <param id="0" name="Speed">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="770647297298351">
+                    <conditions>
+                        <condition id="-10" name="For" sid="467265495006557" type="System">
+                            <param id="0" name="Name">&quot;&quot;</param>
+                            <param id="1" name="Start index">1</param>
+                            <param id="2" name="End index">100</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="600186894109953">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="978316192382622" type="System">
+                                    <param id="0" name="First value">f.Call(&quot;shotCalcDetect&quot;, f.Param(0))</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-17" name="Move forward" sid="419356794070876" type="playerBBshot">
+                                    <param id="0" name="Distance">4</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="196617218595958">
+                                    <conditions>
+                                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="120613808149658" type="playerBBshot">
+                                            <param id="0" name="Instance variable">armed</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-13" name="Set boolean" sid="176883520356216" type="playerBBshot">
+                                            <param id="0" name="Instance variable">armed</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="423017578718142">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="499331174532049" type="System" />
+                                <condition id="-8" name="Is boolean instance variable set" sid="521318977150702" type="playerBBshot">
+                                    <param id="0" name="Instance variable">armed</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="188972651768832" type="playerBBshot">
+                                    <param id="0" name="Object">Particles2</param>
+                                    <param id="1" name="Layer">&quot;player&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action disabled="1" id="-9" name="Destroy" sid="325410561112760" type="playerBBshot" />
+                                <action id="-13" name="Set boolean" sid="355344351483188" type="playerBBshot">
+                                    <param id="0" name="Instance variable">armed</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="4" name="Set speed" sid="673845121955053" type="Particles2">
+                                    <param id="0" name="Speed">0</param>
+                                </action>
+                                <action id="10" name="Set speed randomiser" sid="529800129079411" type="Particles2">
+                                    <param id="0" name="Speed randomiser">8</param>
+                                </action>
+                                <action id="1" name="Set rate" sid="877991990904216" type="Particles2">
+                                    <param id="0" name="Rate">5</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="723418542405023" type="System">
+                                    <param id="0" name="Seconds">loopindex / 1000</param>
+                                </action>
+                                <action id="7" name="Play (by name)" sid="842927322044403" type="Audio">
+                                    <param id="0" name="Folder">0</param>
+                                    <param id="1" name="Audio file name">&quot;tinyClick&quot;</param>
+                                    <param id="3" name="Loop">0</param>
+                                    <param id="4" name="Volume">0</param>
+                                    <param id="2" name="Tag (optional)">&quot;sfx&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="310070364406885">
+                    <conditions />
+                    <actions>
+                        <action disabled="1" id="-16" name="Wait" sid="609843926979242" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="789796173112757" type="playerBBshot" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="160694742424628">
+            <conditions>
+                <condition id="0" name="On function" sid="884603006372780" type="f">
+                    <param id="0" name="Name">&quot;shotCalcDetect&quot;</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="132193025441271" type="playerBBshot">
+                    <param id="0" name="Unique ID">f.Param(0)</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="593087086211540">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="480703470262268" type="playerBBshot">
+                            <param id="0" name="Object">TileMap</param>
+                        </condition>
+                        <condition disabled="1" id="1" name="Is overlapping another object" sid="399298697069510" type="playerBBshot">
+                            <param id="0" name="Object">player</param>
+                        </condition>
+                        <condition behavior="Solid" id="0" name="Is enabled" sid="387597006548848" type="TileMap" />
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="514250174178625" type="f">
+                            <param id="0" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="746569237382586">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="267626430392918" type="playerBBshot">
+                            <param id="0" name="Object">door</param>
+                        </condition>
+                        <condition behavior="Solid" id="0" name="Is enabled" sid="179416385535299" type="door" />
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="722114532745670" type="f">
+                            <param id="0" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="293198908604376">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="883761531663743" type="playerBBshot">
+                            <param id="0" name="Object">slime</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="822033397189503" type="f">
+                            <param id="0" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="311205369008340">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="829923291222363" type="slime">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">player.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="530718158630987" type="f">
+                                    <param id="0" name="Name">&quot;slime_knockback&quot;</param>
+                                    <param id="1" name="Parameter {n}">slime.UID{###}1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="113133053027584">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="181896351579953" type="slime">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">player.X</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="262135940117838" type="f">
+                                    <param id="0" name="Name">&quot;slime_knockback&quot;</param>
+                                    <param id="1" name="Parameter {n}">slime.UID{###}-1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>

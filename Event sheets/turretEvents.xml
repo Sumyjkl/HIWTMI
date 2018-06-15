@@ -6,6 +6,7 @@
         <comment># turretEvents&#x0D;&#x0A;# turret_&#x0D;&#x0A;# Makes turrets work&#x0D;&#x0A;</comment>
         <comment>needs to be functionalised (it&apos;s just a proof of concept at the moment)</comment>
         <comment>Turrets might end up being completely different so take that into account.&#x0D;&#x0A;I&apos;m thinking maybe making them mounted on the sides of blocks, that way we won&apos;t have the &quot;stuck in adjacent blocks&quot; issue</comment>
+        <comment>turrets value 601-699</comment>
         <event-group description="" sid="113344706146814" title="turretGlobal">
             <sub-events>
                 <comment>this will constantly try to fire when a target is in line of fire</comment>
@@ -125,6 +126,101 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="947857604971287">
+                    <conditions>
+                        <condition id="0" name="On function" sid="586423288923460" type="f">
+                            <param id="0" name="Name">&quot;turret_create&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="593479130611869">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Create object" sid="539332833542305" type="System">
+                                    <param id="0" name="Object to create">turretMountCannon</param>
+                                    <param id="1" name="Layer">&quot;tiles&quot;</param>
+                                    <param id="2" name="X">f.Param(0) * tileMapSize</param>
+                                    <param id="3" name="Y">f.Param(1) * tileMapSize</param>
+                                </action>
+                                <action id="4" name="Set at XYZ" sid="894493086132852" type="TileArray">
+                                    <param id="0" name="X">f.Param(0)</param>
+                                    <param id="1" name="Y">f.Param(1)</param>
+                                    <param id="2" name="Z">0</param>
+                                    <param id="3" name="Value">601</param>
+                                </action>
+                                <action id="0" name="Call function" sid="434205427623676" type="f">
+                                    <param id="0" name="Name">&quot;turret_init&quot;</param>
+                                    <param id="1" name="Parameter {n}">turretMountCannon.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="873127644761392">
+                    <conditions>
+                        <condition id="0" name="On function" sid="546014297950699" type="f">
+                            <param id="0" name="Name">&quot;turret_canPlace&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>has mats and is empty tile</comment>
+                        <event-block sid="623629793544656">
+                            <conditions>
+                                <condition id="2" name="Compare at XYZ" sid="321566874919192" type="TileArray">
+                                    <param id="0" name="X">f.Param(0)</param>
+                                    <param id="1" name="Y">f.Param(1)</param>
+                                    <param id="2" name="Z">0</param>
+                                    <param id="3" name="Comparison">0</param>
+                                    <param id="4" name="Value">0</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="853120938083370" type="System">
+                                    <param id="0" name="Variable">inventoryID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="500303914901379" type="f">
+                                    <param id="0" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="346943218138751">
+                    <conditions>
+                        <condition id="0" name="On function" sid="427862407941214" type="f">
+                            <param id="0" name="Name">&quot;turret_placeAtRadial&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="623020315013942">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="980782178555256" type="radialSeg">
+                                    <param id="0" name="Instance variable">center</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="443964715702382" type="System">
+                                    <param id="0" name="First value">f.Call(&quot;turret_canPlace&quot;, (radialSeg.X / tileMapSize), (radialSeg.Y / tileMapSize))</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="367447243443382" type="f">
+                                    <param id="0" name="Name">&quot;turret_create&quot;</param>
+                                    <param id="1" name="Parameter {n}">floor(radialSeg.X / tileMapSize){###}floor(radialSeg.Y / tileMapSize)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="258215691185513" type="f">
+                                    <param id="0" name="Name">&quot;inv_use&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="482800593899971" title="turretSpecific">
@@ -184,6 +280,32 @@
                                 <action id="0" name="Call function" sid="400168577942696" type="f">
                                     <param id="0" name="Name">&quot;turretReload&quot;</param>
                                     <param id="1" name="Parameter {n}">turretHeadCannon.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment></comment>
+                <event-block sid="753598089473582">
+                    <conditions>
+                        <condition id="0" name="On function" sid="163458279234818" type="f">
+                            <param id="0" name="Name">&quot;turret_init&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="260301422192809" type="turretMountCannon">
+                            <param id="0" name="Unique ID">f.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="194940462631855">
+                            <conditions />
+                            <actions>
+                                <action id="-3" name="Set position" sid="628433022004992" type="turretHeadCannon">
+                                    <param id="0" name="X">Self.X + 8</param>
+                                    <param id="1" name="Y">Self.Y + 8</param>
+                                </action>
+                                <action behavior="Turret" id="1" name="Add object to target" sid="912615343378609" type="turretHeadCannon">
+                                    <param id="0" name="Target">slime</param>
                                 </action>
                             </actions>
                         </event-block>

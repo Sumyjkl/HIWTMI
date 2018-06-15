@@ -392,7 +392,11 @@
                     <conditions>
                         <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="503401644701311" type="slime" />
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action behavior="Platform" id="3" name="Set deceleration" sid="880140435489622" type="slime">
+                            <param id="0" name="Deceleration">0</param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block sid="878225536106213">
                             <conditions>
@@ -423,6 +427,16 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="541902994912067">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="189727390638246" type="slime" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="3" name="Set deceleration" sid="525816583021652" type="slime">
+                            <param id="0" name="Deceleration">300</param>
+                        </action>
+                    </actions>
                 </event-block>
                 <event-block sid="884665295254692">
                     <conditions>
@@ -495,6 +509,35 @@
                             <param id="1" name="Value">-1</param>
                         </action>
                     </actions>
+                </event-block>
+                <event-block sid="885048905896948">
+                    <conditions>
+                        <condition id="0" name="On function" sid="234801034301148" type="f">
+                            <param id="0" name="Name">&quot;slime_knockback&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="543772716608958">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="127839914832762" type="slime">
+                                    <param id="0" name="Unique ID">f.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="732677947194946" type="slime">
+                                    <param id="0" name="Vector Y">-100</param>
+                                </action>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="310628277677474" type="slime">
+                                    <param id="0" name="Vector X">100 * f.Param(1)</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="125981801825876" type="slime">
+                                    <param id="0" name="Animation">&quot;jump&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
