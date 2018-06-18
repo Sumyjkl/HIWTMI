@@ -190,11 +190,77 @@
                                 <action behavior="Bullet" id="0" name="Set speed" sid="570423725247892" type="turretCannonBall">
                                     <param id="0" name="Speed">0</param>
                                 </action>
-                                <action id="-16" name="Wait" sid="535985110930516" type="System">
-                                    <param id="0" name="Seconds">0.2</param>
-                                </action>
-                                <action id="-9" name="Destroy" sid="263481622207240" type="turretCannonBall" />
                             </actions>
+                            <sub-events>
+                                <comment>temp until new objects</comment>
+                                <event-block sid="755988765785818">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="261169718905553" type="turretCannonBall">
+                                            <param id="0" name="Object">Particles</param>
+                                            <param id="1" name="Layer">&quot;player&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="653880096738429" type="turretCannonBall">
+                                            <param id="0" name="Object">Particles2</param>
+                                            <param id="1" name="Layer">&quot;player&quot;</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="2" name="Set spray cone" sid="289548090233663" type="Particles">
+                                            <param id="0" name="Spray cone">180</param>
+                                        </action>
+                                        <action id="2" name="Set spray cone" sid="919673166939766" type="Particles2">
+                                            <param id="0" name="Spray cone">180</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="470895317053345" type="Particles">
+                                            <param id="0" name="Angle">-90</param>
+                                        </action>
+                                        <action id="-8" name="Set angle" sid="868260301619601" type="Particles2">
+                                            <param id="0" name="Angle">-90</param>
+                                        </action>
+                                        <action id="11" name="Set size randomiser" sid="699021641330310" type="Particles">
+                                            <param id="0" name="Size randomiser">10</param>
+                                        </action>
+                                        <action id="1" name="Set rate" sid="362806385519865" type="Particles">
+                                            <param id="0" name="Rate">40</param>
+                                        </action>
+                                        <action id="1" name="Set rate" sid="565870212557188" type="Particles2">
+                                            <param id="0" name="Rate">40</param>
+                                        </action>
+                                        <action id="10" name="Set speed randomiser" sid="706536977049084" type="Particles">
+                                            <param id="0" name="Speed randomiser">160</param>
+                                        </action>
+                                        <action id="4" name="Set speed" sid="467518725622675" type="Particles">
+                                            <param id="0" name="Speed">80</param>
+                                        </action>
+                                        <action id="10" name="Set speed randomiser" sid="973666255572580" type="Particles2">
+                                            <param id="0" name="Speed randomiser">200</param>
+                                        </action>
+                                        <action id="4" name="Set speed" sid="381343364054766" type="Particles2">
+                                            <param id="0" name="Speed">100</param>
+                                        </action>
+                                        <action id="7" name="Set grow rate" sid="305236255867903" type="Particles">
+                                            <param id="0" name="Grow rate">-12</param>
+                                        </action>
+                                        <action id="13" name="Set acceleration" sid="671268008765160" type="Particles">
+                                            <param id="0" name="Acceleration">-100</param>
+                                        </action>
+                                        <action id="7" name="Play (by name)" sid="441112610311390" type="Audio">
+                                            <param id="0" name="Folder">0</param>
+                                            <param id="1" name="Audio file name">&quot;canFire&quot;</param>
+                                            <param id="3" name="Loop">0</param>
+                                            <param id="4" name="Volume">-10</param>
+                                            <param id="2" name="Tag (optional)">&quot;sfx&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="903996516343065">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Destroy" sid="263481622207240" type="turretCannonBall" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>

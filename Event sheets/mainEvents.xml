@@ -351,6 +351,10 @@
                                     <param id="0" name="Name">&quot;fogClear&quot;</param>
                                     <param id="1" name="Parameter {n}">fog.PositionToTileX(player.X){###}fog.PositionToTileY(player.Y){###}3</param>
                                 </action>
+                                <action id="0" name="Call function" sid="897615770503582" type="f">
+                                    <param id="0" name="Name">&quot;inv_add&quot;</param>
+                                    <param id="1" name="Parameter {n}">5</param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <event-block sid="663351633156962">
