@@ -467,43 +467,105 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="242672512961626">
+                <event-block sid="832022514058960">
                     <conditions>
-                        <condition id="-1" name="Compare X" sid="809255233062251" type="slime">
-                            <param id="0" name="Comparison">2</param>
-                            <param id="1" name="X co-ordinate">player.X</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="442254547638753" type="slime">
-                            <param id="0" name="Instance variable">aiDirection</param>
+                        <condition id="-7" name="Compare instance variable" sid="563967246193949" type="slime">
+                            <param id="0" name="Instance variable">aiFollow</param>
                             <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">-1</param>
+                            <param id="2" name="Value">&quot;player&quot;</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="904312827452989" type="slime">
-                            <param id="0" name="Instance variable">aiDirection</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="242672512961626">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="809255233062251" type="slime">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">player.X</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="442254547638753" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="904312827452989" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="183296701079613">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="788617923753826" type="slime">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">player.X</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="777818197925404" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="247097635924232" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
-                <event-block sid="183296701079613">
+                <event-block sid="589060841778127">
                     <conditions>
-                        <condition id="-1" name="Compare X" sid="788617923753826" type="slime">
-                            <param id="0" name="Comparison">4</param>
-                            <param id="1" name="X co-ordinate">player.X</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="777818197925404" type="slime">
-                            <param id="0" name="Instance variable">aiDirection</param>
+                        <condition id="-7" name="Compare instance variable" sid="778787637907346" type="slime">
+                            <param id="0" name="Instance variable">aiFollow</param>
                             <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
+                            <param id="2" name="Value">&quot;core&quot;</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-10" name="Set value" sid="247097635924232" type="slime">
-                            <param id="0" name="Instance variable">aiDirection</param>
-                            <param id="1" name="Value">-1</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="885706746245583">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="768697495719498" type="slime">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">core.X</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="645352047672155" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="155112397331388" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="706314938394381">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="276652444455312" type="slime">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">core.X</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="181790955619998" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="876920773616722" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="885048905896948">
                     <conditions>

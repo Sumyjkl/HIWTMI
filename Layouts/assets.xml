@@ -461,6 +461,7 @@
                         <jumpLength>100</jumpLength>
                         <damageToPlayer>1</damageToPlayer>
                         <health>1</health>
+                        <aiFollow>player</aiFollow>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">

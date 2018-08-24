@@ -777,6 +777,7 @@
             <instance-variables>
                 <instance-variable name="damageToPlayer" sid="616970268312877" type="number" />
                 <instance-variable name="health" sid="707587152819190" type="number" />
+                <instance-variable comment="which object to follow (player/core)" name="aiFollow" sid="332200282253044" type="string" />
             </instance-variables>
         </family>
     </families>
