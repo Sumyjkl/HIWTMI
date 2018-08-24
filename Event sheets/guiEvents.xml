@@ -14,7 +14,11 @@
             <sub-events>
                 <event-block sid="201225972034376">
                     <conditions />
-                    <actions />
+                    <actions>
+                        <action id="-5" name="Set width" sid="776092160753414" type="gui_healthBar">
+                            <param id="0" name="Width">player.health * 2</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-block>

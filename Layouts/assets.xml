@@ -457,6 +457,7 @@
                     <instance-variables>
                         <aiDirection>1</aiDirection>
                         <aiTarget>0</aiTarget>
+                        <damageToPlayer>1</damageToPlayer>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">

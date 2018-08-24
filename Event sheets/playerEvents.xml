@@ -857,5 +857,156 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="319841558963687" title="Health">
+            <sub-events>
+                <variable constant="1" name="PLAYER_STARTING_HEALTH" sid="716179691414515" static="0" type="number">10</variable>
+                <event-block sid="974298482504483">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="881624475363845" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="354203077446810" type="player">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Value">PLAYER_STARTING_HEALTH</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="729949719616063">
+                    <conditions>
+                        <condition id="0" name="On function" sid="729973230657449" type="f">
+                            <param id="0" name="Name">&quot;player_hit&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="664981393218565">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="385069741778207" type="player">
+                                    <param id="0" name="Instance variable">immunity</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="607746031473478" type="f">
+                                    <param id="0" name="Name">&quot;player_damage&quot;</param>
+                                    <param id="1" name="Parameter {n}">f.Param(0)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="253322526955630" type="f">
+                                    <param id="0" name="Name">&quot;gui_showStatusText&quot;</param>
+                                    <param id="1" name="Parameter {n}">2{###}player.X{###}player.Y{###}&quot;Bang!&quot;{###}rgb(255, 50, 50)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="264493801591269" type="f">
+                                    <param id="0" name="Name">&quot;player_immunity&quot;</param>
+                                    <param id="1" name="Parameter {n}">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="442655733264751">
+                    <conditions>
+                        <condition id="0" name="On function" sid="749460594816555" type="f">
+                            <param id="0" name="Name">&quot;player_damage&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="262649822883545">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="323972731160823" type="player">
+                                    <param id="0" name="Instance variable">health</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="947905054868048" type="player">
+                                    <param id="0" name="Instance variable">health</param>
+                                    <param id="1" name="Value">f.Param(0)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="125243999908253" type="f">
+                                    <param id="0" name="Name">&quot;gui_update&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="872804617035393">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="707377771920761" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="138648716269449" type="f">
+                                    <param id="0" name="Name">&quot;player_kill&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="647067046157769">
+                    <conditions>
+                        <condition id="0" name="On function" sid="202612584009279" type="f">
+                            <param id="0" name="Name">&quot;player_heal&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="528250826255757">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="489372141170554" type="player">
+                                    <param id="0" name="Instance variable">health</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Add to" sid="986794035525859" type="player">
+                                    <param id="0" name="Instance variable">health</param>
+                                    <param id="1" name="Value">f.Param(0)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="902432718014156" type="f">
+                                    <param id="0" name="Name">&quot;gui_update&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="760614120958898">
+                    <conditions>
+                        <condition id="0" name="On function" sid="400157795527083" type="f">
+                            <param id="0" name="Name">&quot;player_immunity&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="181125468836472" type="player">
+                            <param id="0" name="Instance variable">immunity</param>
+                            <param id="1" name="Value">f.Param(0)</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="718233420035919" type="player">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">f.Param(0)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="722146053616301">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="291332279897430" type="player">
+                            <param id="0" name="Instance variable">immunity</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="318986274367713" type="player">
+                            <param id="0" name="Instance variable">immunity</param>
+                            <param id="1" name="Value">dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

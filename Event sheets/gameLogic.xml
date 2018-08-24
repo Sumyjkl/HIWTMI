@@ -552,5 +552,22 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="927865033838671" title="enemies">
+            <sub-events>
+                <event-block sid="901492207413729">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="529441553561900" type="player">
+                            <param id="0" name="Object">enemyTraditional</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="574974538460234" type="f">
+                            <param id="0" name="Name">&quot;player_hit&quot;</param>
+                            <param id="1" name="Parameter {n}">enemyTraditional.damageToPlayer</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
