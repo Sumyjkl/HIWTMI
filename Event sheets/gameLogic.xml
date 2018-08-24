@@ -666,5 +666,59 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <variable constant="0" name="gl_core_health" sid="234525129792465" static="0" type="number">1</variable>
+        <event-group description="" sid="627188919600315" title="core">
+            <sub-events>
+                <event-block sid="429036323677409">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="957590590295300" type="enemyTraditional">
+                            <param id="0" name="Object">core</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="812769513124597" type="System">
+                            <param id="0" name="Variable">gl_core_health</param>
+                            <param id="1" name="Value">0.1</param>
+                        </action>
+                        <action id="0" name="Call function" sid="438389714904416" type="f">
+                            <param id="0" name="Name">&quot;gui_updateCoreHealth&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="0" name="Call function" sid="574815670128680" type="f">
+                            <param id="0" name="Name">&quot;gui_showStatusText&quot;</param>
+                            <param id="1" name="Parameter {n}">4{###}core.X{###}core.Y{###}&quot;Core damage!&quot;{###}rgb(30, 40, 230)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="753883938744796">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="820212173479462" type="player">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="552936605068583" type="System">
+                    <param id="0" name="Layout">gameover</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="345723458135038">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="580920760708061" type="System">
+                    <param id="0" name="Variable">gl_core_health</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="507195920922454" type="System">
+                    <param id="0" name="Layout">gameover</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

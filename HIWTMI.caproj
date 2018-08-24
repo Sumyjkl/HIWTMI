@@ -582,6 +582,29 @@
             <plugin id="Particles" />
             <texture />
         </object-type>
+        <object-type name="core" sid="133598395902020">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="521527043044683">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="763856981195366" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0">
+                        <image-point name="healthBar" x="0.125" y="0.4375" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="gui_core_health" sid="988011784861766">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="625876545797517" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="turret" plugin-id="Sprite" sid="705466075700669">
@@ -690,6 +713,7 @@
         <layout>main.xml</layout>
         <layout>assets.xml</layout>
         <layout>loader.xml</layout>
+        <layout>gameover.xml</layout>
     </layout-folder>
     <event-folder>
         <event-folder name="gameLogic">
@@ -709,6 +733,7 @@
         <event-sheet>globalEvents.xml</event-sheet>
         <event-sheet>loaderLayout.xml</event-sheet>
         <event-sheet>mainEvents.xml</event-sheet>
+        <event-sheet>gameoverEvents.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="WebStorage" uid="1" />

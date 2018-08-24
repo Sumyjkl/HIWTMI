@@ -299,5 +299,29 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="104477075007823">
+            <conditions>
+                <condition id="-18" name="On created" sid="700352196272150" type="core" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="971683992827925" type="core">
+                    <param id="0" name="Object">gui_core_health</param>
+                    <param id="1" name="Layer">4</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="918741612126847">
+            <conditions>
+                <condition id="0" name="On function" sid="698163837351325" type="f">
+                    <param id="0" name="Name">&quot;gui_updateCoreHealth&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" sid="630394349107718" type="gui_core_health">
+                    <param id="0" name="Width">gl_core_health * 12</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
