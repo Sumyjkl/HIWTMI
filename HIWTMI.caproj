@@ -570,6 +570,18 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="spawner" sid="767247171291490">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="983919149777466" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Ashes" sid="286748176893314">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
     </object-folder>
     <families>
         <family name="turret" plugin-id="Sprite" sid="705466075700669">
@@ -645,6 +657,8 @@
             <instance-variables>
                 <instance-variable name="aiDirection" sid="306516760939745" type="number" />
                 <instance-variable name="aiTarget" sid="119551128018165" type="number" />
+                <instance-variable name="jumpHeight" sid="748756941124101" type="number" />
+                <instance-variable name="jumpLength" sid="815527874499949" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="452767039978381">
@@ -668,6 +682,7 @@
             </members>
             <instance-variables>
                 <instance-variable name="damageToPlayer" sid="616970268312877" type="number" />
+                <instance-variable name="health" sid="707587152819190" type="number" />
             </instance-variables>
         </family>
     </families>
