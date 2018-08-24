@@ -83,10 +83,6 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Call function" sid="415339614821879" type="f">
-                            <param id="0" name="Name">&quot;radialClose&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
                         <action id="0" name="Call function" sid="460150595038275" type="f">
                             <param id="0" name="Name">&quot;function&quot;</param>
                             <param id="1" name="Parameter {n}">radialSeg.function</param>
@@ -94,9 +90,7 @@
                     </actions>
                 </event-block>
                 <event-block sid="317237348804763">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="299763498009510" type="System" />
-                    </conditions>
+                    <conditions />
                     <actions>
                         <action id="0" name="Call function" sid="464157963330640" type="f">
                             <param id="0" name="Name">&quot;radialClose&quot;</param>
@@ -238,5 +232,68 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="235007681955876" title="statusText">
+            <sub-events>
+                <comment>showStatusText(layer, x, y, text, color)</comment>
+                <event-block sid="730179675560329">
+                    <conditions>
+                        <condition id="0" name="On function" sid="675609730566862" type="f">
+                            <param id="0" name="Name">&quot;gui_showStatusText&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="711319415910847" type="System">
+                            <param id="0" name="Object to create">gui_statusText</param>
+                            <param id="1" name="Layer">f.Param(0)</param>
+                            <param id="2" name="X">f.Param(1)</param>
+                            <param id="3" name="Y">f.Param(2)</param>
+                        </action>
+                        <action id="0" name="Set text" sid="635686582693565" type="gui_statusText">
+                            <param id="0" name="Text">f.Param(3)</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="900280522042901" type="gui_statusText">
+                            <param id="0" name="Color">f.Param(4)</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="917330817431035" type="gui_statusText">
+                            <param id="0" name="Angle">-90</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>Cursor</comment>
+        <event-block sid="777334562534698">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="135245398881681" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="420369959242580" type="Mouse">
+                    <param id="0" name="Cursor style">7</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="356730619920418">
+                    <conditions>
+                        <condition id="-16" inverted="1" name="Is on layer" sid="583426024585676" type="cursor">
+                            <param id="0" name="Layer">&quot;cursor&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="479235389820888" type="cursor" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="117051649717031">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="911600046463141" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="137956594815329" type="cursor">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

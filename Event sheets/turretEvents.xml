@@ -219,6 +219,17 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="930461995397432">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="734358106948513" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="557330364375111" type="f">
+                                    <param id="0" name="Name">&quot;gui_showStatusText&quot;</param>
+                                    <param id="1" name="Parameter {n}">2{###}mouse.X{###}mouse.Y{###}&quot;Cannot place turret there!&quot;{###}rgb(255, 0, 0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
             </sub-events>

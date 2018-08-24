@@ -219,6 +219,17 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="647227691690506">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="297618722737688" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="524849517904132" type="f">
+                                    <param id="0" name="Name">&quot;gui_showStatusText&quot;</param>
+                                    <param id="1" name="Parameter {n}">2{###}mouse.X{###}mouse.Y{###}&quot;Cannot place ladder there!&quot;{###}rgb(255, 0, 0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
                     </sub-events>
                 </event-block>
                 <comment>place with L key</comment>
