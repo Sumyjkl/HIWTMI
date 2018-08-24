@@ -155,6 +155,31 @@
                 </animation-folder>
             </object-type>
         </object-folder>
+        <object-folder name="inventory">
+            <object-type name="blockSelectionIndicator" sid="509459042255010">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="inv_index" sid="944252462644581" type="number" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="i0" pingpong="0" repeatcount="1" repeatto="0" sid="886906958310365" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i1" pingpong="0" repeatcount="1" repeatto="0" sid="991014366622564" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i4" pingpong="0" repeatcount="1" repeatto="0" sid="933364890524259" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i5" pingpong="0" repeatcount="1" repeatto="0" sid="708708925724709" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type global="1" name="inv_row" sid="801372277846463">
+                <plugin id="Arr" />
+            </object-type>
+        </object-folder>
         <object-type name="WebStorage" sid="1510269620771624">
             <plugin id="WebStorage" />
         </object-type>
@@ -427,23 +452,6 @@
             <plugin id="Tilemap" />
             <texture />
             <tiles />
-        </object-type>
-        <object-type name="blockSelectionIndicator" sid="509459042255010">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="i0" pingpong="0" repeatcount="1" repeatto="0" sid="886906958310365" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0" />
-                </animation>
-                <animation framecount="1" loop="0" name="i1" pingpong="0" repeatcount="1" repeatto="0" sid="991014366622564" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0" />
-                </animation>
-                <animation framecount="1" loop="0" name="i4" pingpong="0" repeatcount="1" repeatto="0" sid="933364890524259" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0" />
-                </animation>
-                <animation framecount="1" loop="0" name="i5" pingpong="0" repeatcount="1" repeatto="0" sid="708708925724709" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0" />
-                </animation>
-            </animation-folder>
         </object-type>
         <object-type name="ladder" sid="475295915979339">
             <plugin id="TiledBg" />

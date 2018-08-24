@@ -344,6 +344,10 @@
                                     <param id="0" name="Name">&quot;tiles_init&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
                                 </action>
+                                <action id="0" name="Call function" sid="202570943968684" type="f">
+                                    <param id="0" name="Name">&quot;inv_init&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
                                 <action id="11" name="Set collisions enabled" sid="461291263405406" type="freeCam">
                                     <param id="0" name="Collisions">0</param>
                                 </action>
