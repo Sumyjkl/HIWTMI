@@ -503,26 +503,180 @@
                 </event-block>
                 <event-block sid="758431932997550">
                     <conditions>
-                        <condition id="0" name="On function" sid="118570283738527" type="f">
+                        <condition id="0" name="On function" sid="539142396199092" type="f">
+                            <param id="0" name="Name">&quot;inv_getList&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="return" sid="670117094249262" static="0" type="text"></variable>
+                        <event-block sid="376784980455640">
+                            <conditions>
+                                <condition id="-10" name="For" sid="825768901960123" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">inv_row.Width</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="346537863178096" type="System">
+                                    <param id="0" name="Variable">return</param>
+                                    <param id="1" name="Value">return &amp; inv_row.At(loopindex) &amp; &quot;;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="626403720193138">
+                            <conditions />
+                            <actions>
+                                <action id="1" name="Set return value" sid="887788003944380" type="f">
+                                    <param id="0" name="Value">return</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="395951789856778">
+                    <conditions>
+                        <condition id="0" name="On function" sid="838258896138181" type="f">
                             <param id="0" name="Name">&quot;inv_setSelection&quot;</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="328638767043877" type="System">
+                        <action id="-9" name="Set value" sid="414922927882887" type="System">
                             <param id="0" name="Variable">inv_current</param>
                             <param id="1" name="Value">f.Param(0) % 5</param>
                         </action>
-                        <action id="-9" name="Set value" sid="956555768109564" type="System">
+                        <action id="-9" name="Set value" sid="503326451424968" type="System">
                             <param id="0" name="Variable">inventoryID</param>
                             <param id="1" name="Value">inv_row.At(inv_current)</param>
                         </action>
-                        <action id="0" name="Call function" sid="758560961088821" type="f">
+                        <action id="0" name="Call function" sid="282444969699102" type="f">
                             <param id="0" name="Name">&quot;gui_blockIndicatorUpdate&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>
+                <comment>Does the player have all items of list?</comment>
+                <event-block sid="158019319862838">
+                    <conditions>
+                        <condition id="0" name="On function" sid="954649249078394" type="f">
+                            <param id="0" name="Name">&quot;inv_hasList&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="return" sid="544352369995990" static="0" type="number">1</variable>
+                        <event-block sid="996754042267619">
+                            <conditions>
+                                <condition id="-10" name="For" sid="268254591003219" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">tokencount(f.Param(0), &quot;;&quot;) - 1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="754708476675823">
+                                    <conditions>
+                                        <condition id="5" inverted="1" name="Contains value" sid="743961403825731" type="inv_row">
+                                            <param id="0" name="Value">int(tokenat(f.Param(0), loopindex, &quot;;&quot;))</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="399605452944107" type="System">
+                                            <param id="0" name="Variable">return</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="384457165043349">
+                            <conditions />
+                            <actions>
+                                <action id="1" name="Set return value" sid="582918321859752" type="f">
+                                    <param id="0" name="Value">return</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <comment>Take a list of items from the player</comment>
+                <event-block sid="851646261306969">
+                    <conditions>
+                        <condition id="0" name="On function" sid="545957661403444" type="f">
+                            <param id="0" name="Name">&quot;inv_takeList&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>Safe to use (hopefully) even if the player doesn&apos;t have all the items </comment>
+                        <event-block sid="653724806304531">
+                            <conditions>
+                                <condition id="-10" name="For" sid="177775480080050" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">tokencount(f.Param(0), &quot;;&quot;) - 1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="2" name="Set at X" sid="590427581476375" type="inv_row">
+                                    <param id="0" name="X">inv_row.IndexOf(int(tokenat(f.Param(0), loopindex, &quot;;&quot;)))</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="896060449060721">
+                            <conditions />
+                            <actions>
+                                <action id="0" name="Call function" sid="249509621249550" type="f">
+                                    <param id="0" name="Name">&quot;gui_blockIndicatorUpdate&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="655247527727054">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="587857246896725" type="Keyboard">
+                    <param id="0" name="Key">66</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="14" name="Log" sid="407202720205177" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">f.Call(&quot;inv_hasList&quot;, &quot;1;4;5&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="692852900171953">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="356373187230596" type="Keyboard">
+                    <param id="0" name="Key">67</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="14" name="Log" sid="151140442392755" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">f.Call(&quot;inv_getList&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="313270506555191">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="576757815674883" type="Keyboard">
+                    <param id="0" name="Key">78</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="14" name="Log" sid="765985524418450" type="Browser">
+                    <param id="0" name="Type">0</param>
+                    <param id="1" name="Message">f.Call(&quot;inv_takeList&quot;, &quot;1;4;5&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
