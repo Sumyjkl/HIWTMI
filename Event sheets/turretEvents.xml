@@ -163,42 +163,12 @@
                             <param id="0" name="Name">&quot;turret_placeAtRadial&quot;</param>
                         </condition>
                     </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="623020315013942">
-                            <conditions>
-                                <condition id="-8" name="Is boolean instance variable set" sid="980782178555256" type="radialSeg">
-                                    <param id="0" name="Instance variable">center</param>
-                                </condition>
-                                <condition id="-8" name="Compare two values" sid="443964715702382" type="System">
-                                    <param id="0" name="First value">f.Call(&quot;inv_checkCanPlace&quot;, (radialSeg.X / tileMapSize), (radialSeg.Y / tileMapSize), 5)</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="367447243443382" type="f">
-                                    <param id="0" name="Name">&quot;turret_create&quot;</param>
-                                    <param id="1" name="Parameter {n}">floor(radialSeg.X / tileMapSize){###}floor(radialSeg.Y / tileMapSize)</param>
-                                </action>
-                                <action id="0" name="Call function" sid="258215691185513" type="f">
-                                    <param id="0" name="Name">&quot;inv_use&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="930461995397432">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="734358106948513" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="557330364375111" type="f">
-                                    <param id="0" name="Name">&quot;gui_showStatusText&quot;</param>
-                                    <param id="1" name="Parameter {n}">2{###}mouse.X{###}mouse.Y{###}&quot;Cannot place turret there!&quot;{###}rgb(255, 0, 0)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
+                    <actions>
+                        <action id="0" name="Call function" sid="776331348075480" type="f">
+                            <param id="0" name="Name">&quot;gl_buildAtRadial&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;build_turretOptions&quot;{###}&quot;turret_create&quot;</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

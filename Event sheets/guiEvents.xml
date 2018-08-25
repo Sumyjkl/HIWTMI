@@ -53,7 +53,7 @@
                             </conditions>
                             <actions>
                                 <action id="9" name="Set scale" sid="425507548750697" type="blockSelectionIndicator">
-                                    <param id="0" name="Scale">0.8</param>
+                                    <param id="0" name="Scale">0.9</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -114,6 +114,11 @@
                     <conditions>
                         <condition id="7" name="Cursor is over object" sid="187621802647994" type="Mouse">
                             <param id="0" name="Object">radialSeg</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="187665932578336" type="radialSeg">
+                            <param id="0" name="Instance variable">function</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
                         </condition>
                     </conditions>
                     <actions>

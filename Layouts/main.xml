@@ -654,7 +654,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <function></function>
+                        <function>door_placeAtRadial</function>
                         <offsetX>0</offsetX>
                         <offsetY>1</offsetY>
                         <center>false</center>
@@ -743,8 +743,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>31</x>
-                        <y>80</y>
+                        <x>108</x>
+                        <y>77</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
@@ -850,7 +850,7 @@
                 <instance type="blockSelectionIndicator" uid="37">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>i1</initial-animation>
+                        <initial-animation>i0</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
@@ -924,7 +924,7 @@
                 <instance type="blockSelectionIndicator" uid="65">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>i1</initial-animation>
+                        <initial-animation>i0</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
@@ -949,7 +949,7 @@
                 <instance type="blockSelectionIndicator" uid="66">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>i1</initial-animation>
+                        <initial-animation>i0</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
@@ -974,7 +974,7 @@
                 <instance type="blockSelectionIndicator" uid="67">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>i1</initial-animation>
+                        <initial-animation>i0</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
@@ -999,7 +999,7 @@
                 <instance type="blockSelectionIndicator" uid="68">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>i1</initial-animation>
+                        <initial-animation>i0</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>

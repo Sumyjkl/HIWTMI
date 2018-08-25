@@ -3,136 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>inventoryEvents</name>
     <events>
-        <event-block disabled="1" sid="762483907368422">
-            <conditions>
-                <condition id="0" name="On function" sid="116943072453087" type="f">
-                    <param id="0" name="Name">&quot;inv_add&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block disabled="1" sid="638098363214771">
-                    <conditions />
-                    <actions>
-                        <action id="-9" name="Set value" sid="554408247248876" type="System">
-                            <param id="0" name="Variable">inventoryID</param>
-                            <param id="1" name="Value">f.Param(0)</param>
-                        </action>
-                        <action id="0" name="Call function" sid="616094749508719" type="f">
-                            <param id="0" name="Name">&quot;gui_blockIndicatorUpdate&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block disabled="1" sid="454336990882041">
-            <conditions>
-                <condition id="0" name="On function" sid="856725226086776" type="f">
-                    <param id="0" name="Name">&quot;inv_drop&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block disabled="1" sid="204269497706066">
-                    <conditions>
-                        <condition id="-14" inverted="1" name="Compare variable" sid="502229823273175" type="System">
-                            <param id="0" name="Variable">inventoryID</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block disabled="1" sid="699147162259625">
-                            <conditions>
-                                <condition id="7" name="Is mirrored" sid="620843286769212" type="player" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="213659506708427" type="f">
-                                    <param id="0" name="Name">&quot;item_drop&quot;</param>
-                                    <param id="1" name="Parameter {n}">player.X{###}player.Y{###}inventoryID{###}-1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="840061898381875" type="System">
-                                    <param id="0" name="Variable">inventoryID</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="0" name="Call function" sid="308660647319733" type="f">
-                                    <param id="0" name="Name">&quot;gui_blockIndicatorUpdate&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block disabled="1" sid="707137512925630">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="366534992920205" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="138122372832581" type="f">
-                                    <param id="0" name="Name">&quot;item_drop&quot;</param>
-                                    <param id="1" name="Parameter {n}">player.X{###}player.Y{###}inventoryID{###}1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="709452007178740" type="System">
-                                    <param id="0" name="Variable">inventoryID</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="0" name="Call function" sid="686567863169274" type="f">
-                                    <param id="0" name="Name">&quot;gui_blockIndicatorUpdate&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block disabled="1" sid="808093026296359">
-            <conditions>
-                <condition id="0" name="On function" sid="244708640552605" type="f">
-                    <param id="0" name="Name">&quot;inv_use&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block disabled="1" sid="780618516324803">
-                    <conditions />
-                    <actions>
-                        <action id="-9" name="Set value" sid="528277375542400" type="System">
-                            <param id="0" name="Variable">inventoryID</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                        <action id="0" name="Call function" sid="490447284110797" type="f">
-                            <param id="0" name="Name">&quot;gui_blockIndicatorUpdate&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block disabled="1" sid="294634243724826">
-            <conditions>
-                <condition id="0" name="On function" sid="164748393142937" type="f">
-                    <param id="0" name="Name">&quot;inv_hasSpace&quot;</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block disabled="1" sid="357738657471521">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="701064267726393" type="System">
-                            <param id="0" name="Variable">inventoryID</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="1" name="Set return value" sid="511992779243868" type="f">
-                            <param id="0" name="Value">1</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
+        <comment>*** PICKING UP ITEMS ***&#x0D;&#x0A;</comment>
         <event-block sid="297325924324900">
             <conditions>
                 <condition id="1" name="Is overlapping another object" sid="853107424262053" type="player">
@@ -541,20 +412,26 @@
                             <param id="0" name="Name">&quot;inv_setSelection&quot;</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="414922927882887" type="System">
-                            <param id="0" name="Variable">inv_current</param>
-                            <param id="1" name="Value">f.Param(0) % 5</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="503326451424968" type="System">
-                            <param id="0" name="Variable">inventoryID</param>
-                            <param id="1" name="Value">inv_row.At(inv_current)</param>
-                        </action>
-                        <action id="0" name="Call function" sid="282444969699102" type="f">
-                            <param id="0" name="Name">&quot;gui_blockIndicatorUpdate&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="383780895039919">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="414922927882887" type="System">
+                                    <param id="0" name="Variable">inv_current</param>
+                                    <param id="1" name="Value">f.Param(0) % 5</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="503326451424968" type="System">
+                                    <param id="0" name="Variable">inventoryID</param>
+                                    <param id="1" name="Value">inv_row.At(inv_current)</param>
+                                </action>
+                                <action id="0" name="Call function" sid="282444969699102" type="f">
+                                    <param id="0" name="Name">&quot;gui_blockIndicatorUpdate&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>Does the player have all items of list?</comment>
                 <event-block sid="158019319862838">
@@ -639,44 +516,5 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="655247527727054">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="587857246896725" type="Keyboard">
-                    <param id="0" name="Key">66</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="14" name="Log" sid="407202720205177" type="Browser">
-                    <param id="0" name="Type">0</param>
-                    <param id="1" name="Message">f.Call(&quot;inv_hasList&quot;, &quot;1;4;5&quot;)</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="692852900171953">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="356373187230596" type="Keyboard">
-                    <param id="0" name="Key">67</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="14" name="Log" sid="151140442392755" type="Browser">
-                    <param id="0" name="Type">0</param>
-                    <param id="1" name="Message">f.Call(&quot;inv_getList&quot;)</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="313270506555191">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="576757815674883" type="Keyboard">
-                    <param id="0" name="Key">78</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="14" name="Log" sid="765985524418450" type="Browser">
-                    <param id="0" name="Type">0</param>
-                    <param id="1" name="Message">f.Call(&quot;inv_takeList&quot;, &quot;1;4;5&quot;)</param>
-                </action>
-            </actions>
-        </event-block>
     </events>
 </c2eventsheet>
