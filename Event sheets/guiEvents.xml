@@ -72,122 +72,7 @@
             </sub-events>
         </event-block>
         <comment>v</comment>
-        <variable constant="0" name="radialOpen" sid="126438746852101" static="0" type="number">0</variable>
-        <event-block sid="954811007410408">
-            <conditions>
-                <condition id="0" name="On click" sid="808560329386221" type="Mouse">
-                    <param id="0" name="Mouse button">2</param>
-                    <param id="1" name="Click type">0</param>
-                </condition>
-                <condition id="-14" name="Compare variable" sid="717132990110600" type="System">
-                    <param id="0" name="Variable">radialOpen</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">0</param>
-                </condition>
-                <condition id="-14" name="Compare variable" sid="171639782289774" type="System">
-                    <param id="0" name="Variable">player_cursorMode</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">2</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Call function" sid="212242322266029" type="f">
-                    <param id="0" name="Name">&quot;radialOpen&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="763615572606911">
-            <conditions>
-                <condition id="3" name="On button released" sid="778282662030604" type="Mouse">
-                    <param id="0" name="Mouse button">2</param>
-                </condition>
-                <condition id="-14" name="Compare variable" sid="267322947683583" type="System">
-                    <param id="0" name="Variable">radialOpen</param>
-                    <param id="1" name="Comparison">0</param>
-                    <param id="2" name="Value">1</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="146522366682748">
-                    <conditions>
-                        <condition id="7" name="Cursor is over object" sid="187621802647994" type="Mouse">
-                            <param id="0" name="Object">radialSeg</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="187665932578336" type="radialSeg">
-                            <param id="0" name="Instance variable">function</param>
-                            <param id="1" name="Comparison">1</param>
-                            <param id="2" name="Value">&quot;&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="460150595038275" type="f">
-                            <param id="0" name="Name">&quot;function&quot;</param>
-                            <param id="1" name="Parameter {n}">radialSeg.function</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="317237348804763">
-                    <conditions />
-                    <actions>
-                        <action id="0" name="Call function" sid="464157963330640" type="f">
-                            <param id="0" name="Name">&quot;radialClose&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <event-block sid="862353366612022">
-            <conditions>
-                <condition id="8" name="On mouse wheel" sid="973263176595504" type="Mouse">
-                    <param id="0" name="Direction">0</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Call function" sid="986323943024540" type="f">
-                    <param id="0" name="Name">&quot;inv_setSelection&quot;</param>
-                    <param id="1" name="Parameter {n}">inv_current + 1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="747560408786209">
-            <conditions>
-                <condition id="8" name="On mouse wheel" sid="882172826558807" type="Mouse">
-                    <param id="0" name="Direction">1</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="947608795136887">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="669839240503355" type="System">
-                            <param id="0" name="Variable">inv_current</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">0</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="465335895695483" type="f">
-                            <param id="0" name="Name">&quot;inv_setSelection&quot;</param>
-                            <param id="1" name="Parameter {n}">4</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="443846257077057">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="563635091281286" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="579318612541458" type="f">
-                            <param id="0" name="Name">&quot;inv_setSelection&quot;</param>
-                            <param id="1" name="Parameter {n}">inv_current - 1</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
+        <variable constant="0" name="gui_radialOpen" sid="126438746852101" static="0" type="number">0</variable>
         <event-block sid="265355466266457">
             <conditions>
                 <condition id="0" name="On function" sid="754563519888277" type="f">
@@ -210,7 +95,7 @@
                             <param id="1" name="Y">floor(Mouse.Y/tileMapSize)*tileMapSize + tileMapSize * Self.offsetY</param>
                         </action>
                         <action id="-9" name="Set value" sid="418739738873005" type="System">
-                            <param id="0" name="Variable">radialOpen</param>
+                            <param id="0" name="Variable">gui_radialOpen</param>
                             <param id="1" name="Value">1</param>
                         </action>
                         <action id="-3" name="Set position" sid="785092984370788" type="radialSeg">
@@ -254,7 +139,7 @@
                             <param id="0" name="Visibility">0</param>
                         </action>
                         <action id="-9" name="Set value" sid="563162355781601" type="System">
-                            <param id="0" name="Variable">radialOpen</param>
+                            <param id="0" name="Variable">gui_radialOpen</param>
                             <param id="1" name="Value">0</param>
                         </action>
                     </actions>

@@ -102,13 +102,33 @@
                     <type>machine_input</type>
                 </container>
                 <animation-folder>
-                    <animation framecount="8" loop="1" name="iron" pingpong="0" repeatcount="1" repeatto="0" sid="898272596090895" speed="5">
+                    <animation framecount="8" loop="1" name="generic" pingpong="0" repeatcount="1" repeatto="0" sid="898272596090895" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0">
                             <image-point name="Ouput" x="0.5" y="1.1875" />
                         </frame>
                         <frame duration="1" hotspotX="0" hotspotY="0">
                             <image-point name="Ouput" x="0.5" y="1.1875" />
                         </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                    </animation>
+                    <animation framecount="6" loop="1" name="medical" pingpong="0" repeatcount="1" repeatto="0" sid="664050980962674" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0">
                             <image-point name="Ouput" x="0.5" y="1.1875" />
                         </frame>
@@ -172,6 +192,12 @@
                         <frame duration="1" hotspotX="0" hotspotY="0" />
                     </animation>
                     <animation framecount="1" loop="0" name="i5" pingpong="0" repeatcount="1" repeatto="0" sid="708708925724709" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i6" pingpong="0" repeatcount="1" repeatto="0" sid="210664268299011" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i7" pingpong="0" repeatcount="1" repeatto="0" sid="905567110179397" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0" />
                     </animation>
                 </animation-folder>
@@ -444,6 +470,12 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
                 <animation framecount="1" loop="0" name="i5" pingpong="0" repeatcount="1" repeatto="0" sid="172423060375265" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="i6" pingpong="0" repeatcount="1" repeatto="0" sid="194670428954888" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="i7" pingpong="0" repeatcount="1" repeatto="0" sid="193203142468195" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
@@ -788,6 +820,16 @@
                 <instance-variable comment="which object to follow (player/core)" name="aiFollow" sid="332200282253044" type="string" />
             </instance-variables>
         </family>
+        <family name="interactive" plugin-id="Sprite" sid="538275015489437">
+            <members>
+                <member>door</member>
+                <member>machine</member>
+                <member>turretMountCannon</member>
+            </members>
+            <instance-variables>
+                <instance-variable comment="function to call when interacted with" name="interact_function" sid="614561674423874" type="string" />
+            </instance-variables>
+        </family>
     </families>
     <layout-folder>
         <layout>main.xml</layout>
@@ -814,6 +856,7 @@
         <event-sheet>loaderLayout.xml</event-sheet>
         <event-sheet>mainEvents.xml</event-sheet>
         <event-sheet>gameoverEvents.xml</event-sheet>
+        <event-sheet>controls.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="WebStorage" uid="1" />

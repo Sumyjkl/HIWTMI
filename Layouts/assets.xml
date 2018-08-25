@@ -152,6 +152,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <interact_function></interact_function>
+                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">
                             <properties>
@@ -226,6 +229,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <interact_function>door_open</interact_function>
+                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">
                             <properties>
@@ -255,6 +261,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <interact_function>door_open</interact_function>
+                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">
                             <properties>
@@ -740,6 +749,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
+                        <interact_function></interact_function>
                         <accepts>0</accepts>
                         <outputs>0</outputs>
                         <delay>0</delay>

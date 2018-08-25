@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>controls</name>
+    <events>
+        <event-block disabled="1" sid="392304172216016">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="486419310298022" type="Keyboard">
+                    <param id="0" name="Key">85</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="290363105705425" type="f">
+                    <param id="0" name="Name">&quot;tiles_updateAll&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="672447258776100">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="100773335942553" type="Keyboard">
+                    <param id="0" name="Key">80</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="843113559569777" type="TileMap">
+                    <param id="0" name="Unique ID">15</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Solid" id="0" name="Set enabled" sid="621286372644353" type="TileMap">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="811597956424968">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="775093493617753" type="Keyboard">
+                    <param id="0" name="Key">89</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="154226299529546" type="f">
+                    <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
+                    <param id="1" name="Parameter {n}">floor(Mouse.X / tileMapSize){###}floor(Mouse.Y / tileMapSize){###}0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="996858184372141">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="351424857431665" type="Keyboard">
+                    <param id="0" name="Key">84</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block disabled="1" sid="936580769733327">
+                    <conditions />
+                    <actions>
+                        <action id="4" name="Set at XYZ" sid="683968641889112" type="TileArray">
+                            <param id="0" name="X">floor(Mouse.X / tileMapSize)</param>
+                            <param id="1" name="Y">floor(Mouse.Y / tileMapSize)</param>
+                            <param id="2" name="Z">0</param>
+                            <param id="3" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Erase tile" sid="145648763558720" type="TileMap">
+                            <param id="0" name="Tile X">floor(Mouse.X / tileMapSize)</param>
+                            <param id="1" name="Tile Y">floor(Mouse.Y / tileMapSize)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>object interaction (door open)</comment>
+        <event-block sid="334346597839097">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="216353199118211" type="Keyboard">
+                    <param id="0" name="Key">69</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="351327335567727">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="672657967775829" type="Mouse">
+                            <param id="0" name="Object">interactive</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="470226923933760" type="interactive">
+                            <param id="0" name="Instance variable">interact_function</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="760491550383128" type="f">
+                            <param id="0" name="Name">interactive.interact_function</param>
+                            <param id="1" name="Parameter {n}">interactive.UID</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>debug</comment>
+        <event-block disabled="1" sid="510124397297785">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="307679163553149" type="Keyboard">
+                    <param id="0" name="Key">17</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="195661291429776" type="f">
+                    <param id="0" name="Name">&quot;tiles_updateArea&quot;</param>
+                    <param id="1" name="Parameter {n}">floor(Mouse.X/tileMapSize){###}floor(Mouse.Y/tileMapSize)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="594608429500395">
+            <conditions>
+                <condition id="0" name="On click" sid="453915315161033" type="Mouse">
+                    <param id="0" name="Mouse button">2</param>
+                    <param id="1" name="Click type">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="891530800348847" type="System">
+                    <param id="0" name="Variable">gui_radialOpen</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="102679519317084" type="System">
+                    <param id="0" name="Variable">player_cursorMode</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="515025812689151" type="f">
+                    <param id="0" name="Name">&quot;radialOpen&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="835861706841791">
+            <conditions>
+                <condition id="3" name="On button released" sid="870032966478607" type="Mouse">
+                    <param id="0" name="Mouse button">2</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="953602002005198" type="System">
+                    <param id="0" name="Variable">gui_radialOpen</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="485474854864588">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="962132122961760" type="Mouse">
+                            <param id="0" name="Object">radialSeg</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="839925849905239" type="radialSeg">
+                            <param id="0" name="Instance variable">function</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="814572192697317" type="f">
+                            <param id="0" name="Name">&quot;function&quot;</param>
+                            <param id="1" name="Parameter {n}">radialSeg.function</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="704494495373916">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Call function" sid="648871013035124" type="f">
+                            <param id="0" name="Name">&quot;radialClose&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="721332612413249">
+            <conditions>
+                <condition id="8" name="On mouse wheel" sid="263867374743861" type="Mouse">
+                    <param id="0" name="Direction">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="769730407697743" type="f">
+                    <param id="0" name="Name">&quot;inv_setSelection&quot;</param>
+                    <param id="1" name="Parameter {n}">inv_current + 1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="316556244440084">
+            <conditions>
+                <condition id="8" name="On mouse wheel" sid="417512571666493" type="Mouse">
+                    <param id="0" name="Direction">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="986768054106744">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="947522065944506" type="System">
+                            <param id="0" name="Variable">inv_current</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="957179843009928" type="f">
+                            <param id="0" name="Name">&quot;inv_setSelection&quot;</param>
+                            <param id="1" name="Parameter {n}">4</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="274230747193101">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="528842765808522" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="542686525176524" type="f">
+                            <param id="0" name="Name">&quot;inv_setSelection&quot;</param>
+                            <param id="1" name="Parameter {n}">inv_current - 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>&#x0D;&#x0A;PLAYER CONTROLS&#x0D;&#x0A;</comment>
+        <event-block sid="319443122993625">
+            <conditions>
+                <condition id="2" name="Key is down" sid="923126344705252" type="Keyboard">
+                    <param id="0" name="Key">65</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="892260168064107" type="player">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="611140398913555">
+            <conditions>
+                <condition id="2" name="Key is down" sid="153538317732741" type="Keyboard">
+                    <param id="0" name="Key">68</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="341447536109234" type="player">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="177984402694560">
+            <conditions>
+                <condition id="2" name="Key is down" sid="724178021633019" type="Keyboard">
+                    <param id="0" name="Key">87</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="705400640521490" type="player">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="469566127413572">
+            <conditions>
+                <condition id="2" name="Key is down" sid="384739726911694" type="Keyboard">
+                    <param id="0" name="Key">83</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="12" name="Fall through" sid="939463465946402" type="player" />
+            </actions>
+        </event-block>
+        <event-block sid="162418098649015">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="228182217013302" type="Keyboard">
+                    <param id="0" name="Key">86</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="153807937963298" type="f">
+                    <param id="0" name="Name">&quot;playerFire&quot;</param>
+                    <param id="1" name="Parameter {n}">13</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="327333928232466">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="881698786680763" type="Keyboard">
+                    <param id="0" name="Key">81</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="756976394013103" type="f">
+                    <param id="0" name="Name">&quot;inv_drop&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>inventoryEvents</name>
     <events>
+        <comment>Dev item reference:&#x0D;&#x0A;1 - stone&#x0D;&#x0A;4 - wood&#x0D;&#x0A;5 - iron&#x0D;&#x0A;6 - jelly&#x0D;&#x0A;7 - heal&#x0D;&#x0A;</comment>
         <comment>*** PICKING UP ITEMS ***&#x0D;&#x0A;</comment>
         <event-block sid="297325924324900">
             <conditions>
@@ -12,27 +13,64 @@
             </conditions>
             <actions />
             <sub-events>
-                <event-block sid="870176509379944">
+                <comment>heal stuff</comment>
+                <event-block sid="679289201266576">
                     <conditions>
-                        <condition id="-8" name="Is boolean instance variable set" sid="596593604404738" type="itemEntity">
-                            <param id="0" name="Instance variable">itemPickup</param>
-                        </condition>
-                        <condition id="-8" name="Compare two values" sid="988362278503283" type="System">
-                            <param id="0" name="First value">f.Call(&quot;inv_hasSpace&quot;)</param>
+                        <condition id="-7" name="Compare instance variable" sid="304457790400585" type="itemEntity">
+                            <param id="0" name="Instance variable">itemID</param>
                             <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Second value">1</param>
-                        </condition>
-                        <condition id="-17" name="Pick top/bottom" sid="989547050520194" type="itemEntity">
-                            <param id="0" name="Which">1</param>
+                            <param id="2" name="Value">7</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="170179288914790" type="f">
-                            <param id="0" name="Name">&quot;inv_add&quot;</param>
-                            <param id="1" name="Parameter {n}">itemEntity.itemID</param>
-                        </action>
-                        <action id="-9" name="Destroy" sid="235343799588546" type="itemEntity" />
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="874503993285886">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="348463730849836" type="player">
+                                    <param id="0" name="Instance variable">health</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="357720856297988" type="f">
+                                    <param id="0" name="Name">&quot;player_heal&quot;</param>
+                                    <param id="1" name="Parameter {n}">1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="127666323451030" type="itemEntity" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="381438318935230">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="482860456226981" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="870176509379944">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="596593604404738" type="itemEntity">
+                                    <param id="0" name="Instance variable">itemPickup</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="988362278503283" type="System">
+                                    <param id="0" name="First value">f.Call(&quot;inv_hasSpace&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-17" name="Pick top/bottom" sid="989547050520194" type="itemEntity">
+                                    <param id="0" name="Which">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="170179288914790" type="f">
+                                    <param id="0" name="Name">&quot;inv_add&quot;</param>
+                                    <param id="1" name="Parameter {n}">itemEntity.itemID</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="235343799588546" type="itemEntity" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>
@@ -145,19 +183,6 @@
                 <action id="-13" name="Set boolean" sid="259699248626488" type="itemEntity">
                     <param id="0" name="Instance variable">itemPickup</param>
                     <param id="1" name="Value">1</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="969609253439163">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="828198564554851" type="Keyboard">
-                    <param id="0" name="Key">81</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Call function" sid="786158073144356" type="f">
-                    <param id="0" name="Name">&quot;inv_drop&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
                 </action>
             </actions>
         </event-block>

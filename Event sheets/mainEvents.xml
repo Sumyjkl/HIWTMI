@@ -269,20 +269,6 @@
         </event-group>
         <event-group description="" sid="237028099788876" title="other misc">
             <sub-events>
-                <comment>debug</comment>
-                <event-block sid="288057467835352">
-                    <conditions>
-                        <condition id="0" name="On key pressed" sid="349052701708890" type="Keyboard">
-                            <param id="0" name="Key">17</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="775978843357933" type="f">
-                            <param id="0" name="Name">&quot;tiles_updateArea&quot;</param>
-                            <param id="1" name="Parameter {n}">floor(Mouse.X/tileMapSize){###}floor(Mouse.Y/tileMapSize)</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <comment>init</comment>
                 <event-block sid="883431433697372">
                     <conditions>
@@ -412,74 +398,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <comment>open doors (temporary)</comment>
-                <event-block sid="897094913592081">
-                    <conditions>
-                        <condition id="6" name="On object clicked" sid="969608239383400" type="Mouse">
-                            <param id="0" name="Mouse button">2</param>
-                            <param id="1" name="Click type">0</param>
-                            <param id="2" name="Object clicked">door</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="171248022067322">
-                            <conditions>
-                                <condition id="2" name="Is playing" sid="909257077591831" type="door">
-                                    <param id="0" name="Animation">&quot;closed&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="4" name="Set animation" sid="184956356195778" type="door">
-                                    <param id="0" name="Animation">&quot;open&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                                <action behavior="Solid" id="0" name="Set enabled" sid="933709855394034" type="door">
-                                    <param id="0" name="State">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="324173044372281">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="145225813948100" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="4" name="Set animation" sid="948885132936179" type="door">
-                                    <param id="0" name="Animation">&quot;closed&quot;</param>
-                                    <param id="1" name="From">1</param>
-                                </action>
-                                <action behavior="Solid" id="0" name="Set enabled" sid="753229403124698" type="door">
-                                    <param id="0" name="State">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
             </sub-events>
         </event-group>
-        <event-block disabled="1" sid="430027653007747">
-            <conditions>
-                <condition id="1" name="On any click" sid="350143931145396" type="Mouse" />
-            </conditions>
-            <actions>
-                <action id="0" name="Set text" sid="882985562916896" type="Text">
-                    <param id="0" name="Text">&quot;&quot;</param>
-                </action>
-            </actions>
-            <sub-events>
-                <event-block disabled="1" sid="893498272976730">
-                    <conditions>
-                        <condition id="-11" name="For Each" sid="890235243824191" type="System">
-                            <param id="0" name="Object">tilePrefabs</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="1" name="Append text" sid="157288692456810" type="Text">
-                            <param id="0" name="Text">tilePrefabs.material&amp;&quot;-&quot;&amp;tilePrefabs.UID&amp;&quot;;&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
     </events>
 </c2eventsheet>

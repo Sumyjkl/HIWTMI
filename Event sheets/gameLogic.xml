@@ -173,72 +173,6 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block disabled="1" sid="655597454013358">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="359642572317457" type="Keyboard">
-                    <param id="0" name="Key">85</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Call function" sid="759797681888677" type="f">
-                    <param id="0" name="Name">&quot;tiles_updateAll&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block disabled="1" sid="826672097298658">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="562676765188048" type="Keyboard">
-                    <param id="0" name="Key">80</param>
-                </condition>
-                <condition id="-14" name="Pick by unique ID" sid="538350318494661" type="TileMap">
-                    <param id="0" name="Unique ID">15</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Solid" id="0" name="Set enabled" sid="230056421066924" type="TileMap">
-                    <param id="0" name="State">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block disabled="1" sid="387645944291519">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="500571303859536" type="Keyboard">
-                    <param id="0" name="Key">89</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="0" name="Call function" sid="214399372846485" type="f">
-                    <param id="0" name="Name">&quot;tiles_addTile&quot;</param>
-                    <param id="1" name="Parameter {n}">floor(Mouse.X / tileMapSize){###}floor(Mouse.Y / tileMapSize){###}0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block disabled="1" sid="471314575263050">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="720328970432877" type="Keyboard">
-                    <param id="0" name="Key">84</param>
-                </condition>
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block disabled="1" sid="330413199505682">
-                    <conditions />
-                    <actions>
-                        <action id="4" name="Set at XYZ" sid="309963377947415" type="TileArray">
-                            <param id="0" name="X">floor(Mouse.X / tileMapSize)</param>
-                            <param id="1" name="Y">floor(Mouse.Y / tileMapSize)</param>
-                            <param id="2" name="Z">0</param>
-                            <param id="3" name="Value">0</param>
-                        </action>
-                        <action id="0" name="Erase tile" sid="462885811780214" type="TileMap">
-                            <param id="0" name="Tile X">floor(Mouse.X / tileMapSize)</param>
-                            <param id="1" name="Tile Y">floor(Mouse.Y / tileMapSize)</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
         <event-group description="" sid="107422202580552" title="door">
             <sub-events>
                 <event-block sid="451167972411661">
@@ -280,6 +214,49 @@
                             <param id="1" name="Parameter {n}">&quot;build_doorOptions&quot;{###}&quot;door_create&quot;</param>
                         </action>
                     </actions>
+                </event-block>
+                <event-block sid="724331824027132">
+                    <conditions>
+                        <condition id="0" name="On function" sid="308651297209269" type="f">
+                            <param id="0" name="Name">&quot;door_open&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Pick by unique ID" sid="109796907690482" type="door">
+                            <param id="0" name="Unique ID">f.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="791999942555098">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="483515026931418" type="door">
+                                    <param id="0" name="Animation">&quot;closed&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="511944542008847" type="door">
+                                    <param id="0" name="Animation">&quot;open&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Solid" id="0" name="Set enabled" sid="844164686398369" type="door">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="437760264201629">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="747990452719174" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="508072387912851" type="door">
+                                    <param id="0" name="Animation">&quot;closed&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action behavior="Solid" id="0" name="Set enabled" sid="240765987352148" type="door">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -608,6 +585,10 @@
                             <param id="1" name="Layer">3</param>
                             <param id="2" name="Image point">0</param>
                         </action>
+                        <action id="0" name="Call function" sid="534175745512377" type="f">
+                            <param id="0" name="Name">&quot;item_spawn&quot;</param>
+                            <param id="1" name="Parameter {n}">enemyTraditional.X{###}enemyTraditional.Y{###}6</param>
+                        </action>
                         <action id="-9" name="Destroy" sid="310729802550663" type="enemyTraditional" />
                     </actions>
                 </event-block>
@@ -763,35 +744,6 @@
                             <param id="1" name="Parameter {n}">machine.ImagePointX(1){###}machine.ImagePointY(1){###}machine.outputs</param>
                         </action>
                         <action id="2" name="Stop" sid="977390926362963" type="machine" />
-                    </actions>
-                </event-block>
-                <event-block sid="553037320081321">
-                    <conditions>
-                        <condition id="0" name="On function" sid="688874457896976" type="f">
-                            <param id="0" name="Name">&quot;gl_createMachine&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Create object" sid="453742061081430" type="System">
-                            <param id="0" name="Object to create">machine</param>
-                            <param id="1" name="Layer">&quot;tiles&quot;</param>
-                            <param id="2" name="X">f.Param(0)</param>
-                            <param id="3" name="Y">f.Param(1)</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="121235575478379" type="machine">
-                            <param id="0" name="Instance variable">accepts</param>
-                            <param id="1" name="Value">f.Param(2)</param>
-                        </action>
-                        <action id="-10" name="Set value" sid="294361302101207" type="machine">
-                            <param id="0" name="Instance variable">outputs</param>
-                            <param id="1" name="Value">f.Param(3)</param>
-                        </action>
-                        <action id="4" name="Set at XYZ" sid="868226043728409" type="TileArray">
-                            <param id="0" name="X">f.Param(0)</param>
-                            <param id="1" name="Y">f.Param(1)</param>
-                            <param id="2" name="Z">0</param>
-                            <param id="3" name="Value">700</param>
-                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -1020,9 +972,108 @@
         </event-group>
         <event-group description="" sid="945222913529490" title="machines_implement">
             <sub-events>
-                <event-block sid="392866788987976">
-                    <conditions />
+                <event-block sid="506578350737205">
+                    <conditions>
+                        <condition id="0" name="On function" sid="577702717911467" type="f">
+                            <param id="0" name="Name">&quot;machine_create&quot;</param>
+                        </condition>
+                    </conditions>
                     <actions />
+                    <sub-events>
+                        <variable constant="0" name="type" sid="319851628473337" static="0" type="text"></variable>
+                        <event-block sid="315676812723443">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="369118532113725" type="System">
+                                    <param id="0" name="Variable">type</param>
+                                    <param id="1" name="Value">f.Param(2)</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="584485363785544" type="System">
+                                    <param id="0" name="Object to create">machine</param>
+                                    <param id="1" name="Layer">&quot;tiles&quot;</param>
+                                    <param id="2" name="X">f.Param(0) * tileMapSize</param>
+                                    <param id="3" name="Y">f.Param(1) * tileMapSize</param>
+                                </action>
+                                <action id="4" name="Set at XYZ" sid="868226043728409" type="TileArray">
+                                    <param id="0" name="X">f.Param(0)</param>
+                                    <param id="1" name="Y">f.Param(1)</param>
+                                    <param id="2" name="Z">0</param>
+                                    <param id="3" name="Value">700</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="801229621896782">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="472474175354090" type="System">
+                                            <param id="0" name="Variable">type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;4;5&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="943359345791936" type="machine">
+                                            <param id="0" name="Instance variable">accepts</param>
+                                            <param id="1" name="Value">6</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="452727674096198" type="machine">
+                                            <param id="0" name="Instance variable">outputs</param>
+                                            <param id="1" name="Value">7</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="462650935498065" type="machine">
+                                            <param id="0" name="Animation">&quot;medical&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="2" name="Stop" sid="421653387793573" type="machine" />
+                                        <action id="-10" name="Set value" sid="988734164179070" type="machine">
+                                            <param id="0" name="Instance variable">delay</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="211403309654605">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="757481792411546" type="System">
+                                            <param id="0" name="Variable">type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;1;4;5&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="121235575478379" type="machine">
+                                            <param id="0" name="Instance variable">accepts</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="294361302101207" type="machine">
+                                            <param id="0" name="Instance variable">outputs</param>
+                                            <param id="1" name="Value">4</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="228325172791666" type="machine">
+                                            <param id="0" name="Animation">&quot;generic&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="2" name="Stop" sid="470108143427037" type="machine" />
+                                        <action id="-10" name="Set value" sid="963724824719371" type="machine">
+                                            <param id="0" name="Instance variable">delay</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="782971739440164">
+                    <conditions>
+                        <condition id="0" name="On function" sid="741454658052849" type="f">
+                            <param id="0" name="Name">&quot;machine_placeAtRadial&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="591987384394031" type="f">
+                            <param id="0" name="Name">&quot;gl_buildAtRadial&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;build_machineOptions&quot;{###}&quot;machine_create&quot;</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
