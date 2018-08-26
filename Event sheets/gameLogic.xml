@@ -623,6 +623,7 @@
                                 </action>
                             </actions>
                             <sub-events>
+                                <comment>medical (gel &gt; medic)</comment>
                                 <event-block sid="801229621896782">
                                     <conditions>
                                         <condition id="-14" name="Compare variable" sid="472474175354090" type="System">
@@ -651,6 +652,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
+                                <comment>grinder (stone &gt; wood)</comment>
                                 <event-block sid="211403309654605">
                                     <conditions>
                                         <condition id="-14" name="Compare variable" sid="757481792411546" type="System">
@@ -674,6 +676,93 @@
                                         </action>
                                         <action id="2" name="Stop" sid="470108143427037" type="machine" />
                                         <action id="-10" name="Set value" sid="963724824719371" type="machine">
+                                            <param id="0" name="Instance variable">delay</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>uranium producer (iron &gt; uranium)</comment>
+                                <event-block sid="735217432577010">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="875169958012354" type="System">
+                                            <param id="0" name="Variable">type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;1;5;6&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="799492303182845" type="machine">
+                                            <param id="0" name="Instance variable">accepts</param>
+                                            <param id="1" name="Value">5</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="996066173531423" type="machine">
+                                            <param id="0" name="Instance variable">outputs</param>
+                                            <param id="1" name="Value">8</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="893138682007602" type="machine">
+                                            <param id="0" name="Animation">&quot;generic&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="2" name="Stop" sid="918027913239239" type="machine" />
+                                        <action id="-10" name="Set value" sid="437190660903372" type="machine">
+                                            <param id="0" name="Instance variable">delay</param>
+                                            <param id="1" name="Value">5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>polar reverser (magnetion &gt; titanium)</comment>
+                                <event-block sid="436796873845781">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="389845987679781" type="System">
+                                            <param id="0" name="Variable">type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;1;5;9&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="910641870978289" type="machine">
+                                            <param id="0" name="Instance variable">accepts</param>
+                                            <param id="1" name="Value">9</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="305516204580461" type="machine">
+                                            <param id="0" name="Instance variable">outputs</param>
+                                            <param id="1" name="Value">11</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="615391437700358" type="machine">
+                                            <param id="0" name="Animation">&quot;generic&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="2" name="Stop" sid="552969121063022" type="machine" />
+                                        <action id="-10" name="Set value" sid="954958298254121" type="machine">
+                                            <param id="0" name="Instance variable">delay</param>
+                                            <param id="1" name="Value">3</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>compactor (stone &gt; steel)</comment>
+                                <event-block sid="883255168626353">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="120957401846766" type="System">
+                                            <param id="0" name="Variable">type</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;5;11&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="405401769091716" type="machine">
+                                            <param id="0" name="Instance variable">accepts</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="787086643200698" type="machine">
+                                            <param id="0" name="Instance variable">outputs</param>
+                                            <param id="1" name="Value">12</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="932197892180658" type="machine">
+                                            <param id="0" name="Animation">&quot;generic&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action id="2" name="Stop" sid="650811808255207" type="machine" />
+                                        <action id="-10" name="Set value" sid="961310010348161" type="machine">
                                             <param id="0" name="Instance variable">delay</param>
                                             <param id="1" name="Value">3</param>
                                         </action>

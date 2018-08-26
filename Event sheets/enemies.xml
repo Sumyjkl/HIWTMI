@@ -4,7 +4,7 @@
     <name>enemies</name>
     <events>
         <comment># enemies&#x0D;&#x0A;# enm_ &#x0D;&#x0A;# Controls the behavior of all enemies, plus enemy spawning system, enemy block breaking&#x0D;&#x0A;</comment>
-        <variable comment="undecided which parts of the game this changes" constant="0" name="enm_difficulty" sid="262379005146811" static="0" type="number">1</variable>
+        <variable comment="undecided which parts of the game this changes" constant="0" name="enm_difficulty" sid="262379005146811" static="0" type="number">0.5</variable>
         <variable constant="0" name="enm_waveNumber" sid="238194452379928" static="0" type="number">0</variable>
         <variable constant="0" name="enm_nextWave" sid="613627788533310" static="0" type="number">60</variable>
         <event-group description="" sid="786932382756084" title="slime">

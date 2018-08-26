@@ -247,7 +247,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>960</x>
+                        <x>912</x>
                         <y>512</y>
                         <z>0</z>
                         <width>16</width>
@@ -303,8 +303,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>939</x>
-                        <y>504</y>
+                        <x>944</x>
+                        <y>512</y>
                         <z>0</z>
                         <width>16</width>
                         <height>16</height>
@@ -376,7 +376,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>987</x>
+                        <x>960</x>
                         <y>512</y>
                         <z>0</z>
                         <width>16</width>
@@ -388,53 +388,65 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="machine" uid="64">
+                <instance type="cave" uid="64">
                     <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>3</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <interact_function></interact_function>
-                        <accepts>1</accepts>
-                        <outputs>4</outputs>
-                        <delay>4</delay>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="Solid">
-                            <properties>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>909</x>
-                        <y>496</y>
-                        <z>0</z>
-                        <width>16</width>
-                        <height>16</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="machine" uid="53">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <interact_function></interact_function>
-                        <accepts>4</accepts>
-                        <outputs>5</outputs>
-                        <delay>0</delay>
+                        <caveData>0;0;0;0;001101111111;111111101111;111111111111;111111111111;110011111111;111111101111;111111111111;</caveData>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>983</x>
+                        <y>638</y>
+                        <z>0</z>
+                        <width>8</width>
+                        <height>8</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="cave" uid="53">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <caveData>4;0;0;0;0011110;0010010;0111011;0100001;0000000;0111111;</caveData>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>910</x>
+                        <y>459</y>
+                        <z>0</z>
+                        <width>8</width>
+                        <height>8</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="door" uid="71">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>closed</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <interact_function>door_open</interact_function>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">
@@ -446,8 +458,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>893</x>
-                        <y>496</y>
+                        <x>992</x>
+                        <y>512</y>
                         <z>0</z>
                         <width>16</width>
                         <height>16</height>
