@@ -456,13 +456,6 @@
                     <sub-events>
                         <event-block sid="527558999717676">
                             <conditions>
-                                <condition id="2" name="Compare at XYZ" sid="454548483804246" type="TileArray">
-                                    <param id="0" name="X">floor(Mouse.X / tileMapSize)</param>
-                                    <param id="1" name="Y">floor(Mouse.Y / tileMapSize)</param>
-                                    <param id="2" name="Z">0</param>
-                                    <param id="3" name="Comparison">2</param>
-                                    <param id="4" name="Value">500</param>
-                                </condition>
                                 <condition id="2" name="Compare at XYZ" sid="313783408902270" type="TileArray">
                                     <param id="0" name="X">floor(Mouse.X / tileMapSize)</param>
                                     <param id="1" name="Y">floor(Mouse.Y / tileMapSize)</param>
@@ -470,10 +463,10 @@
                                     <param id="3" name="Comparison">0</param>
                                     <param id="4" name="Value">0</param>
                                 </condition>
-                                <condition id="-14" name="Compare variable" sid="842364119612634" type="System">
-                                    <param id="0" name="Variable">inventoryID</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">0</param>
+                                <condition id="-8" name="Compare two values" sid="348600973621789" type="System">
+                                    <param id="0" name="First value">f.Call(&quot;inv_isPlacable&quot;, inventoryID)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
                                 </condition>
                             </conditions>
                             <actions>

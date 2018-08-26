@@ -199,7 +199,7 @@
                                 <rate-of-fire>0.1</rate-of-fire>
                                 <rotate>Yes</rotate>
                                 <rotate-speed>200</rotate-speed>
-                                <target-mode>First in range</target-mode>
+                                <target-mode>Nearest</target-mode>
                                 <predictive-aim>Yes</predictive-aim>
                                 <projectile-speed>500</projectile-speed>
                                 <initial-state>Enabled</initial-state>

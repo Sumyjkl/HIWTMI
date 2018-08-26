@@ -59,7 +59,7 @@
         <prop name="Fullscreen scaling quality">Low</prop>
         <prop name="Hide address bar">No</prop>
         <prop name="Loader style">Progress bar &amp; logo</prop>
-        <prop name="Preview browser">Chrome</prop>
+        <prop name="Preview browser">(default)</prop>
         <prop name="Sampling">Point</prop>
         <prop name="Use iOS retina display">All devices</prop>
     </configuration-settings>
@@ -200,10 +200,141 @@
                     <animation framecount="1" loop="0" name="i7" pingpong="0" repeatcount="1" repeatto="0" sid="905567110179397" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0" />
                     </animation>
+                    <animation framecount="1" loop="0" name="i8" pingpong="0" repeatcount="1" repeatto="0" sid="305310398984128" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i9" pingpong="0" repeatcount="1" repeatto="0" sid="722012824215444" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i10" pingpong="0" repeatcount="1" repeatto="0" sid="851876129351775" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i11" pingpong="0" repeatcount="1" repeatto="0" sid="719546808593727" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i12" pingpong="0" repeatcount="1" repeatto="0" sid="577139532442968" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
                 </animation-folder>
             </object-type>
             <object-type global="1" name="inv_row" sid="801372277846463">
                 <plugin id="Arr" />
+            </object-type>
+            <object-type global="1" name="inv_itemOnly" sid="957231866733494">
+                <plugin id="Arr" />
+            </object-type>
+            <object-type name="itemEntity" sid="933614383096207">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="itemID" sid="789710333946860" type="number" />
+                    <instance-variable name="itemCount" sid="300121292900247" type="number" />
+                    <instance-variable name="itemPickup" sid="188550551352903" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Platform" sid="909026075836736">
+                        <behavior id="Platform" />
+                    </behavior-type>
+                    <behavior-type name="Sine" sid="457384895621142">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                    <behavior-type name="Timer" sid="244368324900948">
+                        <behavior id="Timer" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="i1" pingpong="0" repeatcount="1" repeatto="0" sid="717591640481913" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i4" pingpong="0" repeatcount="1" repeatto="0" sid="800316459499548" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i5" pingpong="0" repeatcount="1" repeatto="0" sid="172423060375265" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i6" pingpong="0" repeatcount="1" repeatto="0" sid="194670428954888" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i7" pingpong="0" repeatcount="1" repeatto="0" sid="193203142468195" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i8" pingpong="0" repeatcount="1" repeatto="0" sid="824561559959895" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i9" pingpong="0" repeatcount="1" repeatto="0" sid="737859080593180" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i10" pingpong="0" repeatcount="1" repeatto="0" sid="488725192998931" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i11" pingpong="0" repeatcount="1" repeatto="0" sid="139640523715049" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i12" pingpong="0" repeatcount="1" repeatto="0" sid="389245757460989" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="turret">
+            <object-type name="turretCannonBall" sid="407838013888517">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="748776845620508" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.166667" y="0.166667" />
+                                <point x="0.833333" y="0.166667" />
+                                <point x="0.833333" y="0.833333" />
+                                <point x="0.166667" y="0.833333" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="turretHeadCannon" sid="298481314468908">
+                <plugin id="Sprite" />
+                <container>
+                    <type>turretHeadCannon</type>
+                    <type>turretMountCannon</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="737402429149405" speed="5">
+                        <frame duration="1" hotspotX="0.25" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="1" y="0.5" />
+                            <collision-poly>
+                                <point x="0.0625" y="0.3125" />
+                                <point x="1" y="0.3125" />
+                                <point x="1" y="0.6875" />
+                                <point x="0.0625" y="0.6875" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="machinegun" pingpong="0" repeatcount="1" repeatto="0" sid="673964422050750" speed="5">
+                        <frame duration="1" hotspotX="0.125" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                            <collision-poly>
+                                <point x="0.03125" y="0.3125" />
+                                <point x="0.5" y="0.3125" />
+                                <point x="0.5" y="0.6875" />
+                                <point x="0.03125" y="0.6875" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="turretMountCannon" sid="714129993918786">
+                <plugin id="Sprite" />
+                <container>
+                    <type>turretHeadCannon</type>
+                    <type>turretMountCannon</type>
+                </container>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="269540452901567" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                    </animation>
+                </animation-folder>
             </object-type>
         </object-folder>
         <object-type name="WebStorage" sid="1510269620771624">
@@ -321,55 +452,6 @@
             <texture />
             <tiles />
         </object-type>
-        <object-type name="turretMountCannon" sid="714129993918786">
-            <plugin id="Sprite" />
-            <container>
-                <type>turretHeadCannon</type>
-                <type>turretMountCannon</type>
-            </container>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="269540452901567" speed="5">
-                    <frame duration="1" hotspotX="0" hotspotY="0">
-                        <image-point name="Imagepoint 1" x="0.5" y="0.5" />
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="turretHeadCannon" sid="298481314468908">
-            <plugin id="Sprite" />
-            <container>
-                <type>turretHeadCannon</type>
-                <type>turretMountCannon</type>
-            </container>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="737402429149405" speed="5">
-                    <frame duration="1" hotspotX="0.25" hotspotY="0.5">
-                        <image-point name="Imagepoint 1" x="1" y="0.5" />
-                        <collision-poly>
-                            <point x="0.0625" y="0.3125" />
-                            <point x="1" y="0.3125" />
-                            <point x="1" y="0.6875" />
-                            <point x="0.0625" y="0.6875" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="turretCannonBall" sid="407838013888517">
-            <plugin id="Sprite" />
-            <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="748776845620508" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
-                        <collision-poly>
-                            <point x="0.166667" y="0.166667" />
-                            <point x="0.833333" y="0.166667" />
-                            <point x="0.833333" y="0.833333" />
-                            <point x="0.166667" y="0.833333" />
-                        </collision-poly>
-                    </frame>
-                </animation>
-            </animation-folder>
-        </object-type>
         <object-type name="cave" sid="802164837025012">
             <plugin id="Sprite" />
             <instance-variables>
@@ -440,42 +522,6 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="878374948542506" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-            </animation-folder>
-        </object-type>
-        <object-type name="itemEntity" sid="933614383096207">
-            <plugin id="Sprite" />
-            <instance-variables>
-                <instance-variable name="itemID" sid="789710333946860" type="number" />
-                <instance-variable name="itemCount" sid="300121292900247" type="number" />
-                <instance-variable name="itemPickup" sid="188550551352903" type="boolean" />
-            </instance-variables>
-            <behaviors>
-                <behavior-type name="Platform" sid="909026075836736">
-                    <behavior id="Platform" />
-                </behavior-type>
-                <behavior-type name="Sine" sid="457384895621142">
-                    <behavior id="Sin" />
-                </behavior-type>
-                <behavior-type name="Timer" sid="244368324900948">
-                    <behavior id="Timer" />
-                </behavior-type>
-            </behaviors>
-            <animation-folder>
-                <animation framecount="1" loop="0" name="i1" pingpong="0" repeatcount="1" repeatto="0" sid="717591640481913" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-                <animation framecount="1" loop="0" name="i4" pingpong="0" repeatcount="1" repeatto="0" sid="800316459499548" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-                <animation framecount="1" loop="0" name="i5" pingpong="0" repeatcount="1" repeatto="0" sid="172423060375265" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-                <animation framecount="1" loop="0" name="i6" pingpong="0" repeatcount="1" repeatto="0" sid="194670428954888" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                </animation>
-                <animation framecount="1" loop="0" name="i7" pingpong="0" repeatcount="1" repeatto="0" sid="193203142468195" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>

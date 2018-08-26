@@ -345,6 +345,10 @@
                                     <param id="0" name="Name">&quot;inv_add&quot;</param>
                                     <param id="1" name="Parameter {n}">5</param>
                                 </action>
+                                <action id="0" name="Call function" sid="855250671987863" type="f">
+                                    <param id="0" name="Name">&quot;inv_add&quot;</param>
+                                    <param id="1" name="Parameter {n}">4</param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <event-block sid="663351633156962">

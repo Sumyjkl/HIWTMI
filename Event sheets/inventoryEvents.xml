@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>inventoryEvents</name>
     <events>
-        <comment>Dev item reference:&#x0D;&#x0A;1 - stone&#x0D;&#x0A;4 - wood&#x0D;&#x0A;5 - iron&#x0D;&#x0A;6 - jelly&#x0D;&#x0A;7 - heal&#x0D;&#x0A;</comment>
+        <comment>Dev item reference:&#x0D;&#x0A;1 - stone&#x0D;&#x0A;4 - wood&#x0D;&#x0A;5 - iron&#x0D;&#x0A;6 - jelly&#x0D;&#x0A;7 - heal&#x0D;&#x0A;8 - uranium&#x0D;&#x0A;9 - magnetion&#x0D;&#x0A;10 - oxohydrate&#x0D;&#x0A;11 - titanium&#x0D;&#x0A;12 - steel&#x0D;&#x0A;</comment>
         <comment>*** PICKING UP ITEMS ***&#x0D;&#x0A;</comment>
         <event-block sid="297325924324900">
             <conditions>
@@ -217,6 +217,32 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-block sid="430427816314115">
+            <conditions>
+                <condition id="0" name="On function" sid="422981508863795" type="f">
+                    <param id="0" name="Name">&quot;inv_isPlacable&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Set return value" sid="819851750832237" type="f">
+                    <param id="0" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="762543526560018">
+                    <conditions>
+                        <condition id="5" name="Contains value" sid="850941998603477" type="inv_itemOnly">
+                            <param id="0" name="Value">f.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Set return value" sid="650465845894833" type="f">
+                            <param id="0" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
         <variable comment="currently selected inedx" constant="0" name="inv_current" sid="607339300880957" static="0" type="number">0</variable>
         <event-group description="" sid="771433775910418" title="inventory_row">
             <sub-events>
@@ -233,6 +259,34 @@
                             <param id="2" name="Depth">1</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <comment>Set array of item-only (non placable) ids</comment>
+                        <event-block sid="347641559129604">
+                            <conditions />
+                            <actions>
+                                <action id="5" name="Push" sid="254355819110792" type="inv_itemOnly">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">0</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="5" name="Push" sid="164964685424467" type="inv_itemOnly">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">6</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="5" name="Push" sid="713161876134050" type="inv_itemOnly">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">7</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="5" name="Push" sid="155417795830289" type="inv_itemOnly">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Value">8</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="836046986348859">
                     <conditions>

@@ -134,8 +134,15 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <comment>cannon turret</comment>
                         <event-block sid="593479130611869">
-                            <conditions />
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="844317097665404" type="f">
+                                    <param id="0" name="Index">2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;5&quot;</param>
+                                </condition>
+                            </conditions>
                             <actions>
                                 <action id="-3" name="Create object" sid="539332833542305" type="System">
                                     <param id="0" name="Object to create">turretMountCannon</param>
@@ -152,6 +159,46 @@
                                 <action id="0" name="Call function" sid="434205427623676" type="f">
                                     <param id="0" name="Name">&quot;turret_init&quot;</param>
                                     <param id="1" name="Parameter {n}">turretMountCannon.UID</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>machine gun turret</comment>
+                        <event-block sid="313948984025441">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="582162750205871" type="f">
+                                    <param id="0" name="Index">2</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;4;5&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="987439300071164" type="System">
+                                    <param id="0" name="Object to create">turretMountCannon</param>
+                                    <param id="1" name="Layer">&quot;tiles&quot;</param>
+                                    <param id="2" name="X">f.Param(0) * tileMapSize</param>
+                                    <param id="3" name="Y">f.Param(1) * tileMapSize</param>
+                                </action>
+                                <action id="4" name="Set at XYZ" sid="927112222075650" type="TileArray">
+                                    <param id="0" name="X">f.Param(0)</param>
+                                    <param id="1" name="Y">f.Param(1)</param>
+                                    <param id="2" name="Z">0</param>
+                                    <param id="3" name="Value">601</param>
+                                </action>
+                                <action id="0" name="Call function" sid="221235914781571" type="f">
+                                    <param id="0" name="Name">&quot;turret_init&quot;</param>
+                                    <param id="1" name="Parameter {n}">turretMountCannon.UID</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="951530194968668" type="turretHeadCannon">
+                                    <param id="0" name="Instance variable">tMagCap</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="253139049398055" type="turretHeadCannon">
+                                    <param id="0" name="Instance variable">tMag</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="299124049595490" type="turretHeadCannon">
+                                    <param id="0" name="Animation">&quot;machinegun&quot;</param>
+                                    <param id="1" name="From">1</param>
                                 </action>
                             </actions>
                         </event-block>

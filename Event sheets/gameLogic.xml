@@ -479,20 +479,6 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="666434143071991">
-                            <conditions>
-                                <condition id="-8" name="Compare two values" sid="821953221335574" type="System">
-                                    <param id="0" name="First value">f.Call(&quot;inv_hasList&quot;, &quot;4;5&quot;)</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Second value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="1" name="Set return value" sid="601807049099887" type="f">
-                                    <param id="0" name="Value">&quot;4;5&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
                         <event-block sid="182560039687123">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="867877729624140" type="System">
@@ -504,6 +490,21 @@
                             <actions>
                                 <action id="1" name="Set return value" sid="178916668073047" type="f">
                                     <param id="0" name="Value">&quot;1;4;5&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="666434143071991">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="103774643767306" type="System" />
+                                <condition id="-8" name="Compare two values" sid="821953221335574" type="System">
+                                    <param id="0" name="First value">f.Call(&quot;inv_hasList&quot;, &quot;4;5&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="601807049099887" type="f">
+                                    <param id="0" name="Value">&quot;4;5&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -557,8 +558,23 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="738022681501151">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="984146771741227" type="System">
+                                    <param id="0" name="First value">f.Call(&quot;inv_hasList&quot;, &quot;4;5&quot;)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="1" name="Set return value" sid="598937616946479" type="f">
+                                    <param id="0" name="Value">&quot;4;5&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="455015459442184">
                             <conditions>
+                                <condition id="-22" name="Else" sid="864192994189528" type="System" />
                                 <condition id="-8" name="Compare two values" sid="560832056583615" type="System">
                                     <param id="0" name="First value">f.Call(&quot;inv_hasList&quot;, &quot;5&quot;)</param>
                                     <param id="1" name="Comparison">0</param>
