@@ -147,7 +147,23 @@
                     <param id="0" name="Text">newline &amp; &quot;tile &quot; &amp; TileMap.TileAt(floor(Mouse.X / tileMapSize),floor(Mouse.Y / tileMapSize))</param>
                 </action>
                 <action id="1" name="Append text" sid="711788072736743" type="Text">
-                    <param id="0" name="Text">newline &amp; tileCracks.TileAt(floor(Mouse.X / tileMapSize),floor(Mouse.Y / tileMapSize))</param>
+                    <param id="0" name="Text">newline &amp; tiles_damageArray.At(floor(Mouse.X / tileMapSize),floor(Mouse.Y / tileMapSize))</param>
+                </action>
+                <action id="1" name="Append text" sid="330514643730711" type="Text">
+                    <param id="0" name="Text">newline &amp; floor(Mouse.X / tileMapSize) &amp; &quot;;&quot; &amp; floor(Mouse.Y / tileMapSize)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="924094162698040">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="329133948384717" type="Keyboard">
+                    <param id="0" name="Key">75</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="901726323110831" type="System">
+                    <param id="0" name="Variable">enm_difficulty</param>
+                    <param id="1" name="Value">0</param>
                 </action>
             </actions>
         </event-block>

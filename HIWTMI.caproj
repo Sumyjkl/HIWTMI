@@ -844,6 +844,7 @@
             <event-sheet>turretEvents.xml</event-sheet>
             <event-sheet>projectileEvents.xml</event-sheet>
             <event-sheet>inventoryEvents.xml</event-sheet>
+            <event-sheet>enemies.xml</event-sheet>
         </event-folder>
         <event-folder name="uiEvents">
             <event-sheet>loaderEvents.xml</event-sheet>

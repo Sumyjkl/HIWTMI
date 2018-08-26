@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>enemies</name>
+    <events>
+        <comment># enemies&#x0D;&#x0A;# enm_ &#x0D;&#x0A;# Controls the behavior of all enemies, plus enemy spawning system, enemy block breaking&#x0D;&#x0A;</comment>
+        <variable comment="undecided which parts of the game this changes" constant="0" name="enm_difficulty" sid="262379005146811" static="0" type="number">1</variable>
+        <variable constant="0" name="enm_waveNumber" sid="238194452379928" static="0" type="number">0</variable>
+        <variable constant="0" name="enm_nextWave" sid="613627788533310" static="0" type="number">60</variable>
+        <event-group description="" sid="786932382756084" title="slime">
+            <sub-events>
+                <event-block sid="343543592674876">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="864547046107766" type="slime" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="961142912423312" type="slime">
+                            <param id="0" name="Instance variable">jumpHeight</param>
+                            <param id="1" name="Value">random(50, 130)</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="755200632794783" type="slime">
+                            <param id="0" name="Instance variable">jumpLength</param>
+                            <param id="1" name="Value">random(50, 130)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="569204045499446">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="914017711161064" type="slime">
+                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="480706673115653">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="333533630041095" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="994076540259002" type="slime">
+                                    <param id="0" name="Animation">&quot;windup&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="920956855051586">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="659004851789088" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="292671385853785" type="slime">
+                                    <param id="0" name="Animation">&quot;idle&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="922458308099406">
+                    <conditions>
+                        <condition id="4" name="On finished" sid="848723937022492" type="slime">
+                            <param id="0" name="Animation">&quot;windup&quot;</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="415432122685995" type="slime">
+                            <param id="0" name="Instance variable">aiDirection</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="239513977293664" type="slime" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="811052794021575" type="slime">
+                            <param id="0" name="Animation">&quot;jump&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="883521621631685" type="slime">
+                            <param id="0" name="Vector Y">-self.jumpHeight</param>
+                        </action>
+                        <action behavior="Platform" id="8" name="Set vector X" sid="999726228185534" type="slime">
+                            <param id="0" name="Vector X">self.jumpLength * Self.aiDirection</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="894603124353815">
+                    <conditions>
+                        <condition behavior="Platform" id="2" inverted="1" name="Is on floor" sid="446960365873391" type="slime" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="3" name="Set deceleration" sid="770196728514987" type="slime">
+                            <param id="0" name="Deceleration">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="663143495180825">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="930069519657020" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="231250978016316" type="slime">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="420326383060438">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="389207867721535" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="7" name="Simulate control" sid="558991598900804" type="slime">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="794152781813257">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="142114689027529" type="slime" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="3" name="Set deceleration" sid="584003319471411" type="slime">
+                            <param id="0" name="Deceleration">300</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="533834752473522">
+                    <conditions>
+                        <condition behavior="Platform" id="6" name="On fall" sid="755313663040848" type="slime" />
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="878960690160141">
+                    <conditions>
+                        <condition behavior="Platform" id="9" name="On landed" sid="676754769279328" type="slime" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="672289083465062">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="206955075847486" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="878294747260820" type="slime">
+                                    <param id="0" name="Animation">&quot;windup&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="114693681528401">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="754150146803734" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="984396628172944" type="slime">
+                                    <param id="0" name="Animation">&quot;idle&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="886083331426094">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="508738238646929" type="slime">
+                            <param id="0" name="Instance variable">aiFollow</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;player&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="199762707875252">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="277461544572788" type="slime">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">player.X</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="888118100082798" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="844807849591597" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="100415753137931">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="957648154004532" type="slime">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">player.X</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="906077477882056" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="436775168664434" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="970493542430987">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="360240525288812" type="slime">
+                            <param id="0" name="Instance variable">aiFollow</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;core&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="273014011686024">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="904771798471625" type="slime">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="X co-ordinate">core.X</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="619040668262616" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">-1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="831355559528234" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="871675154118297">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="739004163419821" type="slime">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="X co-ordinate">core.X</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="505975015790909" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="237371706181715" type="slime">
+                                    <param id="0" name="Instance variable">aiDirection</param>
+                                    <param id="1" name="Value">-1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="313439018786829">
+                    <conditions>
+                        <condition id="0" name="On function" sid="707919965693565" type="f">
+                            <param id="0" name="Name">&quot;slime_knockback&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="845867283113452">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="732649121089446" type="slime">
+                                    <param id="0" name="Unique ID">f.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="808675489251731" type="slime">
+                                    <param id="0" name="Vector Y">-100</param>
+                                </action>
+                                <action behavior="Platform" id="8" name="Set vector X" sid="678889083625822" type="slime">
+                                    <param id="0" name="Vector X">100 * f.Param(1)</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="107940397658378" type="slime">
+                                    <param id="0" name="Animation">&quot;jump&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="221504882236545" title="enemies">
+            <sub-events>
+                <event-block sid="123493764090476">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="968699526596137" type="player">
+                            <param id="0" name="Object">enemyTraditional</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="474804207713423" type="f">
+                            <param id="0" name="Name">&quot;player_hit&quot;</param>
+                            <param id="1" name="Parameter {n}">enemyTraditional.damageToPlayer</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Damage</comment>
+                <event-block sid="429284929735005">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="289920112602188" type="enemyTraditional">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="181088091289551" type="enemyTraditional">
+                            <param id="0" name="Object">Ashes</param>
+                            <param id="1" name="Layer">3</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="194799856549626" type="f">
+                            <param id="0" name="Name">&quot;item_spawn&quot;</param>
+                            <param id="1" name="Parameter {n}">enemyTraditional.X{###}enemyTraditional.Y{###}6</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="867690154696788" type="enemyTraditional" />
+                    </actions>
+                </event-block>
+                <comment>Spawning</comment>
+                <event-block sid="921017627615007">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="319248088060583" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="897509773272597" type="System">
+                            <param id="0" name="Variable">enm_nextWave</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <variable constant="0" name="spawn_number" sid="844819868216815" static="0" type="number">0</variable>
+                <event-block sid="532430200158352">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="304014269210686" type="System">
+                            <param id="0" name="Variable">enm_nextWave</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="427030397796827" type="System">
+                            <param id="0" name="Variable">spawn_number</param>
+                            <param id="1" name="Value">floor(random(1+(enm_waveNumber*2), 5+(enm_waveNumber*2)) * enm_difficulty)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="612136462314011" type="System">
+                            <param id="0" name="Variable">enm_nextWave</param>
+                            <param id="1" name="Value">random(60, 100)</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="921878512838569" type="System">
+                            <param id="0" name="Variable">enm_waveNumber</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="843633208492877">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="587435799359087" type="System">
+                                    <param id="0" name="Object">spawner</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="469565527408768">
+                                    <conditions>
+                                        <condition id="-12" name="Repeat" sid="467465388459182" type="System">
+                                            <param id="0" name="Count">spawn_number</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="563371938166512" type="System">
+                                            <param id="0" name="Object to create">slime</param>
+                                            <param id="1" name="Layer">3</param>
+                                            <param id="2" name="X">spawner.X + random(-5, 5)</param>
+                                            <param id="3" name="Y">spawner.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <variable constant="0" name="enm_env_damage" sid="125396031744685" static="0" type="number">0.2</variable>
+        <event-group description="" sid="581578038821223" title="enemies_env_damage">
+            <sub-events>
+                <comment>Slime types&#x0D;&#x0A;</comment>
+                <event-block sid="711496754206756">
+                    <conditions>
+                        <condition behavior="Platform" id="3" name="Is jumping" sid="721110839425531" type="slimeType" />
+                        <condition id="9" name="Is overlapping at offset" sid="207969136041593" type="slimeType">
+                            <param id="0" name="Object">TileMap</param>
+                            <param id="1" name="Offset X">-2</param>
+                            <param id="2" name="Offset Y">0</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="784750079568544" type="System" />
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="0" name="Call function" sid="716714936019627" type="f">
+                            <param id="0" name="Name">&quot;gui_showStatusText&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;player&quot;{###}slimeType.X{###}slimeType.Y{###}&quot;Wall damage&quot;{###}rgb(0, 255, 0)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="906576408725352" type="f">
+                            <param id="0" name="Name">&quot;tdm_damageTile&quot;</param>
+                            <param id="1" name="Parameter {n}">floor((slimeType.X - 5) / tileMapSize){###}floor(slimeType.Y / tileMapSize){###}enm_env_damage</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="960242619355912">
+                    <conditions>
+                        <condition behavior="Platform" id="3" name="Is jumping" sid="206847279008166" type="slimeType" />
+                        <condition id="9" name="Is overlapping at offset" sid="108072905972798" type="slimeType">
+                            <param id="0" name="Object">TileMap</param>
+                            <param id="1" name="Offset X">2</param>
+                            <param id="2" name="Offset Y">0</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="144899989763280" type="System" />
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="0" name="Call function" sid="183337915072452" type="f">
+                            <param id="0" name="Name">&quot;gui_showStatusText&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;player&quot;{###}slimeType.X{###}slimeType.Y{###}&quot;Wall damage&quot;{###}rgb(0, 255, 0)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="725992927286213" type="f">
+                            <param id="0" name="Name">&quot;tdm_damageTile&quot;</param>
+                            <param id="1" name="Parameter {n}">floor((slimeType.X + 5) / tileMapSize){###}floor(slimeType.Y / tileMapSize){###}enm_env_damage</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="859402025788652">
+                    <conditions>
+                        <condition id="9" name="Is overlapping at offset" sid="600210776729897" type="slimeType">
+                            <param id="0" name="Object">TileMap</param>
+                            <param id="1" name="Offset X">0</param>
+                            <param id="2" name="Offset Y">-1</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="658642593297466" type="System" />
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="0" name="Call function" sid="505810086696899" type="f">
+                            <param id="0" name="Name">&quot;gui_showStatusText&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;player&quot;{###}slimeType.X{###}slimeType.Y{###}&quot;Ceil damage&quot;{###}rgb(0, 255, 0)</param>
+                        </action>
+                        <action id="0" name="Call function" sid="235050363697174" type="f">
+                            <param id="0" name="Name">&quot;tdm_damageTile&quot;</param>
+                            <param id="1" name="Parameter {n}">floor(slimeType.X / tileMapSize){###}floor((slimeType.Y - 10) / tileMapSize){###}enm_env_damage</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
