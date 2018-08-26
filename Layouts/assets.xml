@@ -753,6 +753,7 @@
                         <accepts>0</accepts>
                         <outputs>0</outputs>
                         <delay>0</delay>
+                        <working>false</working>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">

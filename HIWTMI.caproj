@@ -91,6 +91,7 @@
                     <instance-variable comment="the item this machine accepts as input" name="accepts" sid="855152005864565" type="number" />
                     <instance-variable name="outputs" sid="295644299022602" type="number" />
                     <instance-variable comment="how long to wait before dropping result" name="delay" sid="807710646950793" type="number" />
+                    <instance-variable name="working" sid="417307371947236" type="boolean" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="Solid" sid="722647678250749">
