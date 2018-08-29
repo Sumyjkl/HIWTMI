@@ -17,6 +17,7 @@
         <variable constant="0" name="map_gemDensity" sid="953541038957394" static="0" type="number">10</variable>
         <comment>tile</comment>
         <variable comment="size of tiles in tilemap" constant="0" name="tileMapSize" sid="683014316784176" static="0" type="number">16</variable>
+        <variable constant="0" name="tile_depthLimit" sid="576821524192177" static="0" type="number">35</variable>
         <comment>inv</comment>
         <variable constant="0" name="inventoryID" sid="563804555262286" static="0" type="number">0</variable>
         <event-group description="" sid="142850864710611" title="view">
