@@ -261,7 +261,7 @@
                     </actions>
                     <sub-events>
                         <comment>Set array of item-only (non placable) ids</comment>
-                        <event-block sid="347641559129604">
+                        <event-block bookmark="1" sid="347641559129604">
                             <conditions />
                             <actions>
                                 <action id="5" name="Push" sid="254355819110792" type="inv_itemOnly">

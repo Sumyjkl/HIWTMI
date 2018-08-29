@@ -126,6 +126,26 @@
                                 </action>
                             </actions>
                         </event-block>
+                        <event-block sid="754548964685590">
+                            <conditions>
+                                <condition id="-10" name="For" sid="465032036251567" type="System">
+                                    <param id="0" name="Name">&quot;&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">map_gemDensity</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="448358134486627" type="tilePrefabs">
+                                    <param id="0" name="Instance variable">material</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">9</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="646665712641508" type="f">
+                                    <param id="0" name="Name">&quot;tiles_addPrefab&quot;</param>
+                                    <param id="1" name="Parameter {n}">int(random(TileArray.Width)){###}int(random(TileArray.Height)){###}tilePrefabs.At(int(random(tilePrefabs.Width)), 0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="749803097715580">
                             <conditions>
                                 <condition id="-10" name="For" sid="895458493119972" type="System">

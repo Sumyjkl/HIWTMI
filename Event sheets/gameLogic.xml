@@ -682,7 +682,7 @@
                                             <param id="1" name="Value">4</param>
                                         </action>
                                         <action id="4" name="Set animation" sid="228325172791666" type="machine">
-                                            <param id="0" name="Animation">&quot;generic&quot;</param>
+                                            <param id="0" name="Animation">&quot;furnace&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
                                         <action id="2" name="Stop" sid="470108143427037" type="machine" />

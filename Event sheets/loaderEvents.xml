@@ -29,5 +29,64 @@
                 </action>
             </actions>
         </event-block>
+        <event-group description="" sid="766938612255000" title="ldr_itemlist">
+            <sub-events>
+                <event-block sid="756991076894534">
+                    <conditions>
+                        <condition id="0" name="On function" sid="173464381011556" type="f">
+                            <param id="0" name="Name">&quot;ldr_itemlist_parse&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable comment="the content of the row being parsed" constant="0" name="row" sid="439247430388982" static="0" type="text"></variable>
+                        <event-block sid="562420497345177">
+                            <conditions>
+                                <condition id="-10" name="For" sid="126364964212387" type="System">
+                                    <param id="0" name="Name">&quot;rows&quot;</param>
+                                    <param id="1" name="Start index">0</param>
+                                    <param id="2" name="End index">tokencount(f.Param(0), &quot;;&quot;)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="728618830334998" type="System">
+                                    <param id="0" name="Variable">row</param>
+                                    <param id="1" name="Value">tokenat(f.Param(0), loopindex, &quot;;&quot;)</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>placable</comment>
+                                <event-block sid="799147320365643">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="869014320222243" type="System">
+                                            <param id="0" name="First value">tokenat(row, 2, &quot;,&quot;)</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Second value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Push" sid="118398992274457" type="inv_itemOnly">
+                                            <param id="0" name="Where">0</param>
+                                            <param id="1" name="Value">loopindex</param>
+                                            <param id="2" name="Axis">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <comment>strength</comment>
+                                <event-block sid="342076116259935">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Add key" sid="103680981502579" type="tiles_strength">
+                                            <param id="0" name="Key">str(loopindex)</param>
+                                            <param id="1" name="Value">tokenat(row, 7, &quot;,&quot;)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

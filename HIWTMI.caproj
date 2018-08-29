@@ -149,6 +149,88 @@
                             <image-point name="Ouput" x="0.5" y="1.1875" />
                         </frame>
                     </animation>
+                    <animation framecount="2" loop="1" name="grinder" pingpong="0" repeatcount="1" repeatto="0" sid="564831246630681" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                            <collision-poly>
+                                <point x="1" y="1" />
+                                <point x="0" y="1" />
+                                <point x="0" y="0" />
+                                <point x="1" y="0" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="1" name="uranium" pingpong="0" repeatcount="1" repeatto="0" sid="170760923820186" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                    </animation>
+                    <animation framecount="4" loop="1" name="reverser" pingpong="0" repeatcount="1" repeatto="0" sid="145253430784439" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                    </animation>
+                    <animation framecount="7" loop="1" name="compactor" pingpong="0" repeatcount="1" repeatto="0" sid="717121692982612" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                    </animation>
+                    <animation framecount="5" loop="1" name="furnace" pingpong="0" repeatcount="1" repeatto="0" sid="348245290542160" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                        <frame duration="1" hotspotX="0" hotspotY="0">
+                            <image-point name="Ouput" x="0.5" y="1.1875" />
+                        </frame>
+                    </animation>
                 </animation-folder>
             </object-type>
             <object-type name="machine_input" sid="982602320371136">
