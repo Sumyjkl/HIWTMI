@@ -300,5 +300,37 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="532953209294795">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="689744263762164" type="Keyboard">
+                    <param id="0" name="Key">76</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="560315973497710" type="Keyboard">
+                    <param id="0" name="Key">16</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="497368458344171" type="f">
+                    <param id="0" name="Name">&quot;ldr_loadDefault&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="618381368847953">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="118771426944598" type="Keyboard">
+                    <param id="0" name="Key">83</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="124341491987365" type="Keyboard">
+                    <param id="0" name="Key">16</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="975482523583220" type="f">
+                    <param id="0" name="Name">&quot;ldr_saveDefault&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

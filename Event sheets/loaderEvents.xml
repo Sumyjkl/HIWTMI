@@ -88,5 +88,37 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="101691424064920" title="saveload">
+            <sub-events>
+                <event-block sid="431408056007172">
+                    <conditions>
+                        <condition id="0" name="On function" sid="972384496435585" type="f">
+                            <param id="0" name="Name">&quot;ldr_saveDefault&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-36" name="Save" sid="983764910221679" type="System">
+                            <param id="0" name="Slot">&quot;hiwtmi_default&quot;</param>
+                        </action>
+                        <action id="0" name="Call function" sid="101428330634313" type="f">
+                            <param id="0" name="Name">&quot;gui_showStatusText&quot;</param>
+                            <param id="1" name="Parameter {n}">&quot;player&quot;{###}player.X{###}player.Y{###}&quot;Saved!&quot;{###}rgb(255, 255, 255)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="281867849165634">
+                    <conditions>
+                        <condition id="0" name="On function" sid="600933278299944" type="f">
+                            <param id="0" name="Name">&quot;ldr_loadDefault&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-37" name="Load" sid="117335982264220" type="System">
+                            <param id="0" name="Slot">&quot;hiwtmi_default&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
