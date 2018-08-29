@@ -341,13 +341,21 @@
                                     <param id="0" name="Name">&quot;fogClear&quot;</param>
                                     <param id="1" name="Parameter {n}">fog.PositionToTileX(player.X){###}fog.PositionToTileY(player.Y){###}3</param>
                                 </action>
-                                <action id="0" name="Call function" sid="897615770503582" type="f">
+                                <action id="0" name="Call function" sid="627150750528786" type="f">
                                     <param id="0" name="Name">&quot;inv_add&quot;</param>
-                                    <param id="1" name="Parameter {n}">5</param>
+                                    <param id="1" name="Parameter {n}">11</param>
                                 </action>
-                                <action id="0" name="Call function" sid="855250671987863" type="f">
+                                <action id="0" name="Call function" sid="441888495649646" type="f">
                                     <param id="0" name="Name">&quot;inv_add&quot;</param>
-                                    <param id="1" name="Parameter {n}">4</param>
+                                    <param id="1" name="Parameter {n}">11</param>
+                                </action>
+                                <action id="0" name="Call function" sid="209829866591663" type="f">
+                                    <param id="0" name="Name">&quot;inv_add&quot;</param>
+                                    <param id="1" name="Parameter {n}">12</param>
+                                </action>
+                                <action id="0" name="Call function" sid="377128275174152" type="f">
+                                    <param id="0" name="Name">&quot;inv_add&quot;</param>
+                                    <param id="1" name="Parameter {n}">12</param>
                                 </action>
                             </actions>
                             <sub-events>

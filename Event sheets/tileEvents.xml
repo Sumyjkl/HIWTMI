@@ -345,150 +345,36 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <comment>same (not used</comment>
-                        <event-block disabled="1" sid="975490314226653">
+                        <event-block sid="996774563676178">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="298913769177031" type="System">
+                                <condition id="-14" name="Compare variable" sid="329481551403310" type="System">
                                     <param id="0" name="Variable">tmpZ</param>
-                                    <param id="1" name="Comparison">5</param>
-                                    <param id="2" name="Value">1</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="210770543565085" type="System">
+                                    <param id="0" name="Variable">tmpZ</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">11</param>
                                 </condition>
                             </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block disabled="1" sid="994999340954356">
-                                    <conditions>
-                                        <condition id="1" name="Compare at XY" sid="217518408996048" type="TileArray">
-                                            <param id="0" name="X">tmpX</param>
-                                            <param id="1" name="Y">tmpY-1</param>
-                                            <param id="2" name="Comparison">0</param>
-                                            <param id="3" name="Value">tmpZ</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="817623717755033" type="System">
-                                            <param id="0" name="Variable">tmpReturn</param>
-                                            <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block disabled="1" sid="300063751926735">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="487229582581001" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="720174628145464" type="System">
-                                            <param id="0" name="Variable">tmpReturn</param>
-                                            <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block disabled="1" sid="248385007799272">
-                                    <conditions>
-                                        <condition id="1" name="Compare at XY" sid="864806885817161" type="TileArray">
-                                            <param id="0" name="X">tmpX</param>
-                                            <param id="1" name="Y">tmpY+1</param>
-                                            <param id="2" name="Comparison">0</param>
-                                            <param id="3" name="Value">tmpZ</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="188937984869264" type="System">
-                                            <param id="0" name="Variable">tmpReturn</param>
-                                            <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block disabled="1" sid="601764420355750">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="860544355923830" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="536828365103982" type="System">
-                                            <param id="0" name="Variable">tmpReturn</param>
-                                            <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block disabled="1" sid="189091064781668">
-                                    <conditions>
-                                        <condition id="1" name="Compare at XY" sid="919044089985852" type="TileArray">
-                                            <param id="0" name="X">tmpX-1</param>
-                                            <param id="1" name="Y">tmpY</param>
-                                            <param id="2" name="Comparison">0</param>
-                                            <param id="3" name="Value">tmpZ</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="130986407697326" type="System">
-                                            <param id="0" name="Variable">tmpReturn</param>
-                                            <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block disabled="1" sid="535929221719487">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="316901549600018" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="891471918320792" type="System">
-                                            <param id="0" name="Variable">tmpReturn</param>
-                                            <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block disabled="1" sid="424196530748264">
-                                    <conditions>
-                                        <condition id="1" name="Compare at XY" sid="903784593053357" type="TileArray">
-                                            <param id="0" name="X">tmpX+1</param>
-                                            <param id="1" name="Y">tmpY</param>
-                                            <param id="2" name="Comparison">0</param>
-                                            <param id="3" name="Value">tmpZ</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="224167289120368" type="System">
-                                            <param id="0" name="Variable">tmpReturn</param>
-                                            <param id="1" name="Value">tmpReturn &amp; &quot;1&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block disabled="1" sid="168169423165612">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="531771267270054" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="483860033647593" type="System">
-                                            <param id="0" name="Variable">tmpReturn</param>
-                                            <param id="1" name="Value">tmpReturn &amp; &quot;0&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block disabled="1" sid="656747217502585">
-                                    <conditions />
-                                    <actions>
-                                        <action id="1" name="Set tile" sid="402429733607594" type="TileMap">
-                                            <param id="0" name="Tile X">tmpX</param>
-                                            <param id="1" name="Tile Y">tmpY</param>
-                                            <param id="2" name="Tile">(tmpZ-1) * 20 + tileForms.Get(tmpReturn)</param>
-                                            <param id="3" name="State">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
+                            <actions>
+                                <action id="1" name="Set tile" sid="690399593943074" type="TileMap">
+                                    <param id="0" name="Tile X">tmpX</param>
+                                    <param id="1" name="Tile Y">tmpY</param>
+                                    <param id="2" name="Tile">(tmpZ-1) * 20 + 10</param>
+                                    <param id="3" name="State">0</param>
+                                </action>
+                            </actions>
                         </event-block>
                         <comment>any with other rules (you can also omit certain tile types from the test</comment>
                         <event-block sid="901303901743422">
                             <conditions>
+                                <condition id="-22" name="Else" sid="538443456542341" type="System" />
                                 <condition id="-14" name="Compare variable" sid="973797656651429" type="System">
                                     <param id="0" name="Variable">tmpZ</param>
                                     <param id="1" name="Comparison">5</param>
                                     <param id="2" name="Value">1</param>
-                                </condition>
-                                <condition id="-14" inverted="1" name="Compare variable" sid="203939055463370" type="System">
-                                    <param id="0" name="Variable">tmpZ</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">9</param>
                                 </condition>
                                 <condition id="-14" name="Compare variable" sid="953094070461080" type="System">
                                     <param id="0" name="Variable">tmpZ</param>
@@ -673,11 +559,6 @@
                         <event-block sid="709614030771405">
                             <conditions>
                                 <condition id="-22" name="Else" sid="159664300610345" type="System" />
-                                <condition id="-14" inverted="1" name="Compare variable" sid="879797268633693" type="System">
-                                    <param id="0" name="Variable">tmpZ</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">9</param>
-                                </condition>
                                 <condition id="-14" name="Compare variable" sid="675983311112553" type="System">
                                     <param id="0" name="Variable">tmpZ</param>
                                     <param id="1" name="Comparison">5</param>
@@ -1224,7 +1105,7 @@
         <event-group description="" sid="261556135983434" title="Damage to tiles">
             <sub-events>
                 <comment>Initialize damage values</comment>
-                <event-block sid="202448128023486">
+                <event-block bookmark="1" sid="202448128023486">
                     <conditions>
                         <condition id="0" name="On function" sid="128578910153026" type="f">
                             <param id="0" name="Name">&quot;tdm_init&quot;</param>
@@ -1258,6 +1139,22 @@
                                 <action id="0" name="Add key" sid="384604772780732" type="tiles_strength">
                                     <param id="0" name="Key">&quot;5&quot;</param>
                                     <param id="1" name="Value">6</param>
+                                </action>
+                                <action id="0" name="Add key" sid="671722778785172" type="tiles_strength">
+                                    <param id="0" name="Key">&quot;9&quot;</param>
+                                    <param id="1" name="Value">4</param>
+                                </action>
+                                <action id="0" name="Add key" sid="234965603024410" type="tiles_strength">
+                                    <param id="0" name="Key">&quot;10&quot;</param>
+                                    <param id="1" name="Value">0.5</param>
+                                </action>
+                                <action id="0" name="Add key" sid="669279195607104" type="tiles_strength">
+                                    <param id="0" name="Key">&quot;11&quot;</param>
+                                    <param id="1" name="Value">10</param>
+                                </action>
+                                <action id="0" name="Add key" sid="758109215281840" type="tiles_strength">
+                                    <param id="0" name="Key">&quot;12&quot;</param>
+                                    <param id="1" name="Value">8</param>
                                 </action>
                                 <action id="0" name="Add key" sid="136561485785889" type="tiles_strength">
                                     <param id="0" name="Key">&quot;501&quot;</param>

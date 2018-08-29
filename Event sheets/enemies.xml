@@ -83,6 +83,10 @@
                         <action behavior="Platform" id="8" name="Set vector X" sid="999726228185534" type="slime">
                             <param id="0" name="Vector X">self.jumpLength * Self.aiDirection</param>
                         </action>
+                        <action id="0" name="Call function" sid="696277425057556" type="f">
+                            <param id="0" name="Name">&quot;slime_jumping&quot;</param>
+                            <param id="1" name="Parameter {n}">slime.UID</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="894603124353815">
@@ -416,45 +420,51 @@
                 <comment>Slime types&#x0D;&#x0A;</comment>
                 <event-block sid="711496754206756">
                     <conditions>
-                        <condition behavior="Platform" id="3" name="Is jumping" sid="721110839425531" type="slimeType" />
-                        <condition id="9" name="Is overlapping at offset" sid="207969136041593" type="slimeType">
-                            <param id="0" name="Object">TileMap</param>
-                            <param id="1" name="Offset X">-2</param>
-                            <param id="2" name="Offset Y">0</param>
+                        <condition id="0" name="On function" sid="721110839425531" type="f">
+                            <param id="0" name="Name">&quot;slime_jumping&quot;</param>
                         </condition>
-                        <condition id="-4" name="Trigger once while true" sid="784750079568544" type="System" />
+                        <condition id="-14" name="Pick by unique ID" sid="303248996532472" type="slimeType">
+                            <param id="0" name="Unique ID">f.Param(0)</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action disabled="1" id="0" name="Call function" sid="716714936019627" type="f">
                             <param id="0" name="Name">&quot;gui_showStatusText&quot;</param>
                             <param id="1" name="Parameter {n}">&quot;player&quot;{###}slimeType.X{###}slimeType.Y{###}&quot;Wall damage&quot;{###}rgb(0, 255, 0)</param>
                         </action>
-                        <action id="0" name="Call function" sid="906576408725352" type="f">
-                            <param id="0" name="Name">&quot;tdm_damageTile&quot;</param>
-                            <param id="1" name="Parameter {n}">floor((slimeType.X - 5) / tileMapSize){###}floor(slimeType.Y / tileMapSize){###}enm_env_damage</param>
-                        </action>
                     </actions>
-                </event-block>
-                <event-block sid="960242619355912">
-                    <conditions>
-                        <condition behavior="Platform" id="3" name="Is jumping" sid="206847279008166" type="slimeType" />
-                        <condition id="9" name="Is overlapping at offset" sid="108072905972798" type="slimeType">
-                            <param id="0" name="Object">TileMap</param>
-                            <param id="1" name="Offset X">2</param>
-                            <param id="2" name="Offset Y">0</param>
-                        </condition>
-                        <condition id="-4" name="Trigger once while true" sid="144899989763280" type="System" />
-                    </conditions>
-                    <actions>
-                        <action disabled="1" id="0" name="Call function" sid="183337915072452" type="f">
-                            <param id="0" name="Name">&quot;gui_showStatusText&quot;</param>
-                            <param id="1" name="Parameter {n}">&quot;player&quot;{###}slimeType.X{###}slimeType.Y{###}&quot;Wall damage&quot;{###}rgb(0, 255, 0)</param>
-                        </action>
-                        <action id="0" name="Call function" sid="725992927286213" type="f">
-                            <param id="0" name="Name">&quot;tdm_damageTile&quot;</param>
-                            <param id="1" name="Parameter {n}">floor((slimeType.X + 5) / tileMapSize){###}floor(slimeType.Y / tileMapSize){###}enm_env_damage</param>
-                        </action>
-                    </actions>
+                    <sub-events>
+                        <event-block sid="909502498239608">
+                            <conditions>
+                                <condition id="9" name="Is overlapping at offset" sid="207969136041593" type="slimeType">
+                                    <param id="0" name="Object">TileMap</param>
+                                    <param id="1" name="Offset X">-2</param>
+                                    <param id="2" name="Offset Y">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="906576408725352" type="f">
+                                    <param id="0" name="Name">&quot;tdm_damageTile&quot;</param>
+                                    <param id="1" name="Parameter {n}">floor((slimeType.X - 5) / tileMapSize){###}floor(slimeType.Y / tileMapSize){###}enm_env_damage</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="772867290701963">
+                            <conditions>
+                                <condition id="9" name="Is overlapping at offset" sid="108072905972798" type="slimeType">
+                                    <param id="0" name="Object">TileMap</param>
+                                    <param id="1" name="Offset X">2</param>
+                                    <param id="2" name="Offset Y">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="725992927286213" type="f">
+                                    <param id="0" name="Name">&quot;tdm_damageTile&quot;</param>
+                                    <param id="1" name="Parameter {n}">floor((slimeType.X + 5) / tileMapSize){###}floor(slimeType.Y / tileMapSize){###}enm_env_damage</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="859402025788652">
                     <conditions>

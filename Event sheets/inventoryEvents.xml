@@ -3,7 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>inventoryEvents</name>
     <events>
-        <comment>Dev item reference:&#x0D;&#x0A;1 - stone&#x0D;&#x0A;4 - wood&#x0D;&#x0A;5 - iron&#x0D;&#x0A;6 - jelly&#x0D;&#x0A;7 - heal&#x0D;&#x0A;8 - uranium&#x0D;&#x0A;9 - magnetion&#x0D;&#x0A;10 - oxohydrate&#x0D;&#x0A;11 - titanium&#x0D;&#x0A;12 - steel&#x0D;&#x0A;</comment>
+        <comment>Dev item reference:&#x0D;&#x0A;1 - stone&#x0D;&#x0A;2 - bricks&#x0D;&#x0A;4 - wood&#x0D;&#x0A;5 - iron&#x0D;&#x0A;6 - jelly&#x0D;&#x0A;7 - heal&#x0D;&#x0A;8 - uranium&#x0D;&#x0A;9 - magnetion&#x0D;&#x0A;10 - oxohydrate&#x0D;&#x0A;11 - titanium&#x0D;&#x0A;12 - steel&#x0D;&#x0A;</comment>
         <comment>*** PICKING UP ITEMS ***&#x0D;&#x0A;</comment>
         <event-block sid="297325924324900">
             <conditions>
