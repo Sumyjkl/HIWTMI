@@ -337,6 +337,10 @@
                                 <action id="11" name="Set collisions enabled" sid="461291263405406" type="freeCam">
                                     <param id="0" name="Collisions">0</param>
                                 </action>
+                                <action id="0" name="Call function" sid="778058078939231" type="f">
+                                    <param id="0" name="Name">&quot;gui_fade&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
                                 <action id="0" name="Call function" sid="700116998854266" type="f">
                                     <param id="0" name="Name">&quot;fogClear&quot;</param>
                                     <param id="1" name="Parameter {n}">fog.PositionToTileX(player.X){###}fog.PositionToTileY(player.Y){###}3</param>

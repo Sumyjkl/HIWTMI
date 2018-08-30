@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2layout>
-    <name>gameover</name>
-    <sid>620579874099859</sid>
-    <event-sheet>gameoverEvents</event-sheet>
+    <name>menu</name>
+    <sid>210669099528115</sid>
+    <event-sheet>menuLayoutEvents</event-sheet>
     <size>
         <width>1708</width>
         <height>960</height>
@@ -13,7 +13,7 @@
     </margins>
     <unbounded-scrolling>0</unbounded-scrolling>
     <layers>
-        <layer name="Layer 0" sid="569322550788489">
+        <layer name="Layer 0" sid="500679358063372">
             <initially-visible>1</initially-visible>
             <background-color>21,22,49</background-color>
             <transparent>0</transparent>
@@ -28,13 +28,92 @@
             <use-render-cells>0</use-render-cells>
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
+            <instances />
+            <effects />
+        </layer>
+        <layer name="Layer 1" sid="886277559738288">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
             <instances>
-                <instance type="spriteText" uid="77">
+                <instance type="static" uid="72">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>66</x>
+                        <y>-41</y>
+                        <z>0</z>
+                        <width>32</width>
+                        <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spriteText" uid="73">
                     <properties>
                         <character-width>5</character-width>
                         <character-height>6</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>CLICK HERE TO START AGAIN</text>
+                        <text>HOME IS WHERE THE MOUNTAIN IS EARLY ACCESS</text>
+                        <scale>1</scale>
+                        <initial-visibility>Visible</initial-visibility>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <character-spacing>0</character-spacing>
+                        <line-height>2</line-height>
+                    </properties>
+                    <effect-instances>
+                        <effect-instance type="Tint">
+                            <parameters>
+                                <blue>1</blue>
+                                <green>1</green>
+                                <red>1</red>
+                            </parameters>
+                        </effect-instance>
+                    </effect-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>108</x>
+                        <y>-33</y>
+                        <z>0</z>
+                        <width>152.501098633</width>
+                        <height>18</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="spriteText" uid="74">
+                    <properties>
+                        <character-width>5</character-width>
+                        <character-height>6</character-height>
+                        <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
+                        <text>PRESS [E] TO START</text>
                         <scale>1</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -56,8 +135,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>83.133132935</x>
-                        <y>92.028259277</y>
+                        <x>83</x>
+                        <y>166</y>
                         <z>0</z>
                         <width>152.501098633</width>
                         <height>11.763694763</height>
@@ -68,12 +147,12 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="spriteText" uid="78">
+                <instance type="spriteText" uid="75">
                     <properties>
                         <character-width>5</character-width>
                         <character-height>6</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>YOU ARE DEAD.</text>
+                        <text>PLEASE READ THE DESCRIPTION BEFORE PLAYING</text>
                         <scale>1</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -87,19 +166,19 @@
                         <effect-instance type="Tint">
                             <parameters>
                                 <blue>1</blue>
-                                <green>1</green>
-                                <red>1</red>
+                                <green>0.7</green>
+                                <red>0.7</red>
                             </parameters>
                         </effect-instance>
                     </effect-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>82.284881592</x>
-                        <y>77.967933655</y>
+                        <x>81</x>
+                        <y>86.763702393</y>
                         <z>0</z>
                         <width>152.501098633</width>
-                        <height>11.763694763</height>
+                        <height>23</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -107,15 +186,15 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="spriteText" uid="79">
+                <instance type="spriteText" uid="76">
                     <properties>
                         <character-width>5</character-width>
                         <character-height>6</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>YOU CAN PRESS SHIFT + L TO LOAD YOUR SAVE</text>
+                        <text>v001</text>
                         <scale>1</scale>
                         <initial-visibility>Visible</initial-visibility>
-                        <horizontal-alignment>Center</horizontal-alignment>
+                        <horizontal-alignment>Right</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
                         <hotspot>Top-left</hotspot>
                         <wrapping>Word</wrapping>
@@ -134,11 +213,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>50.478179932</x>
-                        <y>166.442779541</y>
+                        <x>239</x>
+                        <y>2</y>
                         <z>0</z>
-                        <width>223.325134277</width>
-                        <height>11.763694763</height>
+                        <width>78</width>
+                        <height>23</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -147,24 +226,6 @@
                     </world>
                 </instance>
             </instances>
-            <effects />
-        </layer>
-        <layer name="cursor" sid="241103073095206">
-            <initially-visible>1</initially-visible>
-            <background-color>255,255,255</background-color>
-            <transparent>1</transparent>
-            <parallax>
-                <x>1</x>
-                <y>1</y>
-            </parallax>
-            <zoom-rate>1</zoom-rate>
-            <opacity>1</opacity>
-            <force-own-texture>0</force-own-texture>
-            <global>0</global>
-            <use-render-cells>0</use-render-cells>
-            <blend-mode>0</blend-mode>
-            <effect-fallback>0</effect-fallback>
-            <instances />
             <effects />
         </layer>
     </layers>

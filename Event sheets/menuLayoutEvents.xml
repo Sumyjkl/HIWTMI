@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>menuLayoutEvents</name>
+    <events>
+        <include>loaderEvents</include>
+        <include>loaderEvents</include>
+        <event-block sid="121088344481343">
+            <conditions>
+                <condition id="-14" name="Pick by unique ID" sid="791080330958306" type="static">
+                    <param id="0" name="Unique ID">72</param>
+                </condition>
+                <condition id="-14" name="Pick by unique ID" sid="315490289211041" type="spriteText">
+                    <param id="0" name="Unique ID">73</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="410164798223420" type="static">
+                    <param id="0" name="Y">lerp(Self.Y, 20, 0.03)</param>
+                </action>
+                <action id="-2" name="Set Y" sid="160188371450488" type="spriteText">
+                    <param id="0" name="Y">lerp(Self.Y, 28, 0.03)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="819987034620833">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="484675194502897" type="Keyboard">
+                    <param id="0" name="Key">76</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="499176101333926" type="Keyboard">
+                    <param id="0" name="Key">16</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="828562028042061" type="f">
+                    <param id="0" name="Name">&quot;ldr_loadDefault&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -41,7 +41,9 @@
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
-    <used-effects />
+    <used-effects>
+        <effect author="Scirra" id="tint">Tint</effect>
+    </used-effects>
     <configurations>
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
@@ -416,6 +418,27 @@
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="269540452901567" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0">
                             <image-point name="Imagepoint 1" x="0.5" y="0.5" />
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
+        <object-folder name="menu">
+            <object-type name="static" sid="970416388449969">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="437611076862869" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\daem_\Documents\Projects\mountain\ic.ico">
+                            <collision-poly>
+                                <point x="0.5" y="0.5" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.5" />
+                                <point x="1" y="1" />
+                                <point x="1" y="1" />
+                                <point x="1" y="1" />
+                                <point x="0.5" y="1" />
+                                <point x="0" y="1" />
+                            </collision-poly>
                         </frame>
                     </animation>
                 </animation-folder>
@@ -848,6 +871,11 @@
         </object-type>
         <object-type name="spriteText" sid="985939698133435">
             <plugin id="Spritefont2" />
+            <effects>
+                <effect-type name="Tint">
+                    <effect id="tint" />
+                </effect-type>
+            </effects>
             <texture />
         </object-type>
     </object-folder>
@@ -968,7 +996,7 @@
     <layout-folder>
         <layout>main.xml</layout>
         <layout>assets.xml</layout>
-        <layout>loader.xml</layout>
+        <layout>menu.xml</layout>
         <layout>gameover.xml</layout>
     </layout-folder>
     <event-folder>
@@ -988,7 +1016,7 @@
         <event-folder name="levelEvents" />
         <event-sheet>gameLogic.xml</event-sheet>
         <event-sheet>globalEvents.xml</event-sheet>
-        <event-sheet>loaderLayout.xml</event-sheet>
+        <event-sheet>menuLayoutEvents.xml</event-sheet>
         <event-sheet>mainEvents.xml</event-sheet>
         <event-sheet>gameoverEvents.xml</event-sheet>
         <event-sheet>controls.xml</event-sheet>
