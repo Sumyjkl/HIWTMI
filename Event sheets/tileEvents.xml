@@ -1202,6 +1202,10 @@
                                     <param id="0" name="Key">&quot;501&quot;</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
+                                <action id="0" name="Add key" sid="690149245101709" type="tiles_strength">
+                                    <param id="0" name="Key">&quot;999&quot;</param>
+                                    <param id="1" name="Value">Infinity</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>

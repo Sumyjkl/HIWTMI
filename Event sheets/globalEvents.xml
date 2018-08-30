@@ -138,6 +138,7 @@
                 <condition disabled="1" id="-6" name="Every X seconds" sid="768825353246468" type="System">
                     <param id="0" name="Interval (seconds)">1.0</param>
                 </condition>
+                <condition id="-18" name="Is in preview" sid="805682556500567" type="System" />
                 <condition behavior="Solid" id="0" name="Is enabled" sid="110499077620041" type="TileMap" />
             </conditions>
             <actions>

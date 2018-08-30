@@ -361,6 +361,11 @@
                                     <param id="0" name="Name">&quot;inv_add&quot;</param>
                                     <param id="1" name="Parameter {n}">12</param>
                                 </action>
+                                <action id="3" name="Set at XY" sid="847921564391437" type="TileArray">
+                                    <param id="0" name="X">round(core.X / tileMapSize)</param>
+                                    <param id="1" name="Y">round(core.Y / tileMapSize)</param>
+                                    <param id="2" name="Value">999</param>
+                                </action>
                             </actions>
                             <sub-events>
                                 <event-block sid="663351633156962">

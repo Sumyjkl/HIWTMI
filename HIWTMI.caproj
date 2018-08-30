@@ -42,6 +42,7 @@
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects>
+        <effect author="Scirra" id="brightness">Brightness</effect>
         <effect author="Scirra" id="tint">Tint</effect>
     </used-effects>
     <configurations>
@@ -267,11 +268,19 @@
                 <instance-variables>
                     <instance-variable name="inv_index" sid="944252462644581" type="number" />
                 </instance-variables>
+                <effects>
+                    <effect-type name="Brightness">
+                        <effect id="brightness" />
+                    </effect-type>
+                </effects>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="i0" pingpong="0" repeatcount="1" repeatto="0" sid="886906958310365" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0" />
                     </animation>
                     <animation framecount="1" loop="0" name="i1" pingpong="0" repeatcount="1" repeatto="0" sid="991014366622564" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
+                    </animation>
+                    <animation framecount="1" loop="0" name="i2" pingpong="0" repeatcount="1" repeatto="0" sid="190602795064515" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0" />
                     </animation>
                     <animation framecount="1" loop="0" name="i4" pingpong="0" repeatcount="1" repeatto="0" sid="933364890524259" speed="5">

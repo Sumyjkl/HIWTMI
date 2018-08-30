@@ -52,8 +52,10 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="9" name="Set scale" sid="425507548750697" type="blockSelectionIndicator">
-                                    <param id="0" name="Scale">0.9</param>
+                                <action id="-28" name="Set effect parameter" sid="425507548750697" type="blockSelectionIndicator">
+                                    <param id="0" name="Effect">&quot;Brightness&quot;</param>
+                                    <param id="1" name="Parameter index">0</param>
+                                    <param id="2" name="Value">120</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -62,8 +64,10 @@
                                 <condition id="-22" name="Else" sid="979852305442401" type="System" />
                             </conditions>
                             <actions>
-                                <action id="9" name="Set scale" sid="703291645853674" type="blockSelectionIndicator">
-                                    <param id="0" name="Scale">1</param>
+                                <action id="-28" name="Set effect parameter" sid="511591512981686" type="blockSelectionIndicator">
+                                    <param id="0" name="Effect">&quot;Brightness&quot;</param>
+                                    <param id="1" name="Parameter index">0</param>
+                                    <param id="2" name="Value">100</param>
                                 </action>
                             </actions>
                         </event-block>
