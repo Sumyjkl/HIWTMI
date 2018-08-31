@@ -40,6 +40,7 @@
         <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+        <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
     </used-behaviors>
     <used-effects>
         <effect author="Scirra" id="brightness">Brightness</effect>
@@ -449,6 +450,22 @@
                                 <point x="0" y="1" />
                             </collision-poly>
                         </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="menu_effect" sid="207123799144481">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="188457384077402">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="Wrap" sid="182088949526712">
+                        <behavior id="wrap" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="977188002111701" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" />
                     </animation>
                 </animation-folder>
             </object-type>
